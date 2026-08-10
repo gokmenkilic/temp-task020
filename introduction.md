@@ -6,14 +6,14 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientifc codes?
+- Why assess performance in large scientific codes?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version?
+- Explain why is it necessary to benchmark code without relying on exsiting version
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

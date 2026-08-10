@@ -4,5 +4,27 @@ title: 'Reference'
 
 ## Glossary
 
-This is a placeholder file. Please add content here. 
-
+performance assessment
+:
+performance analysis
+:
+performance engineering
+:
+profiling
+:
+tracing
+:
+node
+:
+core
+:
+login node
+:
+compute node
+:
+scheduler
+:
+speedup, S(p)
+:
+parallel efficiency, E(p)
+:

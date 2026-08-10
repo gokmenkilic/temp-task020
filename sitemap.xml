@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/citation.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/citation.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://gokmenkilic.github.io/temp-task020/reference.html</loc>
   </url>
 </urlset>

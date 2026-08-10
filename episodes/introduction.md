@@ -1,26 +1,26 @@
 ---
-title: "Using Markdown"
+title: "Introduction"
 teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- Why assess performance in large scientifc codes?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Differentiate performance assessment, analysis and engineering
+- Explain why is it necessary to benchmark code without relying on exsiting version?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
 This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files and
+[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
 [R Markdown][r-markdown] for dynamic files that can render code into output. 
 Please refer to the [Introduction to The Carpentries 
 Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.

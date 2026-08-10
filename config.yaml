@@ -21,7 +21,7 @@ carpentry_description: 'Lesson Description'
 title: 'Theoretically-motivated introduction to performance analysis and optimisation' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: '10/08/2026'~ # FIXME
+created: '2026-08-10' # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'benchmarking, optimisation, lesson, The Carpentries, SHAREing' # FIXME

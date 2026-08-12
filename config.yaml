@@ -50,10 +50,15 @@ contact: 'gokmen.kilic@durham.ac.uk' # FIXME
 # include all pages in the folder.
 #
 # Example -------------
-#
-# episodes:
-# - introduction.md
-# - first-steps.md
+
+episodes:
+ - 01-intro.md             
+ - 02-core.md              
+ - 03-intra-node.md        
+ - 04-inter-node.md        
+ - 05-gpu.md               
+ - 06-io.md                
+ - 07-conclusion.md  
 #
 # learners:
 # - setup.md
@@ -66,8 +71,8 @@ contact: 'gokmen.kilic@durham.ac.uk' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- introduction.md
+#episodes: 
+#- introduction.md
 
 # Information for Learners
 learners: 

@@ -29,3 +29,5 @@ speedup, S(p)
 parallel efficiency, E(p)
 :
 runtime
+:
+algoritmic scaling

@@ -18,7 +18,10 @@ exercises: 2 # exercise time in minutes
 
 ## Introduction
 
-This lesson will introduce you to concept of benchmarking with underlying theory. Before we start it worth to mention we will cover core, intra level benchmarking, inter level benchmarking, GPU, I/O in our episodes. 
+This lesson will introduce concept of benchmarking with underlying theory. The main idea is not delpying your code here to analyse rather it is guiding you how to asset your ow code. 
+
+
+
 
 What you need to know is that there are three sections required for a valid
 Carpentries lesson:

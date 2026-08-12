@@ -14,16 +14,11 @@ exercises: 2 # exercise time in minutes
 
 - Differentiate performance assessment, analysis and engineering
 - Explain why is it necessary to benchmark code without relying on exsiting version
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+This lesson will introduce you to concept of benchmarking with underlying theory. Before we start it worth to mention we will cover core, intra level benchmarking, inter level benchmarking, GPU, I/O in our episodes. 
 
 What you need to know is that there are three sections required for a valid
 Carpentries lesson:

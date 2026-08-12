@@ -1,8 +1,9 @@
 ---
 site: sandpaper::sandpaper_site
+Title: "Home"
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
+Welcome to Theoretically-motivated introduction to performance analysis and optimisation lesson [The Carpentries Workbench][workbench]. 
 
 
 [workbench]: https://carpentries.github.io/sandpaper-docs

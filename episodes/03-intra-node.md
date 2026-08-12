@@ -1,5 +1,5 @@
 ---
-title: "Core level becnhmarking"
+title: "Intra node level benchmarking"
 teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
@@ -17,7 +17,7 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Core
+## Intra-node level becnhmarking
 
 This is a lesson created via The Carpentries Workbench. It is written in
 [Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford

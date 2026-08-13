@@ -1,7 +1,7 @@
 ---
-title: "Introduction"
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+title: "Introduction to Fundamental of Benchmarking"
+teaching: 20 # teaching time in minutes
+exercises: 5 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -16,9 +16,11 @@ exercises: 2 # exercise time in minutes
 - Explain why is it necessary to benchmark code without relying on exsiting version
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Introduction to Fundamental of Benchmarking
 
-This lesson will introduce concept of benchmarking with underlying theory. The main idea is not delpying your code here to analyse rather it is guiding you how to asset your ow code. 
+This lesson will introduce concept of benchmarking with underlying theory. The main idea is not deploying your code here to analyse, rather it is guiding you how to asset your own code. 
+
+Altough there is no standard way to benchmark the code, we will .....(complete me)
 
 
 

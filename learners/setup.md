@@ -2,8 +2,7 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+You do not need to install any particular software for this course. 
 
 ## Data Sets
 
@@ -31,7 +30,6 @@ systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 ### Windows
 
-Use PuTTY
 
 ::::::::::::::::::::::::
 

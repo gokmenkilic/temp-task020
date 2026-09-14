@@ -25,8 +25,8 @@ Altough there is no standard way to benchmark the code, we will touch fundamenta
 
 What you need to know before starting this course are:
 
- 1. It has assumed that the learner of this course has a litmited knowledge of benchmkaring domain and the algorthims used.
- 2. (Continue from here)
+ 1. It has assumed that the learner of this course has a litmited knowledge of benchmarking domain and the algorthims used.
+ 2. It evaluate how a code performs while taking consideration of characteristics.
  3. `keypoints` are displayed at the end of the episode to reinforce the
     objectives.
 

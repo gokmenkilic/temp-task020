@@ -20,9 +20,7 @@ exercises: 5 # exercise time in minutes
 
 This lesson will introduce concept of benchmarking with underlying theory. The main idea is not deploying your code here to analyse, rather it is guiding you how to asset your own code. 
 
-Altough there is no standard way to benchmark the code, we will .....(complete me)
-
-
+Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetment.
 
 
 What you need to know is that there are three sections required for a valid

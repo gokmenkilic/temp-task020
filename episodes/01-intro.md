@@ -23,13 +23,10 @@ This lesson will introduce concept of benchmarking with underlying theory. The m
 Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetments. Therefore, we will start to introduce key metrics of benchmarking and put them glossary of this course so that you will have a better understanding of benchmarking at the end of the course. Saying that to have a skill to  decide which metrics means what and how you can use relavant technics to benchmark and asset your code.
 
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
+What you need to know before starting this course are:
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
+ 1. It has assumed that the learner of this course has a litmited knowledge of benchmkaring domain and the algorthims used.
+ 2. (Continue from here)
  3. `keypoints` are displayed at the end of the episode to reinforce the
     objectives.
 

@@ -28,7 +28,7 @@ What you need to know before starting this course are:
  1. It has assumed that the learner of this course has a limited knowledge of benchmarking domain and the algorthims used.
  2. It has evaluated that how a code performs while taking consideration of characteristics.
  3. It has defined pre-experimental setup for experiments.
- 4. 
+ 4. It has considered that the performance of the code bound the machine's point - not the algoithm or science case. 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 Inline instructor notes can help inform instructors of timing challenges

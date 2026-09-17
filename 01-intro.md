@@ -78,15 +78,15 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
+Amdahl's Law
 
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
+It can be tricky to understand how much speedup parallelisation you can actually gain after benchmark your code.
+To figure out that we use **Amdahl's Law**. It describes how many processors you keep a problem, the part of the code that should run serially puts a limit on total speedup.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: callout
+
+:::::::::::::::::::::::::::::::::::::::::::::
 
 ## Math
 

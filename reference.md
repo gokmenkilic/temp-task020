@@ -12,6 +12,10 @@ performance engineering
 :
 profiling
 :
+execution
+:
+compile time
+:
 tracing
 :
 node
@@ -29,5 +33,13 @@ speedup, S(p)
 parallel efficiency, E(p)
 :
 runtime
+:
+inclusive
+:
+exculisive
+:
+Slurm
+:
+numactl
 :
 algoritmic scaling

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Fundamental of Benchmarking"
 teaching: 20 # teaching time in minutes
-exercises: 5 # exercise time in minutes
+#exercises: 5 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

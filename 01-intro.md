@@ -83,7 +83,7 @@ Amdahl's Law
 It can be tricky to understand how much speedup parallelisation you can actually gain after benchmark your code.
 To figure out that we use **Amdahl's Law**. It describes how many processors you keep a problem, the part of the code that should run serially puts a limit on total speedup.
 
-![The theoretical maximum speedup of a HPC described by Amdahl's law at above figure which shows logaritmic parallelization vs lineer speedup. Whether how much of code could be paralelized and how much speed up you would gain after it. As it is clear in the figure speedup restricly constrained by unparallelizable portion.(fig/AmdahlsLaw.svg)
+![The theoretical maximum speedup of a HPC described by Amdahl's law at above figure which shows logaritmic parallelization vs lineer speedup. Whether how much of code could be paralelized and how much speed up you would gain after it. As it is clear in the figure speedup restricly constrained by unparallelizable portion.(fig/AmdahlsLaw.svg){alt='Amdahls law'}
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout

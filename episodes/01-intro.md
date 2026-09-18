@@ -84,7 +84,8 @@ It can be tricky to understand how much speedup parallelisation you can actually
 To figure out that we use **Amdahl's Law**. It describes how many processors you keep a problem, the part of the code that should run serially puts a limit on total speedup.
 
 
-![The theoretical maximum speedup of an HPC described by Amdahl's law at above figure which shows logaritmic parallelization vs lineer speedup. Whether how much of code could be paralelized and how much speed up you would gain after it. As it is clear in the figure speedup restricly constrained by unparallelizable portion.](/episodes/fig/AmdahlsLaw.svg){alt='Amdahls law'}
+![The theoretical maximum speedup of an HPC described by Amdahl's law at above figure which shows logaritmic parallelization vs lineer speedup. Whether how much of code could be paralelized and how much speed up you would gain after it. As it is clear in the figure speedup restricly constrained by unparallelizable portion.](episodes/fig/AmdahlsLaw.svg){alt='Amdahls law'}
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -94,12 +95,26 @@ To figure out that we use **Amdahl's Law**. It describes how many processors you
 
 ## Math
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+Two term we'll use throughout this lesson are
+**speedup** and **efficiency**.
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+Speedup compares the time taken on one processor, $T(1)$, to the time
+taken on $p$ processors, $T(p)$:
 
-Cool, right?
+$S(p) = \dfrac{T(1)}{T(p)}$
+
+Efficiency normalises speedup by the number of processors used, giving
+a value between 0 and 1 (or 0% and 100%):
+
+$E(p) = \dfrac{S(p)}{p}$
+
+**Amdahl's Law** predicts the maximum speedup achievable given a fixed
+problem size, where $f$ is the fraction of the code that must run
+serially:
+
+$S(p) = \dfrac{1}{(1 - f) + \dfrac{f}{p}}$
+
+As $p \to \infty$, speedup meets to $\dfrac{1}{1-f}$.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

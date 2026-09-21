@@ -60,14 +60,6 @@ measurement to decide what to do next.
  
 :::::::::::::::::::::::::::::::::
 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Figures
@@ -99,6 +91,39 @@ To figure out that we use **Amdahl's Law**. It describes how many processors you
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Is benchmarking the same as performance analysis?
+
+Now, let's think about a health screening in medicine: a doctor checks your
+blood pressure, pulse etc for standard checks. If some metrics are not in the ideal region
+where they should be, it will be issued for further tests. It will then switch to analysis part.
+
+1. When you **benchmark** your code (e.g. measuring $S(p)$ and $E(p)$
+across different systems), which stage does that belong to assetments or analysis?
+2. Is "benchmarking" and "performance analysis" the same thing? Why or
+why not?
+
+:::::::::::::::::::::::: solution
+
+### Solution
+
+**1.** Benchmarking is **assessment**. Measuring speedup and
+efficiency is like taking blood pressure and pulse — you're recording
+*what* happens, not explaining *why*.
+
+**2.** No, they're not the same thing. Benchmarking only tells you
+*that* something might be wrong (e.g. speedup is lower than expected).
+It doesn't tell you *why*. Finding the "why" — for example, using a
+profiler to discover that most of the time is spent waiting on memory
+rather than computing — is **performance analysis**, the equivalent of
+the doctor ordering follow-up tests once a vital sign looks off.
+
+In short: **benchmarking is how you assess the code; analysis is how you
+explain what the assessment found.**
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Math
 

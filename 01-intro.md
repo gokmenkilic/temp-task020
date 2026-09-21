@@ -79,10 +79,10 @@ accessibility purposes'}`
 ::::::::::::::::::::::::::::::::::::: callout
 
 This lesson aims to create a glossary that covers theory of performance analysis and optimisation. Please open it via
- [Glossary](reference.html#glossary) in a new tab and refer back to it
- as you go through this lesson.
+[Glossary](reference.html#glossary) in a new tab and refer back to it
+as you go through this lesson.
 
- :::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout
 

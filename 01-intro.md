@@ -78,6 +78,14 @@ accessibility purposes'}`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
+This lesson aims to create a glossary that covers theory of performance analysis and optimisation. Please open it via
+ [Glossary](reference.html#glossary) in a new tab and refer back to it
+ as you go through this lesson.
+
+ :::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+
 Amdahl's Law
 
 It can be tricky to understand how much speedup parallelisation you can actually gain after benchmark your code.
@@ -88,10 +96,6 @@ To figure out that we use **Amdahl's Law**. It describes how many processors you
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: callout
-
-
-:::::::::::::::::::::::::::::::::::::::::::::
 
 ## Math
 

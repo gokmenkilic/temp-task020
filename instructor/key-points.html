@@ -376,14 +376,16 @@
 <section id="01-intro"><h2 class="section-heading"><a href="01-intro.html">Introduction to Fundamental of Benchmarking</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Benchmarking measures how code performs, it doesn’t explain why, and
+it doesn’t fix anything in the code</li>
+<li>Performance work follows assessment, then analysis, then
+engineering</li>
+<li>Speedup <span class="math inline">\(S(p) = t(1)/t(p)\)</span> and
+efficiency <span class="math inline">\(E(p) = S(p)/p\)</span> are
+quantified by Amdahl’s Law, which shows that a code’s non-parallelisable
+fraction caps its total achievable speedup</li>
+<li>Profiling reveals where time is spent overall; tracing reveals the
+order in which events happened</li>
 </ul></section><section id="02-core"><h2 class="section-heading"><a href="02-core.html">Core level benchmarking</a></h2>
 <hr class="half-width">
 <ul>

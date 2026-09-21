@@ -405,7 +405,7 @@ faster even if you never called it “benchmarking.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Examples </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>Timing two different driving routes to see which actually gets you
 there faster.</li>
@@ -460,6 +460,21 @@ portion.</div>
 </figure></div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>
+<hr class="half-width"><p>Two term we’ll use throughout this lesson are
+<strong>speedup</strong> and <strong>efficiency</strong>.</p>
+<p>Speedup compares the time taken on one processor, <span class="math inline">\(T(1)\)</span>, to the time taken on <span class="math inline">\(p\)</span> processors, <span class="math inline">\(T(p)\)</span>:</p>
+<p><span class="math inline">\(S(p) = \dfrac{T(1)}{T(p)}\)</span></p>
+<p>Efficiency normalises speedup by the number of processors used,
+giving a value between 0 and 1 (or 0% and 100%):</p>
+<p><span class="math inline">\(E(p) = \dfrac{S(p)}{p}\)</span></p>
+<p><strong>Amdahl’s Law</strong> predicts the maximum speedup achievable
+given a fixed problem size, where <span class="math inline">\(f\)</span>
+is the fraction of the code that must run serially:</p>
+<p><span class="math inline">\(S(p) = \dfrac{1}{(1 - f) +
+\dfrac{f}{p}}\)</span></p>
+<p>As <span class="math inline">\(p \to \infty\)</span>, speedup meets
+to <span class="math inline">\(\dfrac{1}{1-f}\)</span>.</p>
 <div id="is-benchmarking-the-same-as-performance-analysis" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -485,7 +500,7 @@ why not?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong>1.</strong> Benchmarking is <strong>assessment</strong>.
 Measuring speedup and efficiency is like taking blood pressure and pulse
@@ -504,21 +519,6 @@ is how you explain what the assessment found.</strong></p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>
-<hr class="half-width"><p>Two term we’ll use throughout this lesson are
-<strong>speedup</strong> and <strong>efficiency</strong>.</p>
-<p>Speedup compares the time taken on one processor, <span class="math inline">\(T(1)\)</span>, to the time taken on <span class="math inline">\(p\)</span> processors, <span class="math inline">\(T(p)\)</span>:</p>
-<p><span class="math inline">\(S(p) = \dfrac{T(1)}{T(p)}\)</span></p>
-<p>Efficiency normalises speedup by the number of processors used,
-giving a value between 0 and 1 (or 0% and 100%):</p>
-<p><span class="math inline">\(E(p) = \dfrac{S(p)}{p}\)</span></p>
-<p><strong>Amdahl’s Law</strong> predicts the maximum speedup achievable
-given a fixed problem size, where <span class="math inline">\(f\)</span>
-is the fraction of the code that must run serially:</p>
-<p><span class="math inline">\(S(p) = \dfrac{1}{(1 - f) +
-\dfrac{f}{p}}\)</span></p>
-<p>As <span class="math inline">\(p \to \infty\)</span>, speedup meets
-to <span class="math inline">\(\dfrac{1}{1-f}\)</span>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -526,14 +526,16 @@ to <span class="math inline">\(\dfrac{1}{1-f}\)</span>.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<ul><li>Benchmarking measures how code performs, it doesn’t explain why, and
+it doesn’t fix anything in the code</li>
+<li>Performance work follows assessment, then analysis, then
+engineering</li>
+<li>Speedup <span class="math inline">\(S(p) = t(1)/t(p)\)</span> and
+efficiency <span class="math inline">\(E(p) = S(p)/p\)</span> are
+quantified by Amdahl’s Law, which shows that a code’s non-parallelisable
+fraction caps its total achievable speedup</li>
+<li>Profiling reveals where time is spent overall; tracing reveals the
+order in which events happened</li>
 </ul></div>
 </div>
 </div>

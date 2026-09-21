@@ -38,22 +38,26 @@ This is a note for instructor of this course who might need to use COSMA Azimuth
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
+## Challenge 1: Have you been already performance analaysis?
 
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+Now, take a minute and think of a time in daily life when you compared two
+ways of doing something to see which was more efficent or faster
+even if you never called it "benchmarking."
 
 :::::::::::::::::::::::: solution 
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+### Some ideas
 
+- Timing two different driving routes to see which
+  actually gets you there faster.
+- Watching which supermarket checkout line is moving faster before
+  joining one.
+- Comparing two meals how much calorie you will gain according to the your diet.
+
+Each of these is exactly what benchmarking a program does: measuring
+real performance under different conditions, then using that
+measurement to decide what to do next. 
+ 
 :::::::::::::::::::::::::::::::::
 
 

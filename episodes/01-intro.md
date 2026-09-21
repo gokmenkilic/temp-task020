@@ -91,8 +91,6 @@ To figure out that we use **Amdahl's Law**. It describes how many processors you
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Math
 
 Two term we'll use throughout this lesson are
@@ -148,13 +146,14 @@ efficiency is like taking blood pressure and pulse — you're recording
  explain what the assessment found.**
 
 :::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Benchmarking measures how code performs, it doesn't explain why, and it doesn't fix anything in the code
+- Performance work follows assessment, then analysis, then engineering
+- Speedup $S(p) = t(1)/t(p)$ and efficiency $E(p) = S(p)/p$ are quantified by Amdahl's Law, which shows that a code's non-parallelisable fraction caps its total achievable speedup
+- Profiling reveals where time is spent overall; tracing reveals the order in which events happened
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

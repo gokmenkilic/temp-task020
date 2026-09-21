@@ -420,32 +420,6 @@ to decide what to do next.</p>
 </div>
 </div>
 </div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
 </section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a></h2>
 <hr class="half-width"><p>You can use standard markdown for static figures with the following
 syntax:</p>
@@ -484,6 +458,50 @@ paralelized and how much speed up you would gain after it. As it is
 clear in the figure speedup restricly constrained by unparallelizable
 portion.</div>
 </figure></div>
+</div>
+</div>
+<div id="is-benchmarking-the-same-as-performance-analysis" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="is-benchmarking-the-same-as-performance-analysis" class="callout-inner">
+<h3 class="callout-title">Is benchmarking the same as performance
+analysis?</h3>
+<div class="callout-content">
+<p>Now, let’s think about a health screening in medicine: a doctor
+checks your blood pressure, pulse etc for standard checks. If some
+metrics are not in the ideal region where they should be, it will be
+issued for further tests. It will then switch to analysis part.</p>
+<ol style="list-style-type: decimal"><li>When you <strong>benchmark</strong> your code (e.g. measuring <span class="math inline">\(S(p)\)</span> and <span class="math inline">\(E(p)\)</span> across different systems), which
+stage does that belong to assetments or analysis?</li>
+<li>Is “benchmarking” and “performance analysis” the same thing? Why or
+why not?</li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p><strong>1.</strong> Benchmarking is <strong>assessment</strong>.
+Measuring speedup and efficiency is like taking blood pressure and pulse
+— you’re recording <em>what</em> happens, not explaining
+<em>why</em>.</p>
+<p><strong>2.</strong> No, they’re not the same thing. Benchmarking only
+tells you <em>that</em> something might be wrong (e.g. speedup is lower
+than expected). It doesn’t tell you <em>why</em>. Finding the “why” —
+for example, using a profiler to discover that most of the time is spent
+waiting on memory rather than computing — is <strong>performance
+analysis</strong>, the equivalent of the doctor ordering follow-up tests
+once a vital sign looks off.</p>
+<p>In short: <strong>benchmarking is how you assess the code; analysis
+is how you explain what the assessment found.</strong></p>
+</div>
+</div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>

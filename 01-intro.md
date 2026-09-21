@@ -38,7 +38,7 @@ This is a note for instructor of this course who might need to use COSMA Azimuth
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Have you been already performance analaysis?
+## Have you been already performance analaysis?
 
 Now, take a minute and think of a time in daily life when you compared two
 ways of doing something to see which was more efficent or faster
@@ -46,7 +46,7 @@ even if you never called it "benchmarking."
 
 :::::::::::::::::::::::: solution 
 
-### Some ideas
+### Examples
 
 - Timing two different driving routes to see which
   actually gets you there faster.

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Fundamental of Benchmarking"
 teaching: 20 # teaching time in minutes
-#exercises: 5 # exercise time in minutes
+exercises: 5 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -62,7 +62,7 @@ measurement to decide what to do next.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Amdahl's Law in Practice (Complete me)
 
 You can use standard markdown for static figures with the following syntax:
 
@@ -91,7 +91,7 @@ To figure out that we use **Amdahl's Law**. It describes how many processors you
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Math
+## Speedup and Efficiency
 
 Two term we'll use throughout this lesson are
 **speedup** and **efficiency**.

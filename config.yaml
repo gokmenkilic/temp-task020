@@ -18,7 +18,7 @@ carpentry: 'incubator'
 carpentry_description: 'Lesson Description'
 
 # Overall title for pages.
-title: 'Theoritically-motivated Introduction to Performance Analysis and Optimisation' # FIXME
+title: 'Theoretically-motivated Introduction to Performance Analysis and Optimisation' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2026-08-10' # FIXME

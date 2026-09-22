@@ -17,8 +17,6 @@ exercises: TBD # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Core
-
 This is a lesson created via The Carpentries Workbench. It is written in
 [Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
 [R Markdown][r-markdown] for dynamic files that can render code into output. 
@@ -72,7 +70,7 @@ You can add a line with at least three colons and a `solution` tag.
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Benchmark Characteristics
 
 You can use standard markdown for static figures with the following syntax:
 
@@ -93,7 +91,7 @@ e.g. by providing the answer to a commonly-asked question.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Math
+## Compiler Setup
 
 One of our episodes contains $\LaTeX$ equations when describing how to create
 dynamic reports with {knitr}, so we now use mathjax to describe this:

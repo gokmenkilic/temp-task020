@@ -19,6 +19,16 @@ exercises: TBD # exercise time in minutes
 
 In this subsection, we will look at how to prepare a benchmark case to see the performance of the code. It usally calls "pre-assessment" (e.g. defining charctesistics of benchmark, preparing the compiler setup etc). As all domains could differentiate from one to other in terms of algoritmic complexity and behaviour etc, we will treat the code like a black-box and prepare the setup based on some rules. This rules can be checked via a checklist to identify basic informations from code. This informations will help the person that will run the benchmark between the code owner. Because it is not always the case we benchmark our own codes. It generally carries out via external people who might be unfamillar to our domain. Without previous knowledge of code, the checklist will help us to understand underlying characteristics of code and its behaviour on targeting machine. 
 
+## Checklist
+
+::::::::::::::::::::::::::::::::::::::::::::::callout
+Before starting benchmark the code and analysis it, it is expected to fill the knowledge gap between owner of the code and benchmark analyst. Below points reflects initial checks for code:
+ 
+ 1. An archive that contains all files,
+ 2. Relying on a static files (making sure that the files for benchmarking is not going to be changed during the analysis),
+ 3. Include the documentation of benchmark (e.g. how to build and run the code)
+ 4. Reduce size of benchmark, however not too small, it should be representative for the case study.
+::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

@@ -1,7 +1,7 @@
 ---
-title: "Core level benchmarking"
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+title: "Core Level Benchmarking"
+teaching: TBD # teaching time in minutes
+exercises: TBD # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

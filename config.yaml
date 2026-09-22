@@ -53,12 +53,13 @@ contact: 'gokmen.kilic@durham.ac.uk' # FIXME
 
 episodes:
  - 01-intro.md             
- - 02-core.md              
- - 03-intra-node.md        
- - 04-inter-node.md        
- - 05-gpu.md               
- - 06-io.md                
- - 07-conclusion.md  
+ - 02-preparation.md
+ - 03-core.md
+ - 04-intra-node.md        
+ - 05-inter-node.md        
+ - 06-gpu.md               
+ - 07-io.md                
+ - 08-conclusion.md  
 #
 # learners:
 # - setup.md

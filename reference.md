@@ -30,10 +30,8 @@ scheduler
 :
 speedup
 :
-global efficiency
-:	It describes how well the parallelization of code performing.
-parallel efficiency
-:       It describes how well the execution of code performing.
+**global efficiency**: It describes how well the parallelization of code performing.
+**parallel efficiency**: It describes how well the execution of code performing.
 load balance efficeny
 :       It shows how well the distribution of work to processes of threads is performed by code.
 communication efficiency

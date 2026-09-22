@@ -1,5 +1,5 @@
 ---
-title: "Therotically-motivated Introduction to Performance Analysis and Optimisation"
+title: "Introduction to Performance Analysis and Optimisation"
 teaching: 20 # teaching time in minutes
 exercises: 5 # exercise time in minutes
 ---
@@ -16,7 +16,7 @@ exercises: 5 # exercise time in minutes
 - Explain why is it necessary to benchmark code without relying on exsiting version
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction to Fundamental of Performance Analysis
+## Introduction
 
 This lesson will introduce concept of benchmarking with underlying theory. The main idea is not deploying your code here to analyse, rather it is guiding you how to asset your own code. 
 

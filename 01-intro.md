@@ -60,8 +60,6 @@ measurement to decide what to do next.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Amdahl's Law 
-
 ::::::::::::::::::::::::::::::::::::: callout
 
 This lesson aims to create a glossary that covers theory of performance analysis and optimisation. Please open it via
@@ -69,10 +67,10 @@ This lesson aims to create a glossary that covers theory of performance analysis
 as you go through this lesson.
 
 :::::::::::::::::::::::::::::::::::::::::::::
+ 
 
+## Amdahl's Law 
 ::::::::::::::::::::::::::::::::::::: callout
-
-Amdahl's Law
 
 It can be tricky to understand how much speedup parallelisation you can actually gain after benchmark your code.
 To figure out that we use **Amdahl's Law**. It describes how many processors you keep a problem, the part of the code that should run serially puts a limit on total speedup.

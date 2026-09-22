@@ -209,8 +209,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#amdahls-law-in-practice-complete-me">Amdahl’s Law in Practice (Complete me)</a></li>
+        <ul><li><a href="#amdahls-law">Amdahl’s Law</a></li>
 <li><a href="#speedup-and-efficiency">Speedup and Efficiency</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -365,8 +364,7 @@ exsiting version</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>This lesson will introduce concept of benchmarking with underlying
+<p>This lesson will introduce concept of benchmarking with underlying
 theory. The main idea is not deploying your code here to analyse, rather
 it is guiding you how to asset your own code.</p>
 <p>Altough there is no standard way to benchmark the code, we will touch
@@ -405,7 +403,7 @@ faster even if you never called it “benchmarking.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Examples </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul><li>Timing two different driving routes to see which actually gets you
 there faster.</li>
@@ -420,12 +418,8 @@ to decide what to do next.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="amdahls-law-in-practice-complete-me">Amdahl’s Law in Practice (Complete me)<a class="anchor" aria-label="anchor" href="#amdahls-law-in-practice-complete-me"></a></h2>
-<hr class="half-width"><p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
+<section><h2 class="section-heading" id="amdahls-law">Amdahl’s Law<a class="anchor" aria-label="anchor" href="#amdahls-law"></a></h2>
+<hr class="half-width"><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -500,7 +494,7 @@ why not?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong>1.</strong> Benchmarking is <strong>assessment</strong>.
 Measuring speedup and efficiency is like taking blood pressure and pulse

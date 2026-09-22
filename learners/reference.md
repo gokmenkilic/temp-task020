@@ -28,22 +28,18 @@ compute node
 :
 scheduler
 :
-speedup, S(p)
+speedup
 :
 global efficiency
-:
-parallel efficiency, E(p)
-:
+:	It describes how well the parallelization of code performing.
+parallel efficiency
+:       It describes how well the execution of code performing.
 load balance efficeny
-:
+:       It shows how well the distribution of work to processes of threads is performed by code.
 communication efficiency
-:
-serilization efficiency
-:
-transfer efficiency
-:
+:       It shows the loss of efficiency by communication time.
 computation efficiency
-:
+:       It describes how well the computational load of code scales with number of processes.  
 runtime
 :
 inclusive

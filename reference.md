@@ -5,31 +5,31 @@ title: 'Reference'
 ## Glossary
 
 performance assessment
-:
+: test
 performance analysis
-:
+: test
 performance engineering
-:
+: test
 profiling
-:
+: test
 execution
-:
+: test
 compile time
-:
+: test
 tracing
-:
+: test
 node
-:
+: test
 core
-:
+: test
 login node
-:
+: test
 compute node
-:
+: test
 scheduler
-: 
+: test
 speedup
-:
+: test
 global efficiency
 : It describes how well the parallelization of code performing
 parallel efficiency
@@ -41,14 +41,14 @@ communication efficiency
 computation efficiency
 : It describes how well the computational load of code scales with number of processes  
 runtime
-:
+: test
 inclusive
-:
+: test
 exculisive
-:
+: test
 slurm
-:
+: test
 numactl
-:
+: test
 algoritmic scaling
-:
+: test

@@ -30,7 +30,19 @@ scheduler
 :
 speedup, S(p)
 :
+global efficiency
+:
 parallel efficiency, E(p)
+:
+load balance efficeny
+:
+communication efficiency
+:
+serilization efficiency
+:
+transfer efficiency
+:
+computation efficiency
 :
 runtime
 :
@@ -38,7 +50,7 @@ inclusive
 :
 exculisive
 :
-Slurm
+slurm
 :
 numactl
 :

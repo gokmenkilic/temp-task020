@@ -16,8 +16,6 @@ exercises: 5 # exercise time in minutes
 - Explain why is it necessary to benchmark code without relying on exsiting version
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
-
 This lesson will introduce concept of benchmarking with underlying theory. The main idea is not deploying your code here to analyse, rather it is guiding you how to asset your own code. 
 
 Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetments. Therefore, we will start to introduce key metrics of benchmarking and put them glossary of this course so that you will have a better understanding of benchmarking at the end of the course. Saying that to have a skill to  decide which metrics means what and how you can use relavant technics to benchmark and asset your code.
@@ -62,14 +60,7 @@ measurement to decide what to do next.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Amdahl's Law in Practice (Complete me)
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+## Amdahl's Law 
 
 ::::::::::::::::::::::::::::::::::::: callout
 

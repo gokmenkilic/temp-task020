@@ -27,7 +27,7 @@ Before starting benchmark the code and analysis it, it is expected to fill the k
  1. An archive that contains all files,
  2. Relying on a static files (making sure that the files for benchmarking is not going to be changed during the analysis),
  3. Include the documentation of benchmark (e.g. how to build and run the code)
- 4. Reduuce size of benchmark, however not too small, it should be representative for the case study.
+ 4. Reduce size of benchmark, however not too small, it should be representative for the case study.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor

@@ -20,13 +20,12 @@ This lesson will introduce concept of benchmarking with underlying theory. The m
 
 Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetments. Therefore, we will start to introduce key metrics of benchmarking and put them glossary of this course so that you will have a better understanding of benchmarking at the end of the course. Saying that to have a skill to  decide which metrics means what and how you can use relavant technics to benchmark and asset your code.
 
+It is assumed that the learner of this course has a limited knowledge of benchmarking, profiling and the algorithms used.  Before starting this course, it is assumed that the learner has:
 
-What you need to know before starting this course are:
-
- 1. It has assumed that the learner of this course has a limited knowledge of benchmarking domain and the algorthims used.
- 2. It has evaluated that how a code performs while taking consideration of characteristics.
- 3. It has defined pre-experimental setup for experiments.
- 4. It has considered that the performance of the code bound the machine's point - not the algoithm or science case. (This could go after the lesson.) 
+ 1. Has a code to be evaluated.
+ 2. Has a pre-defined metric which is a proxy for code performance (e.g. run time, ns per day, etc).
+ 3. Has sufficient knowledge of the code to know how to modify compiler flags and algorithms within it.
+ 4. Awareness that benchmarking might be specific to the system on which it is performed; running the code on another system might give different performance characteristics.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

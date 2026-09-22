@@ -1,19 +1,19 @@
 ---
-title: "Core Level Benchmarking"
+title: "Preparation"
 teaching: TBD # teaching time in minutes
 exercises: TBD # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
+- How do we choose a characteristic benchmark of codebase?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
+- Prepare the benchmark case
+- Define the benchmark characteristics
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

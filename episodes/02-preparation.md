@@ -70,15 +70,9 @@ flowchart LR
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+We can not skip correctness even if got successfully run the benchmark. It is expected from a good benchmark performs well in representative benchmark but also needs to be checked via unit tests for their codes. Therefore before collecting the results, it needs to beconfirmed the run computationly correct and accurate.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 ## Compiler Setup
 

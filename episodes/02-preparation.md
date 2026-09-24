@@ -39,7 +39,7 @@ This part of section related how to use Cosma Azimuth system.
 
 ## Challenge 1: Is this a good benchmark case?
 
-A main rotuine of a large scientific code has planned into a benchmark. It only tests that main routine,
+A main routine of a large scientific code has planned into a benchmark. It only tests that main routine,
 and it can only run a small problem size.
 
 1. According to the checklist above, is this a good benchmark?
@@ -51,7 +51,7 @@ and it can only run a small problem size.
 
 **1.** No, it's missing two things the checklist asks for.
 
-**2.** It only tests a main routine,however it worh to check how other routines are behaving in the code. It also can be benchmark with diffrent problem sizes. A good
+**2.** It only tests a main routine,however it worth to check how other routines are behaving in the code. It also can be benchmark with different problem sizes. A good
 benchmark should cover multiple routines and be configurable to
 run at different problem sizes.
 

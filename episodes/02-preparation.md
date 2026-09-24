@@ -87,11 +87,9 @@ previous run's results.
 
 :::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
+- Preparing a benchmark starts with closing the knowledge gap between the code owner and the analyst, using a checklist 
+- A representative benchmark is an application benchmark, not a synthetic one, structured around preparation, iterate steps, interpretation 
+- Giving each environment and compiler setup in a deploy script helps run and compare them safely 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/

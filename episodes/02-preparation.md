@@ -60,7 +60,13 @@ run at different problem sizes.
 
 ## Designing a Benchmark
 
-All benchmarks do not measure same characteristics of the code. Therefore, we need to design our benchmarks depends on what metrics and characteristics we want to compare and that improve our code accordingly. In this case, you may have no idea where to start designing a benchmark for your code. It is also common people uses benchmarking tools with significant overhead while not having a representative small case of setup. 
+All benchmarks do not measure same characteristics of the code. Therefore, we need to design our benchmarks depends on what metrics and characteristics we want to compare and that improve our code accordingly. In this case, you may have no idea where to start designing a benchmark for your code. It is also common people uses benchmarking tools with significant overhead while not having a representative small case of setup. Avoiding all time wasting we recommend you to follow below three stages:
+
+```mermaid
+flowchart LR
+    A["Preparation<br/>File/directory setup, place data,initial conditions etc."] --> B["Iterate steps<br/>(Run program N steps, based on the selected routine)"]
+    B --> C["Interpretation<br/>Visualize the results and interpret them"]
+```
 
 ::::::::::::::::::::::::::::::::::::: callout
 

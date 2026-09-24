@@ -76,7 +76,7 @@ We can not skip correctness even if got successfully run the benchmark. It is ex
 
 ## Setting Environment
 
-To run effectively a good benchmark case, you have to be well prepare your working enviroment including compiler setup, hardware details etc. All those can (complete me)
+To run effectively a good benchmark case, you have to well prepare your working enviroment including compiler setup align with hardware details etc. It could be challenging if you are using several machines and different types of compilers for your benchmark case. Therefore, in this lesson we aim to provide a guidelenss how to structure your directories including compiler setup. So that you will be able to pick your results without worrying about environment changes. 
 :::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

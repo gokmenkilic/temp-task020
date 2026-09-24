@@ -1,7 +1,7 @@
 ---
 title: "Preparation"
-teaching: TBD # teaching time in minutes
-exercises: TBD # exercise time in minutes
+teaching: 15 # teaching time in minutes
+exercises: 5 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -37,71 +37,59 @@ This part of section related how to use Cosma Azimuth system.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
+## Challenge 1: Is this a good benchmark case?
 
-What is the output of this command?
+A main routine of a large scientific code has planned into a benchmark. It only tests that main routine,
+and it can only run a small problem size.
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+1. According to the checklist above, is this a good benchmark?
+2. What's the main thing missing?
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::: solution
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+### Solution
 
-:::::::::::::::::::::::::::::::::
+**1.** No, it's missing two things the checklist asks for.
 
+**2.** It only tests a main routine,however it worth to check how other routines are behaving in the code. It also can be benchmark with different problem sizes. A good
+benchmark should cover multiple routines and be configurable to
+run at different problem sizes.
 
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Benchmark Characteristics
+## Designing a Benchmark
 
-You can use standard markdown for static figures with the following syntax:
+All benchmarks do not measure same characteristics of the code. Therefore, we need to design our benchmarks depends on what metrics and characteristics we want to compare and that improve our code accordingly. In this case, you may have no idea where to start designing a benchmark for your code. It is also common people uses benchmarking tools with significant overhead while not having a representative small case of setup. Avoiding all time wasting we recommend you to follow below three stages:
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+```mermaid
+flowchart LR
+    A["Preparation<br/>File/directory setup, place data,initial conditions etc."] --> B["Iterate steps<br/>(Run program N steps, based on the selected routine)"]
+    B --> C["Interpretation<br/>Visualize the results and interpret them"]
+```
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+We can not skip correctness even if got successfully run the benchmark. It is expected from a good benchmark performs well in representative benchmark but also needs to be checked via unit tests for their codes. Therefore before collecting the results, it needs to beconfirmed the run computationly correct and accurate.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Setting Environment
 
-## Compiler Setup
+To run effectively a good benchmark case, you have to well prepare your working enviroment including compiler setup align with hardware details etc. It could be challenging if you are using several machines and different types of compilers for your benchmark case. Therefore, in this lesson we aim to provide a guidelenss how to structure your directories including compiler setup. So that you will be able to pick your results without worrying about environment changes. 
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+To aim that, we will use a deploy script to handle environment and also compiler setup in this lesson. 
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+Son each unique combination of framework, platform, configuration, and
+test case gets its own isolated working directory. Therefore switching
+machines or compilers never risks overwriting or contaminating a
+previous run's results. 
 
-Cool, right?
+:::::::::::::::::::::::::::::::::::: keypoints 
 
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
+- Preparing a benchmark starts with closing the knowledge gap between the code owner and the analyst, using a checklist 
+- A representative benchmark is an application benchmark, not a synthetic one, structured around preparation, iterate steps, interpretation 
+- Giving each environment and compiler setup in a deploy script helps run and compare them safely 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/

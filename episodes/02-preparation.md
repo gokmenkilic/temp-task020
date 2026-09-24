@@ -74,16 +74,10 @@ We can not skip correctness even if got successfully run the benchmark. It is ex
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Compiler Setup
+## Setting Environment
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
-::::::::::::::::::::::::::::::::::::: keypoints 
+To run effectively a good benchmark case, you have to be well prepare your working enviroment including compiler setup, hardware details etc. All those can (complete me)
+:::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content
 - Use `.Rmd` files for episodes when you need to generate output

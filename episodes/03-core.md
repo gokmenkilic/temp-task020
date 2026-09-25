@@ -85,14 +85,21 @@ measures double precision floating point throughput.
 
 
 
-## Math
+## Core performance ratio
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+The core performance ratio is:
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+$C_{core} = \dfrac{\text{obtained peak performance}}{\text{maximum peak performance}}$
 
-Cool, right?
+Classified as:
+
+| $C_{core}$ | Classification | Meaning |
+|---|---|---|
+| $C_{core} \geq 0.8$ | 🟢 Green | Core compute performance is good |
+| $0.6 \leq C_{core} < 0.8$ | 🟡 Yellow | Not making full use of the hardware |
+| $C_{core} < 0.6$ | 🔴 Red | Core compute performance is poor |
+
+Note that above is normalised againist scalar peak. Due to some routines can not be vectorized, scalar peak used.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

@@ -32,8 +32,7 @@ This part is for running small examples on COSMA/Azimuth service for instructors
 
 #### The benchmark rubrics
 
-Across every section of this course (core, GPU, I/O,
-intra-node, inter-node), we use the same three-way classification:
+Across every section of this course, we will use three classification:
 
 - **Green** (≥ 80%): performing efficiently
 - **Yellow** (60–80%): not using the hardware to its full potential

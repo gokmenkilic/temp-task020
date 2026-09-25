@@ -73,6 +73,9 @@ compute bound
 memory bound
 : test
 
+optimisaation
+: test
+
 slurm
 : test
 

@@ -23,7 +23,7 @@ When we look at the core level performance the first thing we investigate is mea
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-
+This part is for running small examples on COSMA/Azimuth service for instructors.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 

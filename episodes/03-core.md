@@ -13,8 +13,9 @@ exercises: TBD # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
+- Explain what core level performance benchmarks are
+- Describe how to prepare a good core level benchmark case
+- Calculate a core performance ratio and classify it
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

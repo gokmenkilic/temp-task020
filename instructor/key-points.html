@@ -411,14 +411,17 @@ run and compare them safely</li>
 </ul></section><section id="03-core"><h2 class="section-heading"><a href="03-core.html">Core Level Benchmarking</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Core level benchmarking starts with obtained peak performance vs the
+hardware’s maximum</li>
+<li>A good measurement needs a representative benchmark case larger than
+cache, exclusive node access, and pinned thread affinity</li>
+<li>
+<span class="math inline">\(C_{core} = \text{obtained} /
+\text{maximum peak}\)</span>, classified as green (≥80%), yellow
+(60–80%), or red (&lt;60%)</li>
+<li>
+<span class="math inline">\(C_{core}\)</span> is normalised against
+scalar not vectorised peak</li>
 </ul></section><section id="04-intra-node"><h2 class="section-heading"><a href="04-intra-node.html">Intra node level benchmarking</a></h2>
 <hr class="half-width">
 <ul>
@@ -524,8 +527,8 @@ locally</li>
   "url": "https://gokmenkilic.github.io/temp-task020/instructor/key-points.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/instructor/key-points.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-09-24",
-  "datePublished": "2026-09-24"
+  "dateModified": "2026-09-25",
+  "datePublished": "2026-09-25"
 }
 
   </script><script>

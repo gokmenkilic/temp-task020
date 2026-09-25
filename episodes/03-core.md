@@ -39,17 +39,8 @@ intra-node, inter-node), we use the same three-way classification:
 - **Yellow** (60–80%): not using the hardware to its full potential
 - **Red** (< 60%): a clear performance flaw
 
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Figures
 

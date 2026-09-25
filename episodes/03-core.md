@@ -40,15 +40,21 @@ Across every section of this course, we will use three classification:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+# Running a single core benchmark
 
-## Figures
+As we mention in the preparation section, benchmark needs to be set up according to the all environment that we have. To do that we have to care about some criterias:
 
-You can use standard markdown for static figures with the following syntax:
+- A representative benchmark case should fit in the cache. You may no idea if the problem you will be running on fits on the cache or not. Having unrealistic results could be a bad benchmark case you desgined and run. To avoid this we have to be sure that the problem size is not too small to sit L1/L2/L3 cache. Before running the benchmark case, it is always necessary that we are checking target system memory according to the our case.
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+- So that we have to know what is peak performance of hardware algin with using single core. Please be aware many HPC systems allows you to run your program on login node initially. However, to be able to benefit from peak performance you have to run the program on a single core. 
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+- Also we will need to know what is peak performance of our program where we run executable.
+
+
+
+
+
+
 
 ::::::::::::::::::::::::::::::::::::: callout
 

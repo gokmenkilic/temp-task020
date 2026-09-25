@@ -59,6 +59,8 @@ core, rather than the all program:
 ## Runnining single core level peak performance check
 likwid-bench -t peakflops -w S0:16kB:1
 ```
+Above command pins the application the `peakflops` benchmark to a single core on the
+first socket (`S0`), via a data half the size of the L1 cache. This method allows us to avoid memory effects and pinned on compute.
 
 ::::::::::::::::::::::::::::::::::::: callout
 

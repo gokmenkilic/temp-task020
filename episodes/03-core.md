@@ -30,21 +30,14 @@ This part is for running small examples on COSMA/Azimuth service for instructors
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
+#### The benchmark rubrics
 
-What is the output of this command?
+Across every section of this course (core, GPU, I/O,
+intra-node, inter-node), we use the same three-way classification:
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+- **Green** (≥ 80%): performing efficiently
+- **Yellow** (60–80%): not using the hardware to its full potential
+- **Red** (< 60%): a clear performance flaw
 
 :::::::::::::::::::::::::::::::::
 

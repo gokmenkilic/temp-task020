@@ -21,6 +21,8 @@ exercises: TBD # exercise time in minutes
 
 When we look at the core level performance the first thing we investigate is measure how well our code utilize a single core. Recently, most of the hardwares designed for using vector instructions efficiently where data moves between memory and compute via fast cachechannels. However, whether our code takes advantage of them is entierly different question.
 
+When you use high level performance analysis tools, it is common you will likely see vectorication ratios, memory utulizations and those kind of metrics which can not be a good starting point too look at. To prepare a good benchmark case, we therefore start with hig level numbers. For example, how close does our code get to the machine's peak performance? Despite the running any heavy profiling tools, these number will tell us whether our code compute bound or memory bound and how it is well utulize the microarcitechture of harware. 
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 This part is for running small examples on COSMA/Azimuth service for instructors.

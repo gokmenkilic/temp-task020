@@ -95,9 +95,9 @@ Classified as:
 
 | $C_{core}$ | Classification | Meaning |
 |---|---|---|
-| $C_{core} \geq 0.8$ | 🟢 Green | Core compute performance is good |
-| $0.6 \leq C_{core} < 0.8$ | 🟡 Yellow | Not making full use of the hardware |
-| $C_{core} < 0.6$ | 🔴 Red | Core compute performance is poor |
+| $C_{core} \geq 0.8$ |  Green | Core compute performance is good |
+| $0.6 \leq C_{core} < 0.8$ | Yellow | Not making full use of the hardware |
+| $C_{core} < 0.6$ |  Red | Core compute performance is poor |
 
 Note that above is normalised againist scalar peak. Due to some routines can not be vectorized, scalar peak used.
 
@@ -120,7 +120,19 @@ same harware, where the hardware's maximum peak is 40 GFLOPS/s:
 
 :::::::::::::::::::::::: solution
 
+### Solution
 
+| Code | $C_{core}$ | Classification |
+|---|---|---|
+| A | $34/40 = 0.85$ |  Green |
+| B | $28/40 = 0.70$ |  Yellow |
+| C | $19/40 = 0.475$ |  Red |
+
+
+Code A is performing well and does not need further investigation at this
+level of benchmark. Code B is worth a double check look. It is not clearly broken, but
+there's room for improvement. Code C shows a clear issue and should be
+prioritised for optimisation.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

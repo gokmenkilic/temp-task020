@@ -136,10 +136,10 @@ prioritised for optimisation.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Core level benchmarking starts with obtained peak performance vs the hardware's maximum
+- A good measurement needs a representative benchmark case larger than cache, exclusive node access, and pinned thread affinity
+- $C_{core} = \text{obtained} / \text{maximum peak}$, classified as green (≥80%), yellow (60–80%), or red (<60%)
+- $C_{core}$ is normalised against scalar not vectorised) peak
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -133,6 +133,8 @@ Code A is performing well and does not need further investigation at this
 level of benchmark. Code B is worth a double check look. It is not clearly broken, but
 there's room for improvement. Code C shows a clear issue and should be
 prioritised for optimisation.
+::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -141,6 +143,6 @@ prioritised for optimisation.
 - $C_{core} = \text{obtained} / \text{maximum peak}$, classified as green (≥80%), yellow (60–80%), or red (<60%)
 - $C_{core}$ is normalised against scalar not vectorised) peak
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/

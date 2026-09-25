@@ -101,6 +101,27 @@ Classified as:
 
 Note that above is normalised againist scalar peak. Due to some routines can not be vectorized, scalar peak used.
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Classify these results. 
+
+Three codes were benchmarked for single-core peak performance on the
+same harware, where the hardware's maximum peak is 40 GFLOPS/s:
+
+| Code | Obtained performance |
+|---|---|
+| A | 34 GFLOPS/s |
+| B | 28 GFLOPS/s |
+| C | 19 GFLOPS/s |
+
+1. Calculate $C_{core}$ for each code.
+2. Classify each as green, yellow, or red.
+3. Which code(s), if any, need further investigation?
+
+:::::::::::::::::::::::: solution
+
+
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

@@ -67,6 +67,12 @@ inclusive
 exculisive
 : test
 
+compute bound
+: test
+
+memory bound
+: test
+
 slurm
 : test
 

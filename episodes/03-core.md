@@ -50,11 +50,15 @@ As we mention in the preparation section, benchmark needs to be set up according
 
 - Also we will need to know what is peak performance of our program where we run executable.
 
+Recall the `deploy.sh` pattern from the Preparation episode this is
+exactly where a core level benchmark run. Once the code is
+built, you'd run a peak performance pinned to a single
+core, rather than the all program:
 
-
-
-
-
+```bash
+## Runnining single core level peak performance check
+likwid-bench -t peakflops -w S0:16kB:1
+```
 
 ::::::::::::::::::::::::::::::::::::: callout
 

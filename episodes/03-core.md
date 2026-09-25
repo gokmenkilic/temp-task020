@@ -40,7 +40,7 @@ Across every section of this course, we will use three classification:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Running a single core benchmark
+## Running a single core benchmark
 
 As we mention in the preparation section, benchmark needs to be set up according to the all environment that we have. To do that we have to care about some criterias:
 
@@ -67,6 +67,22 @@ first socket (`S0`), via a data half the size of the L1 cache. This method allow
 As we mention earlier it is worth to check you have using weather project code or partition submit your job or you interactively using the hardware. Because sharing resources on login node may cause you have not quite right numbers for result. Therefore we usally reccomend you have a exculise node access while running your benchmarks.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Evaluation
+
+To evaluate core performance, we will need two numbers:
+
+- The **maximum single-core peak performance** the hardware can
+  theoretically deliver
+- The **obtained single-core peak performance** your code actually
+  achieves
+
+```bash
+likwid-perfctr -f -C 0 -g FLOPS_DP ./code
+```
+Above command will pin our code's serial run to the first physical core and
+measures double precision floating point throughput.
+
 
 
 ## Math

@@ -6,7 +6,8 @@ exercises: TBD # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
+- How do you find out if your code is making good use of a single core?
+- What separates a "good enough" measurement from a misleading one?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

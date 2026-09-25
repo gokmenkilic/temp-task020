@@ -56,7 +56,7 @@ built, you'd run a peak performance pinned to a single
 core, rather than the all program:
 
 ```bash
-## Runnining single core level peak performance check
+## Running single core level peak performance check
 likwid-bench -t peakflops -w S0:16kB:1
 ```
 Above command pins the application the `peakflops` benchmark to a single core on the
@@ -141,7 +141,7 @@ prioritised for optimisation.
 - Core level benchmarking starts with obtained peak performance vs the hardware's maximum
 - A good measurement needs a representative benchmark case larger than cache, exclusive node access, and pinned thread affinity
 - $C_{core} = \text{obtained} / \text{maximum peak}$, classified as green (≥80%), yellow (60–80%), or red (<60%)
-- $C_{core}$ is normalised against scalar not vectorised) peak
+- $C_{core}$ is normalised against scalar not vectorised peak
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
 

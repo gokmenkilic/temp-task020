@@ -6,14 +6,16 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
-
+- How a code scale across a whole node?
+- How do we interprate parallelism by using performance analysis tools?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
+- Understanding scalability before running a whole node test
+- Distinguish parallesition of code frantions and identify their scaling
+- Providing guidance on code's behaviour on a pre-defined architecture
+- Evaluation of Amdahl's Law and blancing the performance
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

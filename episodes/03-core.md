@@ -38,6 +38,7 @@ Across every section of this course, we will use three classification:
 - **Yellow** (60–80%): not using the hardware to its full potential
 - **Red** (< 60%): a clear performance flaw
 
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Running a single core benchmark
 

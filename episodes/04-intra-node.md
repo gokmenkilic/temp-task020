@@ -39,8 +39,9 @@ Carpentries lesson:
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+Select the appropriate kernel to let you generate perforamnce analysis backend within Moodle service.
+
+#fixme add kernel info from Azimuth 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

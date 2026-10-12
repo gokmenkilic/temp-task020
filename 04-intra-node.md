@@ -7,7 +7,7 @@ exercises: 2 # exercise time in minutes
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How a code scale across a whole node?
-- How do we interprate parallelism by using performance analysis tools?
+- How do we interprate parallelism by using performance analysis tools? #fixme (performance anlaysis tools something meant to default per lesson where added user profiles on Azimuth)
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
@@ -39,8 +39,9 @@ Carpentries lesson:
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+Select the appropriate kernel to let you generate perforamnce analysis backend within Moodle service.
+
+#fixme add kernel info from Azimuth 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

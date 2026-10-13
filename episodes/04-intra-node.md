@@ -33,36 +33,35 @@ Select the appropriate kernel to let you generate perforamnce analysis backend w
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge 
+![Decision graph for intra-node analysis. Start by identifying parallelism in the code, then compare theoretical parallelism to observed parallelism. If they disagree, the cause is either that tasks are too small or that tasks serialise each other.](fig/decision-graph.png){alt='Flowchart. A box reading "Identify parallelism in the code" leads to a diamond reading "Compare theoretical parallelism to observed parallelism". Two arrows leave the diamond: one to "Tasks are too small" and one to "Tasks serialize each other".'}
 
-## Challenge 1: Can you do it?
+::::::::::::::::::::::::::::::::::::: challenge
 
-What is the output of this command?
+###  Which branch of the decision graph?
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+Let's say we have two codes both have plenty of parallel work in principle, yet both
+scale poorly on a single node. Using the decision graph, decide which
+branch each one belongs to.
 
-:::::::::::::::::::::::: solution 
+**Code A.** The code creates millions of very short tasks, each
+running for only a few microseconds. The profile shows most of the
+time going into the OpenMP runtime (barrier and overhead functions),
+and effective CPU utilisation is well below 80%.
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+**Code B.** The code creates a moderate number of tasks, and each one
+contains a loop with a very small critical section. The profile shows
+a large amount of spin time in the threading back-end, even though
+all threads look busy.
 
-:::::::::::::::::::::::::::::::::
+1. Which branch does each code belong to?
+2. What evidence in the description points to that branch?
+3. What is one thing you could try first, without changing the
+algorithm?
 
+:::::::::::::::::::::::: solution
 
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Figures
 
 You can use standard markdown for static figures with the following syntax:

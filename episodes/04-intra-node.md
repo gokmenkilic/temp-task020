@@ -13,7 +13,7 @@ exercises: 2 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understanding scalability before running a whole node test
-- Distinguish parallesition of code frantions and identify their scaling
+- Distinguish parallesiation of code frantions and identify their scaling
 - Providing guidance on code's behaviour on a pre-defined architecture
 - Evaluation of Amdahl's Law and blancing the performance
 
@@ -21,21 +21,7 @@ exercises: 2 # exercise time in minutes
 
 ## Intra-node level becnhmarking
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
-
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+After learning how to learn our codes utulize in a single core, now we can disvocer node-level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we will touch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

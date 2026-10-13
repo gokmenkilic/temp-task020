@@ -75,14 +75,15 @@ separates the two branches.
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
-## Figures
 
-You can use standard markdown for static figures with the following syntax:
+## Coverage: Is Enough of the Code Parallel?
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+If only a small fraction of the code is parallelised,
+that fraction limits how well the code scales as you add cores.
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+Rather than using a node run straight away, we first measure
+how the code scales, and then ask what that scaling says about how much
+of the code is actually parallel.
 
 ::::::::::::::::::::::::::::::::::::: callout
 

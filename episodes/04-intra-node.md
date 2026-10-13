@@ -55,10 +55,23 @@ all threads look busy.
 
 1. Which branch does each code belong to?
 2. What evidence in the description points to that branch?
-3. What is one thing you could try first, without changing the
-algorithm?
 
 :::::::::::::::::::::::: solution
+
+**Code A: tasks are too small.** Concurrency is high, but creating and
+cleaning up each task costs more than the work inside it. The overhead
+shows up in the runtime rather than in your own functions, which is
+why the runtime dominates the profile. A reasonable task should run
+for at least tens of microseconds.
+
+**Code B: tasks serialise each other.** The tasks look parallel, but
+each one briefly locks the others out, so in effect they run one after
+another. Many short critical sections in a row appear as heavy spin
+time in the threading back-end. 
+
+In both cases the symptom is the same: parallelism exists in theory
+but not in the measurements. The evidence inside the profile is what
+separates the two branches. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::

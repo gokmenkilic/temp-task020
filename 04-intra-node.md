@@ -13,7 +13,7 @@ exercises: 2 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understanding scalability before running a whole node test
-- Distinguish parallesition of code frantions and identify their scaling
+- Distinguish parallesiation of code frantions and identify their scaling
 - Providing guidance on code's behaviour on a pre-defined architecture
 - Evaluation of Amdahl's Law and blancing the performance
 
@@ -21,21 +21,9 @@ exercises: 2 # exercise time in minutes
 
 ## Intra-node level becnhmarking
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+After learning how to learn our codes utulize in a single core, now we can disvocer node-level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we willtouch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+![Desicion Graph](episodes/fig/DesicionGraph.png){alt='Desicion Graph'}
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -45,44 +33,57 @@ Select the appropriate kernel to let you generate perforamnce analysis backend w
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge 
+![Decision graph for intra-node analysis. Start by identifying parallelism in the code, then compare theoretical parallelism to observed parallelism. If they disagree, the cause is either that tasks are too small or that tasks serialise each other.](fig/decision-graph.png){alt='Flowchart. A box reading "Identify parallelism in the code" leads to a diamond reading "Compare theoretical parallelism to observed parallelism". Two arrows leave the diamond: one to "Tasks are too small" and one to "Tasks serialize each other".'}
 
-## Challenge 1: Can you do it?
+::::::::::::::::::::::::::::::::::::: challenge
 
-What is the output of this command?
+###  Which branch of the decision graph?
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+Let's say we have two codes both have plenty of parallel work in principle, yet both
+scale poorly on a single node. Using the decision graph, decide which
+branch each one belongs to.
 
-:::::::::::::::::::::::: solution 
+**Code A.** The code creates millions of very short tasks, each
+running for only a few microseconds. The profile shows most of the
+time going into the OpenMP runtime (barrier and overhead functions),
+and effective CPU utilisation is well below 80%.
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+**Code B.** The code creates a moderate number of tasks, and each one
+contains a loop with a very small critical section. The profile shows
+a large amount of spin time in the threading back-end, even though
+all threads look busy.
 
-:::::::::::::::::::::::::::::::::
+1. Which branch does each code belong to?
+2. What evidence in the description points to that branch?
 
+:::::::::::::::::::::::: solution
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+**Code A: tasks are too small.** Concurrency is high, but creating and
+cleaning up each task costs more than the work inside it. The overhead
+shows up in the runtime rather than in your own functions, which is
+why the runtime dominates the profile. A reasonable task should run
+for at least tens of microseconds.
 
-:::::::::::::::::::::::: solution 
+**Code B: tasks serialise each other.** The tasks look parallel, but
+each one briefly locks the others out, so in effect they run one after
+another. Many short critical sections in a row appear as heavy spin
+time in the threading back-end. 
 
-You can add a line with at least three colons and a `solution` tag.
+In both cases the symptom is the same: parallelism exists in theory
+but not in the measurements. The evidence inside the profile is what
+separates the two branches. 
 
-:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Coverage: Is Enough of the Code Parallel?
 
-You can use standard markdown for static figures with the following syntax:
+If only a small fraction of the code is parallelised,
+that fraction limits how well the code scales as you add cores.
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+Rather than using a node run straight away, we first measure
+how the code scales, and then ask what that scaling says about how much
+of the code is actually parallel.
 
 ::::::::::::::::::::::::::::::::::::: callout
 

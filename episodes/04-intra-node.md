@@ -129,6 +129,32 @@ A code that is 98% parallel looks excellent, yet it falls below 80%
 efficiency on 16 threads. This is why a scalability study should come
 before an exculisive node run.
 
+## Calibration
+
+Now, we can look at rearranging
+the speedup formula for $f_{intra}$ gives:
+
+$f_{intra} = \dfrac{p\,(S(p) - 1)}{S(p)\,(p - 1)}$
+
+Here is an example with $t(1) = 100$ s:
+
+| $p$ | $t(p)$ [s] | $S(p)$ | $E(p)$ | Estimated $f_{intra}$ |
+|---|---|---|---|---|
+| 2 | 55 | 1.82 | 0.91 | 0.90 |
+| 4 | 32.5 | 3.08 | 0.77 | 0.90 |
+| 8 | 21.3 | 4.71 | 0.59 | 0.90 |
+| 16 | 15.6 | 6.40 | 0.40 | 0.90 |
+
+The estimate stays at 0.90 for every $p$. The serial
+fraction is $s = 0.10$, and the speedup can never exceed 10.
+
+Let's suppose the last two runs had given $t(8) = 26$ s and
+$t(16) = 25$ s. The estimates become 0.85 at $p = 8$ and 0.80 at
+$p = 16$. The estimated $f_{intra}$ drifts downwards as $p$ grows, and hence
+the model does not represent the code well enough. The runtime has flattened, which
+is a sign of overhead or lack of concurrency rather than a fixed serial
+fraction.
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

@@ -1,7 +1,7 @@
 ---
 title: "Intra node level benchmarking"
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+teaching: 40 # teaching time in minutes
+exercises: 10 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -19,10 +19,8 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Intra-node level becnhmarking
-
-After learning how to learn our codes utulize in a single core, now we can disvocer node-level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we willtouch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
-
+After learning how to learn our codes utulize in a single core, now we can dig into node level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we will touch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
+ 
 ![Desicion Graph](episodes/fig/DesicionGraph.png){alt='Desicion Graph'}
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
@@ -76,7 +74,7 @@ separates the two branches.
 :::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Coverage: Is Enough of the Code Parallel?
+## Coverage
 
 If only a small fraction of the code is parallelised,
 that fraction limits how well the code scales as you add cores.
@@ -85,33 +83,106 @@ Rather than using a node run straight away, we first measure
 how the code scales, and then ask what that scaling says about how much
 of the code is actually parallel.
 
+Amdahl's Law, from Episode 1, models the runtime on $p$ threads as:
+
+$t(p) = t(1)\left(\dfrac{f_{intra}}{p} + (1 - f_{intra})\right)$
+
+Here $0 \le f_{intra} \le 1$ is the **parallel fraction**: the share of
+the single-thread runtime that gets faster as threads are added, and
+scales perfectly in this model. The remaining share, $1 - f_{intra}$,
+is the **serial fraction** and does not change with $p$.
+
+Dividing $t(1)$ by $t(p)$ gives the speedup, and dividing that by $p$
+gives the efficiency:
+
+$S(p) = \dfrac{t(1)}{t(p)} = \left(\dfrac{f_{intra}}{p} + (1 - f_{intra})\right)^{-1}$
+
+$E(p) = \dfrac{S(p)}{p} = \dfrac{1}{f_{intra} + (1 - f_{intra})\,p}$
+
+Letting $p \to \infty$, the speedup can never exceed:
+
+$S_{max} = \dfrac{1}{1 - f_{intra}}$
+
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+In this lesson, $s = 1 - f_{intra}$ is the serial fraction. Wherever a
+threshold such as 0.2 is quoted below, it refers to $s$, not to
+$f_{intra}$.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Suppose you want to keep efficiency at or above 80%. Setting
+$E(p) \ge 0.8$ and rearranging gives a limit on the serial fraction:
 
-## Math
+$s \le \dfrac{0.25}{p - 1}$
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+| Threads $p$ | Largest serial fraction $s$ for $E \ge 80\%$ |
+|---|---|
+| 4 | 8.3% |
+| 8 | 3.6% |
+| 16 | 1.7% |
+| 64 | 0.4% |
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+A code that is 98% parallel looks excellent, yet it falls below 80%
+efficiency on 16 threads. This is why a scalability study should come
+before an exculisive node run.
 
-Cool, right?
+## Calibration
+
+Now, we can look at rearranging
+the speedup formula for $f_{intra}$ gives:
+
+$f_{intra} = \dfrac{p\,(S(p) - 1)}{S(p)\,(p - 1)}$
+
+Here is an example with $t(1) = 100$ s:
+
+| $p$ | $t(p)$ [s] | $S(p)$ | $E(p)$ | Estimated $f_{intra}$ |
+|---|---|---|---|---|
+| 2 | 55 | 1.82 | 0.91 | 0.90 |
+| 4 | 32.5 | 3.08 | 0.77 | 0.90 |
+| 8 | 21.3 | 4.71 | 0.59 | 0.90 |
+| 16 | 15.6 | 6.40 | 0.40 | 0.90 |
+
+The estimate stays at 0.90 for every $p$. The serial
+fraction is $s = 0.10$, and the speedup can never exceed 10.
+
+Let's suppose the last two runs had given $t(8) = 26$ s and
+$t(16) = 25$ s. The estimates become 0.85 at $p = 8$ and 0.80 at
+$p = 16$. The estimated $f_{intra}$ drifts downwards as $p$ grows, and hence
+the model does not represent the code well enough. The runtime has flattened, which
+is a sign of overhead or lack of concurrency rather than a fixed serial
+fraction.
+
+## Evaluation
+
+1. **The model fits and $s$ is small (well below 0.2).** The code
+should scale in principle, and a strong scaling problem is unlikely.
+Trying different numbers of MPI ranks per node can reduce the effect of
+the serial part even further.
+2. **The model fits but $s \ge 0.2$.** If the code is parallelised
+throughout, then major parts are effectively serial, often because of
+imbalance or excessive synchronisation. Look at balancing next. If
+major code parts are not inside parallel regions, they simply are not
+parallelised.
+3. **The model does not fit.** A typical sign is a runtime that scales
+well up to some thread count.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+Amdahl's Law assumes a code is either perfectly parallel or perfectly
+serial. However, in scientific codes also have small loops and tasks that do not scale,
+critical sections that force serialisation, and thread
+overhead that grows with $p$. Therefore the estimated
+$f_{intra}$ is an *effective* parallel fraction, something you observe,
+not a literal split of your source code.
+
+:::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Fitting Amdahl's Law to measured strong scaling data gives an effective parallel fraction, $f_{intra} = \dfrac{p\,(S(p)-1)}{S(p)\,(p-1)}$, and the model only fits if this estimate stays stable as $p$ grows
+- Even a small serial fraction costs a lot of efficiency: keeping $E(p) \ge 80\%$ needs $s \le 0.25/(p-1)$, so a 98% parallel code already drops below 80% on 16 threads
+- When parallel work exists in theory but scaling is still poor, compare theoretical and observed parallelism, then use profiling evidence to separate the causes: unbalanced work, tasks that are too small, or tasks that serialise each other
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -19,8 +19,6 @@ exercises: 0 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Intra-node level becnhmarking
-
 After learning how to learn our codes utulize in a single core, now we can disvocer node-level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we willtouch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
 
 ![Desicion Graph](episodes/fig/DesicionGraph.png){alt='Desicion Graph'}

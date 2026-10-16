@@ -76,7 +76,7 @@ separates the two branches.
 :::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Coverage: Is Enough of the Code Parallel?
+## Coverage
 
 If only a small fraction of the code is parallelised,
 that fraction limits how well the code scales as you add cores.
@@ -85,6 +85,25 @@ Rather than using a node run straight away, we first measure
 how the code scales, and then ask what that scaling says about how much
 of the code is actually parallel.
 
+Amdahl's Law, from Episode 1, models the runtime on $p$ threads as:
+
+$t(p) = t(1)\left(\dfrac{f_{intra}}{p} + (1 - f_{intra})\right)$
+
+Here $0 \le f_{intra} \le 1$ is the **parallel fraction**: the share of
+the single-thread runtime that gets faster as threads are added, and
+scales perfectly in this model. The remaining share, $1 - f_{intra}$,
+is the **serial fraction** and does not change with $p$.
+
+Dividing $t(1)$ by $t(p)$ gives the speedup, and dividing that by $p$
+gives the efficiency:
+
+$S(p) = \dfrac{t(1)}{t(p)} = \left(\dfrac{f_{intra}}{p} + (1 - f_{intra})\right)^{-1}$
+
+$E(p) = \dfrac{S(p)}{p} = \dfrac{1}{f_{intra} + (1 - f_{intra})\,p}$
+
+Letting $p \to \infty$, the speedup can never exceed:
+
+$S_{max} = \dfrac{1}{1 - f_{intra}}$
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.

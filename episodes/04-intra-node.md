@@ -1,7 +1,7 @@
 ---
 title: "Intra node level benchmarking"
 teaching: 40 # teaching time in minutes
-exercises: 0 # exercise time in minutes
+exercises: 10 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

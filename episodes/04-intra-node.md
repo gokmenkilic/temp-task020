@@ -113,15 +113,21 @@ $f_{intra}$.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Suppose you want to keep efficiency at or above 80%. Setting
+$E(p) \ge 0.8$ and rearranging gives a limit on the serial fraction:
 
-## Math
+$s \le \dfrac{0.25}{p - 1}$
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+| Threads $p$ | Largest serial fraction $s$ for $E \ge 80\%$ |
+|---|---|
+| 4 | 8.3% |
+| 8 | 3.6% |
+| 16 | 1.7% |
+| 64 | 0.4% |
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+A code that is 98% parallel looks excellent, yet it falls below 80%
+efficiency on 16 threads. This is why a scalability study should come
+before an exculisive node run.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

@@ -182,10 +182,9 @@ not a literal split of your source code.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Fitting Amdahl's Law to measured strong scaling data gives an effective parallel fraction, $f_{intra} = \dfrac{p\,(S(p)-1)}{S(p)\,(p-1)}$, and the model only fits if this estimate stays stable as $p$ grows
+- Even a small serial fraction costs a lot of efficiency: keeping $E(p) \ge 80\%$ needs $s \le 0.25/(p-1)$, so a 98% parallel code already drops below 80% on 16 threads
+- When parallel work exists in theory but scaling is still poor, compare theoretical and observed parallelism, then use profiling evidence to separate the causes: unbalanced work, tasks that are too small, or tasks that serialise each other
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

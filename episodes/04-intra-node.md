@@ -169,6 +169,17 @@ parallelised.
 3. **The model does not fit.** A typical sign is a runtime that scales
 well up to some thread count.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+Amdahl's Law assumes a code is either perfectly parallel or perfectly
+serial. However, in scientific codes also have small loops and tasks that do not scale,
+critical sections that force serialisation, and thread
+overhead that grows with $p$. Therefore the estimated
+$f_{intra}$ is an *effective* parallel fraction, something you observe,
+not a literal split of your source code.
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

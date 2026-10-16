@@ -107,12 +107,9 @@ $S_{max} = \dfrac{1}{1 - f_{intra}}$
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+In this lesson, $s = 1 - f_{intra}$ is the serial fraction. Wherever a
+threshold such as 0.2 is quoted below, it refers to $s$, not to
+$f_{intra}$.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

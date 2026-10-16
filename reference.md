@@ -25,6 +25,9 @@ compile time
 tracing
 : test
 
+idle
+: test
+
 node
 : test
 
@@ -40,7 +43,61 @@ compute node
 scheduler
 : test
 
+dynamic scheduling
+: test
+
 speedup
+: test
+
+task
+: test
+
+task-based parallelisation
+: test 
+
+theoretical concurrency
+: test
+
+practical concurrency
+: test 
+
+threading analysis
+: test 
+
+multithreading
+: test 
+
+overhead
+: test
+
+occupation
+: test
+
+utulization
+: test 
+
+coverage analysis:
+: test
+
+flame graph
+: test
+
+strong scaling:
+: test
+
+weak scaling
+: test
+
+hotspot analysis:
+: test
+
+performance characterization analysis
+: test
+
+observed parallelism
+: test
+
+blancing
 : test
 
 global efficiency

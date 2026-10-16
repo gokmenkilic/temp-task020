@@ -19,8 +19,8 @@ exercises: 10 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-After learning how to learn our codes utulize in a single core, now we can disvocer node-level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we willtouch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
-
+After learning how to learn our codes utulize in a single core, now we can dig into node level performance analysis. We also called it "intra node" which means basically inside the node. At this point, we will touch practice of Amdalh's Law again weather our code make good use of parallelisation or not. To understand this we can benefit from below graph.
+ 
 ![Desicion Graph](episodes/fig/DesicionGraph.png){alt='Desicion Graph'}
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor

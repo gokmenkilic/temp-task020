@@ -450,14 +450,18 @@ scalar not vectorised peak</li>
 </ul></section><section id="04-intra-node"><h2 class="section-heading"><a href="04-intra-node.html">Intra node level benchmarking</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Fitting Amdahl’s Law to measured strong scaling data gives an
+effective parallel fraction, <span class="math inline">\(f_{intra} =
+\dfrac{p\,(S(p)-1)}{S(p)\,(p-1)}\)</span>, and the model only fits if
+this estimate stays stable as <span class="math inline">\(p\)</span>
+grows</li>
+<li>Even a small serial fraction costs a lot of efficiency: keeping
+<span class="math inline">\(E(p) \ge 80\%\)</span> needs <span class="math inline">\(s \le 0.25/(p-1)\)</span>, so a 98% parallel code
+already drops below 80% on 16 threads</li>
+<li>When parallel work exists in theory but scaling is still poor,
+compare theoretical and observed parallelism, then use profiling
+evidence to separate the causes: unbalanced work, tasks that are too
+small, or tasks that serialise each other</li>
 </ul></section><section id="05-inter-node"><h2 class="section-heading"><a href="05-inter-node.html">Inter node level benchmarking</a></h2>
 <hr class="half-width">
 <ul>
@@ -552,8 +556,8 @@ locally</li>
   "url": "https://gokmenkilic.github.io/temp-task020/key-points.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/key-points.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-16",
+  "datePublished": "2026-10-16"
 }
 
   </script><script>

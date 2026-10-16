@@ -123,7 +123,7 @@
     <a id="search-button-nav" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 59%" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">59%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 46%" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">46%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -245,9 +245,9 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#intra-node-level-becnhmarking">Intra-node level becnhmarking</a></li>
-<li><a href="#coverage-is-enough-of-the-code-parallel">Coverage: Is Enough of the Code Parallel?</a></li>
-<li><a href="#math">Math</a></li>
+        <ul><li><a href="#coverage">Coverage</a></li>
+<li><a href="#calibration">Calibration</a></li>
+<li><a href="#evaluation">Evaluation</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -362,13 +362,13 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Intra node level benchmarking</h1>
-        <p>Last updated on 2026-10-13 |
+        <p>Last updated on 2026-10-16 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/04-intra-node.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -405,11 +405,10 @@ architecture</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="intra-node-level-becnhmarking">Intra-node level becnhmarking<a class="anchor" aria-label="anchor" href="#intra-node-level-becnhmarking"></a></h2>
-<hr class="half-width"><p>After learning how to learn our codes utulize in a single core, now
-we can disvocer node-level performance analysis. We also called it
+<p>After learning how to learn our codes utulize in a single core, now
+we can dig into node level performance analysis. We also called it
 “intra node” which means basically inside the node. At this point, we
-willtouch practice of Amdalh’s Law again weather our code make good use
+will touch practice of Amdalh’s Law again weather our code make good use
 of parallelisation or not. To understand this we can benefit from below
 graph.</p>
 <figure><img src="../fig/DesicionGraph.png" alt="Desicion Graph" class="figure mx-auto d-block"><div class="figcaption">Desicion Graph</div>
@@ -418,7 +417,7 @@ graph.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Select the appropriate kernel to let you generate perforamnce
 analysis backend within Moodle service.</p>
@@ -461,7 +460,7 @@ even though all threads look busy.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>Code A: tasks are too small.</strong> Concurrency is high,
 but creating and cleaning up each task costs more than the work inside
@@ -479,12 +478,31 @@ separates the two branches.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="coverage-is-enough-of-the-code-parallel">Coverage: Is Enough of the Code Parallel?<a class="anchor" aria-label="anchor" href="#coverage-is-enough-of-the-code-parallel"></a></h2>
+<section><h2 class="section-heading" id="coverage">Coverage<a class="anchor" aria-label="anchor" href="#coverage"></a></h2>
 <hr class="half-width"><p>If only a small fraction of the code is parallelised, that fraction
 limits how well the code scales as you add cores.</p>
 <p>Rather than using a node run straight away, we first measure how the
 code scales, and then ask what that scaling says about how much of the
 code is actually parallel.</p>
+<p>Amdahl’s Law, from Episode 1, models the runtime on <span class="math inline">\(p\)</span> threads as:</p>
+<p><span class="math inline">\(t(p) = t(1)\left(\dfrac{f_{intra}}{p} +
+(1 - f_{intra})\right)\)</span></p>
+<p>Here <span class="math inline">\(0 \le f_{intra} \le 1\)</span> is
+the <strong>parallel fraction</strong>: the share of the single-thread
+runtime that gets faster as threads are added, and scales perfectly in
+this model. The remaining share, <span class="math inline">\(1 -
+f_{intra}\)</span>, is the <strong>serial fraction</strong> and does not
+change with <span class="math inline">\(p\)</span>.</p>
+<p>Dividing <span class="math inline">\(t(1)\)</span> by <span class="math inline">\(t(p)\)</span> gives the speedup, and dividing that
+by <span class="math inline">\(p\)</span> gives the efficiency:</p>
+<p><span class="math inline">\(S(p) = \dfrac{t(1)}{t(p)} =
+\left(\dfrac{f_{intra}}{p} + (1 - f_{intra})\right)^{-1}\)</span></p>
+<p><span class="math inline">\(E(p) = \dfrac{S(p)}{p} =
+\dfrac{1}{f_{intra} + (1 - f_{intra})\,p}\)</span></p>
+<p>Letting <span class="math inline">\(p \to \infty\)</span>, the
+speedup can never exceed:</p>
+<p><span class="math inline">\(S_{max} = \dfrac{1}{1 -
+f_{intra}}\)</span></p>
 <div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -492,20 +510,104 @@ code is actually parallel.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
+<p>In this lesson, <span class="math inline">\(s = 1 -
+f_{intra}\)</span> is the serial fraction. Wherever a threshold such as
+0.2 is quoted below, it refers to <span class="math inline">\(s\)</span>, not to <span class="math inline">\(f_{intra}\)</span>.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>
-<hr class="half-width"><p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<p>Suppose you want to keep efficiency at or above 80%. Setting <span class="math inline">\(E(p) \ge 0.8\)</span> and rearranging gives a
+limit on the serial fraction:</p>
+<p><span class="math inline">\(s \le \dfrac{0.25}{p - 1}\)</span></p>
+<table class="table"><thead><tr><th>Threads <span class="math inline">\(p\)</span>
+</th>
+<th>Largest serial fraction <span class="math inline">\(s\)</span> for
+<span class="math inline">\(E \ge 80\%\)</span>
+</th>
+</tr></thead><tbody><tr><td>4</td>
+<td>8.3%</td>
+</tr><tr><td>8</td>
+<td>3.6%</td>
+</tr><tr><td>16</td>
+<td>1.7%</td>
+</tr><tr><td>64</td>
+<td>0.4%</td>
+</tr></tbody></table><p>A code that is 98% parallel looks excellent, yet it falls below 80%
+efficiency on 16 threads. This is why a scalability study should come
+before an exculisive node run.</p>
+</section><section><h2 class="section-heading" id="calibration">Calibration<a class="anchor" aria-label="anchor" href="#calibration"></a></h2>
+<hr class="half-width"><p>Now, we can look at rearranging the speedup formula for <span class="math inline">\(f_{intra}\)</span> gives:</p>
+<p><span class="math inline">\(f_{intra} = \dfrac{p\,(S(p) -
+1)}{S(p)\,(p - 1)}\)</span></p>
+<p>Here is an example with <span class="math inline">\(t(1) =
+100\)</span> s:</p>
+<table class="table"><thead><tr><th><span class="math inline">\(p\)</span></th>
+<th>
+<span class="math inline">\(t(p)\)</span> [s]</th>
+<th><span class="math inline">\(S(p)\)</span></th>
+<th><span class="math inline">\(E(p)\)</span></th>
+<th>Estimated <span class="math inline">\(f_{intra}\)</span>
+</th>
+</tr></thead><tbody><tr><td>2</td>
+<td>55</td>
+<td>1.82</td>
+<td>0.91</td>
+<td>0.90</td>
+</tr><tr><td>4</td>
+<td>32.5</td>
+<td>3.08</td>
+<td>0.77</td>
+<td>0.90</td>
+</tr><tr><td>8</td>
+<td>21.3</td>
+<td>4.71</td>
+<td>0.59</td>
+<td>0.90</td>
+</tr><tr><td>16</td>
+<td>15.6</td>
+<td>6.40</td>
+<td>0.40</td>
+<td>0.90</td>
+</tr></tbody></table><p>The estimate stays at 0.90 for every <span class="math inline">\(p\)</span>. The serial fraction is <span class="math inline">\(s = 0.10\)</span>, and the speedup can never
+exceed 10.</p>
+<p>Let’s suppose the last two runs had given <span class="math inline">\(t(8) = 26\)</span> s and <span class="math inline">\(t(16) = 25\)</span> s. The estimates become 0.85
+at <span class="math inline">\(p = 8\)</span> and 0.80 at <span class="math inline">\(p = 16\)</span>. The estimated <span class="math inline">\(f_{intra}\)</span> drifts downwards as <span class="math inline">\(p\)</span> grows, and hence the model does not
+represent the code well enough. The runtime has flattened, which is a
+sign of overhead or lack of concurrency rather than a fixed serial
+fraction.</p>
+</section><section><h2 class="section-heading" id="evaluation">Evaluation<a class="anchor" aria-label="anchor" href="#evaluation"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>
+<strong>The model fits and <span class="math inline">\(s\)</span> is
+small (well below 0.2).</strong> The code should scale in principle, and
+a strong scaling problem is unlikely. Trying different numbers of MPI
+ranks per node can reduce the effect of the serial part even
+further.</li>
+<li>
+<strong>The model fits but <span class="math inline">\(s \ge
+0.2\)</span>.</strong> If the code is parallelised throughout, then
+major parts are effectively serial, often because of imbalance or
+excessive synchronisation. Look at balancing next. If major code parts
+are not inside parallel regions, they simply are not parallelised.</li>
+<li>
+<strong>The model does not fit.</strong> A typical sign is a runtime
+that scales well up to some thread count.</li>
+</ol><div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Amdahl’s Law assumes a code is either perfectly parallel or perfectly
+serial. However, in scientific codes also have small loops and tasks
+that do not scale, critical sections that force serialisation, and
+thread overhead that grows with <span class="math inline">\(p\)</span>.
+Therefore the estimated <span class="math inline">\(f_{intra}\)</span>
+is an <em>effective</em> parallel fraction, something you observe, not a
+literal split of your source code.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -513,14 +615,18 @@ this:</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<ul><li>Fitting Amdahl’s Law to measured strong scaling data gives an
+effective parallel fraction, <span class="math inline">\(f_{intra} =
+\dfrac{p\,(S(p)-1)}{S(p)\,(p-1)}\)</span>, and the model only fits if
+this estimate stays stable as <span class="math inline">\(p\)</span>
+grows</li>
+<li>Even a small serial fraction costs a lot of efficiency: keeping
+<span class="math inline">\(E(p) \ge 80\%\)</span> needs <span class="math inline">\(s \le 0.25/(p-1)\)</span>, so a 98% parallel code
+already drops below 80% on 16 threads</li>
+<li>When parallel work exists in theory but scaling is still poor,
+compare theoretical and observed parallelism, then use profiling
+evidence to separate the causes: unbalanced work, tasks that are too
+small, or tasks that serialise each other</li>
 </ul></div>
 </div>
 </div>
@@ -588,8 +694,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/instructor/04-intra-node.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/instructor/04-intra-node.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-16",
+  "datePublished": "2026-10-16"
 }
 
   </script><script>

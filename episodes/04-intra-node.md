@@ -104,6 +104,7 @@ $E(p) = \dfrac{S(p)}{p} = \dfrac{1}{f_{intra} + (1 - f_{intra})\,p}$
 Letting $p \to \infty$, the speedup can never exceed:
 
 $S_{max} = \dfrac{1}{1 - f_{intra}}$
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.

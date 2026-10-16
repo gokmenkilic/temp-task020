@@ -155,6 +155,20 @@ the model does not represent the code well enough. The runtime has flattened, wh
 is a sign of overhead or lack of concurrency rather than a fixed serial
 fraction.
 
+## Evaluation
+
+1. **The model fits and $s$ is small (well below 0.2).** The code
+should scale in principle, and a strong scaling problem is unlikely.
+Trying different numbers of MPI ranks per node can reduce the effect of
+the serial part even further.
+2. **The model fits but $s \ge 0.2$.** If the code is parallelised
+throughout, then major parts are effectively serial, often because of
+imbalance or excessive synchronisation. Look at balancing next. If
+major code parts are not inside parallel regions, they simply are not
+parallelised.
+3. **The model does not fit.** A typical sign is a runtime that scales
+well up to some thread count.
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

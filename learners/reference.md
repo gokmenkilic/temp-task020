@@ -153,3 +153,6 @@ problem size
 
 algorothm complexity
 : test
+
+hybrid codes
+: test

@@ -6,13 +6,14 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
-
+- How to make good use of multiple nodes?
+- How we interpret efficency while increasing size of problem?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain why weak scaling is using to assess performance across multiple nodes rather than strong scaling
+- Calibrate efficiency for changing problem sizes using the algorithm's complexity
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Inter-node level becnhmarking

@@ -54,16 +54,10 @@ You can add a line with at least three colons and a `solution` tag.
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Preperation
 
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
+Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using.
+::::::::::::::::::::::::::::::::::::: calleut
 
 Callout sections can highlight information.
 

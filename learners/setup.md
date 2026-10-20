@@ -2,7 +2,11 @@
 title: Setup
 ---
 
-You do not need to install any particular software for this course. 
+You do not need to install any particular software for this course. We installed necessary sofware packages in our Cloud service for you. Some of them are:
+
+- Intel Vtune
+
+
 
 ## Data Sets
 
@@ -19,11 +23,8 @@ Download the [data zip file](https://example.com/FIXME) and unzip it to your Des
 
 ### Details
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
+You need to login DiRAC Training Academy and enrol for the course (#fixme add link for Moodle). If you don't have an account you can setup via this [link](https://training-academy.dirac.ac.uk/login/signup.php). It will take a few minutes to create an account. You are not suppose to have an SAFE account for this.
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler

@@ -1,57 +1,30 @@
 ---
 title: "Inter node level benchmarking"
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+teaching: 40 # teaching time in minutes
+exercises: 10 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
-
+- How to make good use of multiple nodes?
+- How we interpret efficency while increasing size of problem?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
-
+- Explain why weak scaling is using to assess performance across multiple nodes rather than strong scaling
+- Calibrate efficiency for changing problem sizes using the algorithm's complexity
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Inter-node level becnhmarking
-
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files anperford
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
-
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
-
+When we want to scale up our code across to multiple nodes, there are certain things we have to be extra careful. To prioritise, weak and strong scaling are key metrics to have an idea about how our code perform with multiple nodes. In this lesson, we will use nbody simulation to get better understanding of weak and strong scaling aling with relavant performance metrics. To remind our 80% - 60% rule to say if insufficent or if we increase the problem size it get back to a level of 100% - %80 efficiency. 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
+Make sure that you are running example code in right kernel. If you spot anything odd to initilaze your kernel please kill and close all your running kernels before restarting it.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
+#fixme add Gustafson's Law here with Nbody example
 :::::::::::::::::::::::: solution 
 
 ## Output
@@ -62,8 +35,7 @@ paste("This", "new", "lesson", "looks", "good")
 
 :::::::::::::::::::::::::::::::::
 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
+#fixme add a challenge or introduce before hyrid codes
 
 :::::::::::::::::::::::: solution 
 
@@ -72,15 +44,14 @@ You can add a line with at least three colons and a `solution` tag.
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Workflow
 
-You can use standard markdown for static figures with the following syntax:
+Determine Nbody simulation with following metrics:
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+## Preperation
 
+Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using.
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.
@@ -93,15 +64,9 @@ e.g. by providing the answer to a commonly-asked question.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Math
+## Evaluation
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
+In this section, we'll determine how our nbosy simulation utulizing accross the nodes with our performance metrics.
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

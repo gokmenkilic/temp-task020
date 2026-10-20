@@ -40,6 +40,12 @@ login node
 compute node
 : test
 
+intra-node
+:test
+
+inter-node
+: test 
+
 scheduler
 : test
 
@@ -140,4 +146,7 @@ numactl
 : test
 
 algoritmic scaling
+: test
+
+problem size
 : test

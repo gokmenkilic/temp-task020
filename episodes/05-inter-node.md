@@ -57,7 +57,7 @@ You can add a line with at least three colons and a `solution` tag.
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using.
-::::::::::::::::::::::::::::::::::::: calleut
+::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.
 

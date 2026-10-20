@@ -26,14 +26,7 @@ associated with the lessons. They appear in the "Instructor View"
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
+#fixme add Gustafson's Law here with Nbody example
 :::::::::::::::::::::::: solution 
 
 ## Output

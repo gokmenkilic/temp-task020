@@ -150,3 +150,6 @@ algoritmic scaling
 
 problem size
 : test
+
+algorothm complexity
+: test

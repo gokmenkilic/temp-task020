@@ -12,9 +12,7 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
-
+- Explain why weak scaling is using to assess performance across multiple nodes rather than strong scaling
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Inter-node level becnhmarking

@@ -35,8 +35,7 @@ Make sure that you are running example code in right kernel. If you spot anythin
 
 :::::::::::::::::::::::::::::::::
 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
+#fixme add a challenge or introduce before hyrid codes
 
 :::::::::::::::::::::::: solution 
 

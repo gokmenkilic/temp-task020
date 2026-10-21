@@ -33,7 +33,6 @@ runs over several physically separate nodes count as inter-node.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-#fixme add Gustafson's Law here with Nbody example
 
 :::::::::::::::::::::::: solution 
 

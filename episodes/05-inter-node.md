@@ -63,7 +63,12 @@ Determine Nbody simulation with following metrics:
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.
 For $g = 1$, doubling $n$ doubles the runtime. For $g = 2$, it
-quadruples it.
+quadruples it. The efficiency becomes:
+
+$E_{inter}(p) = \dfrac{t(1)/n_1^{\,g}}{\left(t(p)/n_{inter}^{\,g}\right)\cdot p}$
+
+Here $n_1$ is the problem size on a single node, $n_{inter}$ the size on
+$p$ nodes, and the timings are raw.
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.

@@ -83,6 +83,24 @@ At 16 nodes efficiency falls under 60%, so the problem is enlarged.
 The bigger problem brings efficiency back above 80%, which is the
 good behaviour as we mentioned at introdcution of this lesson.
 
+::::::::::::::::::::::::::::::::::::::::::::::: callout
+
+Amdahl's Law, from Episode 1, fixes the problem size. Gustafson's Law
+lets the problem grow with the machine. With $s$ the serial fraction
+of the runtime on the parallel system, the scaled speedup is:
+
+$S(p) = p - s\,(p - 1)$
+
+With $s = 0.02$ on 16 nodes, $S = 15.7$, an efficiency of about 98%.
+A growing problem hides a small serial part, which is why the
+N-body code can scale well when its problem is enlarged with the node
+count. The method in this episode does not use Gustafson's formula
+directly. It measures efficiency with the workflow and calibration above.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.

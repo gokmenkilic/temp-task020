@@ -65,6 +65,9 @@ Determine Nbody simulation with following metrics:
 5. If $E_{inter} \le 60\%$, increase the problem size and continue
 from there with the larger setup.
 
+How much can we  increase the problem size? It would be as large as the nodes can handle, while keeping each node's
+local memory footprint close to what it was for $n_1$ on a single node.
+
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.

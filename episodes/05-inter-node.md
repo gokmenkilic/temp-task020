@@ -58,6 +58,12 @@ You can add a line with at least three colons and a `solution` tag.
 
 Determine Nbody simulation with following metrics:
 
+1. Pick a problem size $n_1$ for single node.
+2. Measure the time $t(1)$.
+3. Increase the number of nodes and measure the timings.
+4. Compute $E_{inter}$ , using the calibrated formula.
+5. If $E_{inter} \le 60\%$, increase the problem size and continue
+from there with the larger setup.
 
 ## Preperation
 

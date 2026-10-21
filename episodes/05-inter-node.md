@@ -33,15 +33,15 @@ runs over several physically separate nodes count as inter-node.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-# fixme 
-# add running nbody on multiple nodes example
+#fixme 
+#add running nbody on multiple nodes example
 
 :::::::::::::::::::::::: solution 
 
-# fixme 
-# probably some profiling with vtune can go here
-# not sure how it can squeeze plots here
-# may be sort of utulization or hotspot?
+#fixme 
+#probably some profiling with vtune can go here
+#not sure how it can squeeze plots here
+#may be sort of utulization or hotspot?
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::

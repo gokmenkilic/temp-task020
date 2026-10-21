@@ -33,15 +33,11 @@ runs over several physically separate nodes count as inter-node.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-#fixme 
-#add running nbody on multiple nodes example
+#fixme: add running nbody on multiple nodes example
 
 :::::::::::::::::::::::: solution 
 
-#fixme 
-#probably some profiling with vtune can go here
-#not sure how it can squeeze plots here
-#may be sort of utulization or hotspot?
+#fixme: probably some profiling with vtune can go here - not sure how it can squeeze plots, maybe sort of utulization or hotspot?
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -110,6 +106,7 @@ efficiency of the larger setup and let $C_{inter}$ be the number of such
 jumps, $C^{80\%}_{inter}$ the number that reach 80% or more, and
 $C^{60\%}_{inter}$ the number that land between 60% and 80%. Rest of evaluation will be as same as our benchmark rubrics idea at [core level benchmarking](episodes/03-core.md).
 
+
 :::::::::::::::::::::::::::::::::::::::::::::: callout
 
 Performance metrics describe observed behaviour. They carry no weighting
@@ -117,7 +114,7 @@ against the other rubrics (core, intra-node, GPU, I/O), so deciding
 which way around to tackle first needs input from the people who know the
 code and its science. 
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -125,6 +122,7 @@ code and its science.
 - Efficiency across different problem sizes must be calibrated with the algorithm's complexity
 - A code scales well across nodes if each problem-size increase brings efficiency back above 80%
 - #fixme (if we can add a callout or challenge how does that work for hybrid codes if there is an avalible example for it)
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/

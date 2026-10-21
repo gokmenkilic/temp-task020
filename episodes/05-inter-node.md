@@ -68,6 +68,21 @@ from there with the larger setup.
 How much can we  increase the problem size? It would be as large as the nodes can handle, while keeping each node's
 local memory footprint close to what it was for $n_1$ on a single node.
 
+An illustrative run with $n_1 = 100{,}000$ and $t(1) = 200$ s:
+
+| Nodes $p$ | $n$ | $t(p)$ [s] | $E_{inter}$ |
+|---|---|---|---|
+| 1 | 100,000 | 200 | 1.00 |
+| 2 | 141,421 | 210 | 0.95 |
+| 4 | 200,000 | 235 | 0.85 |
+| 8 | 282,843 | 290 | 0.69 |
+| 16 | 400,000 | 360 | 0.56 |
+| 16, larger problem | 600,000 | 520 | 0.87 |
+
+At 16 nodes efficiency falls under 60%, so the problem is enlarged.
+The bigger problem brings efficiency back above 80%, which is the
+good behaviour as we mentioned at introdcution of this lesson.
+
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.

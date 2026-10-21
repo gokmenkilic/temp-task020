@@ -23,6 +23,16 @@ When we want to scale up our code across to multiple nodes, there are certain th
 Make sure that you are running example code in right kernel. If you spot anything odd to initilaze your kernel please kill and close all your running kernels before restarting it.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: callout
+
+Running MPI ranks on a single node, with physically shared memory,
+belongs to the intra-node assessment from the previous episode. Only
+runs over several physically separate nodes count as inter-node.
+
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 #fixme add Gustafson's Law here with Nbody example

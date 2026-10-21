@@ -33,14 +33,11 @@ runs over several physically separate nodes count as inter-node.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
+#fixme add running nbody on multiple nodes example
 
 :::::::::::::::::::::::: solution 
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+#probably some profiling with vtune can go here
 
 :::::::::::::::::::::::::::::::::
 

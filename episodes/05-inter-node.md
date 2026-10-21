@@ -118,13 +118,13 @@ which way around to tackle first needs input from the people who know the
 code and its science. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Weak scaling across nodes starts from one reasonably large problem size
 - Efficiency across different problem sizes must be calibrated with the algorithm's complexity
 - A code scales well across nodes if each problem-size increase brings efficiency back above 80%
 - #fixme (if we can add a callout or challenge how does that work for hybrid codes if there is an avalible example for it)
-::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/

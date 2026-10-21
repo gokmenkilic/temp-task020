@@ -123,7 +123,7 @@ code and its science.
 - Weak scaling across nodes starts from one reasonably large problem size
 - Efficiency across different problem sizes must be calibrated with the algorithm's complexity
 - A code scales well across nodes if each problem-size increase brings efficiency back above 80%
-
+- #fixme (if we can add a callout or challenge how does that work for hybrid codes if there is an avalible example for it)
 ::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

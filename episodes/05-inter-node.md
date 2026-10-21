@@ -31,8 +31,6 @@ runs over several physically separate nodes count as inter-node.
 
 :::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 #fixme add Gustafson's Law here with Nbody example
@@ -63,8 +61,9 @@ Determine Nbody simulation with following metrics:
 
 ## Preperation
 
-Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using.
-
+Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.
+For $g = 1$, doubling $n$ doubles the runtime. For $g = 2$, it
+quadruples it.
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.

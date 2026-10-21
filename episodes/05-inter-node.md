@@ -106,17 +106,6 @@ $E_{inter}(p) = \dfrac{t(1)/n_1^{\,g}}{\left(t(p)/n_{inter}^{\,g}\right)\cdot p}
 Here $n_1$ is the problem size on a single node, $n_{inter}$ the size on
 $p$ nodes, and the timings are raw.
 
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Evaluation
 
 After increasing node counts and measuring the timings, we should collect every node count
@@ -125,6 +114,14 @@ efficiency of the larger setup and let $C_{inter}$ be the number of such
 jumps, $C^{80\%}_{inter}$ the number that reach 80% or more, and
 $C^{60\%}_{inter}$ the number that land between 60% and 80%. Rest of evaluation will be as same as our benchmark rubrics idea at [core level benchmarking](episodes/03-core.md).
 
+:::::::::::::::::::::::::::::::::::::::::::::: callout
+
+Performance metrics describe observed behaviour. They carry no weighting
+against the other rubrics (core, intra-node, GPU, I/O), so deciding
+which way around to tackle first needs input from the people who know the
+code and its science. 
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

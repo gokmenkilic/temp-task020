@@ -40,14 +40,6 @@ runs over several physically separate nodes count as inter-node.
 #probably some profiling with vtune can go here
 
 :::::::::::::::::::::::::::::::::
-
-#fixme add a challenge or introduce before hyrid codes
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Workflow

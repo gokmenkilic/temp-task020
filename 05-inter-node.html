@@ -362,7 +362,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Inter node level benchmarking</h1>
-        <p>Last updated on 2026-10-20 |
+        <p>Last updated on 2026-10-21 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/05-inter-node.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -406,13 +406,8 @@ perform with multiple nodes. In this lesson, we will use nbody
 simulation to get better understanding of weak and strong scaling aling
 with relavant performance metrics. To remind our 80% - 60% rule to say
 if insufficent or if we increase the problem size it get back to a level
-of 100% - %80 efficiency.
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-instructor</p>
-<p>Make sure that you are running example code in right kernel. If you
-spot anything odd to initilaze your kernel please kill and close all
-your running kernels before restarting it.
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</p>
+of 100% - %80 efficiency.</p>
+
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -421,10 +416,17 @@ your running kernels before restarting it.
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>#fixme add Gustafson’s Law here with Nbody example
-:::::::::::::::::::::::: solution</p>
-<div class="section level2">
-<h2 id="output">Output<a class="anchor" aria-label="anchor" href="#output"></a></h2>
+<p>#fixme add Gustafson’s Law here with Nbody example</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -434,13 +436,25 @@ your running kernels before restarting it.
 </div>
 </div>
 </div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<em> (continued)</em>
+</h3>
+<div class="callout-content">
 <p>#fixme add a challenge or introduce before hyrid codes</p>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -448,24 +462,37 @@ your running kernels before restarting it.
 </div>
 </div>
 </div>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
 <section><h2 class="section-heading" id="workflow">Workflow<a class="anchor" aria-label="anchor" href="#workflow"></a></h2>
 <hr class="half-width"><p>Determine Nbody simulation with following metrics:</p>
 </section><section><h2 class="section-heading" id="preperation">Preperation<a class="anchor" aria-label="anchor" href="#preperation"></a></h2>
 <hr class="half-width"><p>Before running a multinode benchmark case, it will identify
 algoritmic complexity of problem, so that we’ll increase the complexity
-to calibrate number of nodes we’ll be using.
-::::::::::::::::::::::::::::::::::::: callout</p>
+to calibrate number of nodes we’ll be using.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
 <p>Callout sections can highlight information.</p>
 <p>They are sometimes used to emphasise particularly important points
 but are also used in some lessons to present “asides”: content that is
 not central to the narrative of the lesson, e.g. by providing the answer
 to a commonly-asked question.</p>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="evaluation">Evaluation<a class="anchor" aria-label="anchor" href="#evaluation"></a></h2>
 <hr class="half-width"><p>In this section, we’ll determine how our nbosy simulation utulizing
-accross the nodes with our performance metrics.
-::::::::::::::::::::::::::::::::::::: keypoints</p>
+accross the nodes with our performance metrics.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
 <ul><li>Use <code>.md</code> files for episodes when you want static
 content</li>
 <li>Use <code>.Rmd</code> files for episodes when you need to generate
@@ -474,7 +501,9 @@ output</li>
 with your lesson</li>
 <li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
 locally</li>
-</ul><p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -539,8 +568,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/05-inter-node.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/05-inter-node.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-10-20",
-  "datePublished": "2026-10-20"
+  "dateModified": "2026-10-21",
+  "datePublished": "2026-10-21"
 }
 
   </script><script>

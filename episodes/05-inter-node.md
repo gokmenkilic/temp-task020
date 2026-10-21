@@ -69,6 +69,7 @@ $E_{inter}(p) = \dfrac{t(1)/n_1^{\,g}}{\left(t(p)/n_{inter}^{\,g}\right)\cdot p}
 
 Here $n_1$ is the problem size on a single node, $n_{inter}$ the size on
 $p$ nodes, and the timings are raw.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.

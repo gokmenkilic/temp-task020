@@ -728,7 +728,7 @@ representative for the case study.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>This part of section related how to use Cosma Azimuth system.</p>
 </div>
@@ -759,7 +759,7 @@ problem size.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><strong>1.</strong> No, it’s missing two things the checklist asks
 for.</p>
@@ -1193,7 +1193,7 @@ graph.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Select the appropriate kernel to let you generate perforamnce
 analysis backend within Moodle service.</p>
@@ -1238,7 +1238,7 @@ even though all threads look busy.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Code A: tasks are too small.</strong> Concurrency is high,
 but creating and cleaning up each task costs more than the work inside
@@ -1501,12 +1501,25 @@ of 100% - %80 efficiency.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Make sure that you are running example code in right kernel. If you
 spot anything odd to initilaze your kernel please kill and close all
 your running kernels before restarting it.</p>
 </div>
+</div>
+</div>
+</div>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Running MPI ranks on a single node, with physically shared memory,
+belongs to the intra-node assessment from the previous episode. Only
+runs over several physically separate nodes count as inter-node.</p>
 </div>
 </div>
 </div>
@@ -1518,48 +1531,19 @@ your running kernels before restarting it.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>#fixme add Gustafson’s Law here with Nbody example</p>
+<p>#fixme: add running nbody on multiple nodes example</p>
 </div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<em> (continued)</em>
-</h3>
-<div class="callout-content">
-<p>#fixme add a challenge or introduce before hyrid codes</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
+<p>#fixme: probably some profiling with vtune can go here - not sure how
+it can squeeze plots, maybe sort of utulization or hotspot?</p>
 </div>
 </div>
 </div>
@@ -1568,32 +1552,133 @@ your running kernels before restarting it.</p>
 </h2>
 <hr class="half-width">
 <p>Determine Nbody simulation with following metrics:</p>
-</section><section><h2 class="section-heading" id="preperation">Preperation<a class="anchor" aria-label="anchor" href="#preperation"></a>
-</h2>
-<hr class="half-width">
-<p>Before running a multinode benchmark case, it will identify
-algoritmic complexity of problem, so that we’ll increase the complexity
-to calibrate number of nodes we’ll be using.</p>
-<div id="callout1" class="callout">
+<ol style="list-style-type: decimal">
+<li>Pick a problem size <span class="math inline">\(n_1\)</span> for
+single node.</li>
+<li>Measure the time <span class="math inline">\(t(1)\)</span>.</li>
+<li>Increase the number of nodes and measure the timings.</li>
+<li>Compute <span class="math inline">\(E_{inter}\)</span> , using the
+calibrated formula.</li>
+<li>If <span class="math inline">\(E_{inter} \le 60\%\)</span>, increase
+the problem size and continue from there with the larger setup.</li>
+</ol>
+<p>How much can we increase the problem size? It would be as large as
+the nodes can handle, while keeping each node’s local memory footprint
+close to what it was for <span class="math inline">\(n_1\)</span> on a
+single node.</p>
+<p>An illustrative run with <span class="math inline">\(n_1 =
+100{,}000\)</span> and <span class="math inline">\(t(1) = 200\)</span>
+s:</p>
+<table class="table">
+<thead><tr>
+<th>Nodes <span class="math inline">\(p\)</span>
+</th>
+<th><span class="math inline">\(n\)</span></th>
+<th>
+<span class="math inline">\(t(p)\)</span> [s]</th>
+<th><span class="math inline">\(E_{inter}\)</span></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>100,000</td>
+<td>200</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>141,421</td>
+<td>210</td>
+<td>0.95</td>
+</tr>
+<tr>
+<td>4</td>
+<td>200,000</td>
+<td>235</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>8</td>
+<td>282,843</td>
+<td>290</td>
+<td>0.69</td>
+</tr>
+<tr>
+<td>16</td>
+<td>400,000</td>
+<td>360</td>
+<td>0.56</td>
+</tr>
+<tr>
+<td>16, larger problem</td>
+<td>600,000</td>
+<td>520</td>
+<td>0.87</td>
+</tr>
+</tbody>
+</table>
+<p>At 16 nodes efficiency falls under 60%, so the problem is enlarged.
+The bigger problem brings efficiency back above 80%, which is the good
+behaviour as we mentioned at introdcution of this lesson.</p>
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
+<p>Amdahl’s Law, from Episode 1, fixes the problem size. Gustafson’s Law
+lets the problem grow with the machine. With <span class="math inline">\(s\)</span> the serial fraction of the runtime on
+the parallel system, the scaled speedup is:</p>
+<p><span class="math inline">\(S(p) = p - s\,(p - 1)\)</span></p>
+<p>With <span class="math inline">\(s = 0.02\)</span> on 16 nodes, <span class="math inline">\(S = 15.7\)</span>, an efficiency of about 98%. A
+growing problem hides a small serial part, which is why the N-body code
+can scale well when its problem is enlarged with the node count. The
+method in this episode does not use Gustafson’s formula directly. It
+measures efficiency with the workflow and calibration above.</p>
 </div>
 </div>
 </div>
+</section><section><h2 class="section-heading" id="preperation">Preperation<a class="anchor" aria-label="anchor" href="#preperation"></a>
+</h2>
+<hr class="half-width">
+<p>Before running a multinode benchmark case, it will identify
+algoritmic complexity of problem, so that we’ll increase the complexity
+to calibrate number of nodes we’ll be using. Let’s say an algorithm’s
+cost grows as <span class="math inline">\(O(n^g)\)</span> with problem
+size <span class="math inline">\(n\)</span>. For <span class="math inline">\(g = 1\)</span>, doubling <span class="math inline">\(n\)</span> doubles the runtime. For <span class="math inline">\(g = 2\)</span>, it quadruples it. The efficiency
+becomes:</p>
+<p><span class="math inline">\(E_{inter}(p) =
+\dfrac{t(1)/n_1^{\,g}}{\left(t(p)/n_{inter}^{\,g}\right)\cdot
+p}\)</span></p>
+<p>Here <span class="math inline">\(n_1\)</span> is the problem size on
+a single node, <span class="math inline">\(n_{inter}\)</span> the size
+on <span class="math inline">\(p\)</span> nodes, and the timings are
+raw.</p>
 </section><section><h2 class="section-heading" id="evaluation">Evaluation<a class="anchor" aria-label="anchor" href="#evaluation"></a>
 </h2>
 <hr class="half-width">
-<p>In this section, we’ll determine how our nbosy simulation utulizing
-accross the nodes with our performance metrics.</p>
+<p>After increasing node counts and measuring the timings, we should
+collect every node count where we had to increase the problem size. For
+each one,we’ll take the efficiency of the larger setup and let <span class="math inline">\(C_{inter}\)</span> be the number of such jumps,
+<span class="math inline">\(C^{80\%}_{inter}\)</span> the number that
+reach 80% or more, and <span class="math inline">\(C^{60\%}_{inter}\)</span> the number that land
+between 60% and 80%. Rest of evaluation will be as same as our benchmark
+rubrics idea at <a href="03-core.html">core level benchmarking</a>.</p>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Performance metrics describe observed behaviour. They carry no
+weighting against the other rubrics (core, intra-node, GPU, I/O), so
+deciding which way around to tackle first needs input from the people
+who know the code and its science.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1602,14 +1687,14 @@ accross the nodes with our performance metrics.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Weak scaling across nodes starts from one reasonably large problem
+size</li>
+<li>Efficiency across different problem sizes must be calibrated with
+the algorithm’s complexity</li>
+<li>A code scales well across nodes if each problem-size increase brings
+efficiency back above 80%</li>
+<li>#fixme (if we can add a callout or challenge how does that work for
+hybrid codes if there is an avalible example for it)</li>
 </ul>
 </div>
 </div>
@@ -1867,7 +1952,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -1899,7 +1984,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1928,7 +2013,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -2053,7 +2138,7 @@ reinforce the objectives.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -2085,7 +2170,7 @@ View”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2114,7 +2199,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>

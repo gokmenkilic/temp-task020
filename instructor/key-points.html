@@ -467,14 +467,14 @@ small, or tasks that serialise each other</li>
 </ul></section><section id="05-inter-node"><h2 class="section-heading"><a href="05-inter-node.html">Inter node level benchmarking</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Weak scaling across nodes starts from one reasonably large problem
+size</li>
+<li>Efficiency across different problem sizes must be calibrated with
+the algorithm’s complexity</li>
+<li>A code scales well across nodes if each problem-size increase brings
+efficiency back above 80%</li>
+<li>#fixme (if we can add a callout or challenge how does that work for
+hybrid codes if there is an avalible example for it)</li>
 </ul></section><section id="06-gpu"><h2 class="section-heading"><a href="06-gpu.html">GPU level benchmarking</a></h2>
 <hr class="half-width">
 <ul>

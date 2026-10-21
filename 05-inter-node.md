@@ -17,6 +17,7 @@ exercises: 10 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 When we want to scale up our code across to multiple nodes, there are certain things we have to be extra careful. To prioritise, weak and strong scaling are key metrics to have an idea about how our code perform with multiple nodes. In this lesson, we will use nbody simulation to get better understanding of weak and strong scaling aling with relavant performance metrics. To remind our 80% - 60% rule to say if insufficent or if we increase the problem size it get back to a level of 100% - %80 efficiency. 
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 Make sure that you are running example code in right kernel. If you spot anything odd to initilaze your kernel please kill and close all your running kernels before restarting it.
@@ -25,6 +26,7 @@ Make sure that you are running example code in right kernel. If you spot anythin
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 #fixme add Gustafson's Law here with Nbody example
+
 :::::::::::::::::::::::: solution 
 
 ## Output
@@ -52,6 +54,7 @@ Determine Nbody simulation with following metrics:
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 Callout sections can highlight information.
@@ -67,6 +70,7 @@ e.g. by providing the answer to a commonly-asked question.
 ## Evaluation
 
 In this section, we'll determine how our nbosy simulation utulizing accross the nodes with our performance metrics.
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

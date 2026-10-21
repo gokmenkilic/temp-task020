@@ -98,8 +98,6 @@ directly. It measures efficiency with the workflow and calibration above.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 ## Preperation
 
 Before running a multinode benchmark case, it will identify algoritmic complexity of problem, so that we'll increase the complexity to calibrate number of nodes we'll be using. Let's say an algorithm's cost grows as $O(n^g)$ with problem size $n$.
@@ -122,10 +120,13 @@ e.g. by providing the answer to a commonly-asked question.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 ## Evaluation
 
-In this section, we'll determine how our nbosy simulation utulizing accross the nodes with our performance metrics.
+After increasing node counts and measuring the timings, we should collect every node count
+where we had to increase the problem size. For each one,we'll take the
+efficiency of the larger setup and let $C_{inter}$ be the number of such
+jumps, $C^{80\%}_{inter}$ the number that reach 80% or more, and
+$C^{60\%}_{inter}$ the number that land between 60% and 80%. Rest of evaluation will be as same as our benchmark rubrics idea at [core level benchmarking](episodes/03-core.md).
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

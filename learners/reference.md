@@ -151,7 +151,7 @@ algoritmic scaling
 problem size
 : test
 
-algorothm complexity
+algorithm complexity
 : test
 
 hybrid codes

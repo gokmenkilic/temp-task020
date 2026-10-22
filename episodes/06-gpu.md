@@ -17,6 +17,7 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of the GPU.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

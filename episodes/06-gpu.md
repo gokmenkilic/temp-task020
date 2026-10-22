@@ -6,14 +6,14 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why assess performance in large scientific codes?
+- How to compare theoretical peak performance of GPU
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Differentiate performance assessment, analysis and engineering
-- Explain why is it necessary to benchmark code without relying on exsiting version
+- Making good use of GPU
+- Understanding GPU metrics and chosing right metrics for performance analysis
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -33,15 +33,7 @@ What if you change to arhitecture of your code or want to build it with differen
 You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
 :::::::::::::::::::::::::::::::::
 
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+#fixme Compute Capability
 
 ## Figures
 

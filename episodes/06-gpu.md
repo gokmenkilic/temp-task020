@@ -26,9 +26,11 @@ We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not hav
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
+What if you change to arhitecture of your code or want to build it with different compiler? What will be first thing you need to check it?
 
 :::::::::::::::::::::::: solution 
 
+You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
 :::::::::::::::::::::::::::::::::
 
 

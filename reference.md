@@ -152,7 +152,7 @@ problem size
 : test
 
 algorithm complexity
-: test
+: It measures how amount of the work an algorithm grows with the problem size. Some others use term of "computational complexity" to describe it. For more info please see [computational complexity](https://en.wikipedia.org/wiki/Computational_complexity).
 
 hybrid codes
 : test

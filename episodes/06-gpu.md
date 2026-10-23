@@ -32,6 +32,7 @@ What if you change to arhitecture of your code or want to build it with differen
 
 You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
 :::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 #fixme Compute Capability
 

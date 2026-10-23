@@ -18,6 +18,7 @@ exercises: 2 # exercise time in minutes
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of the GPU. To do that we'll firstly investigate peak perforamnce of our system. 
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not have install any software for this lesson.Y
@@ -31,6 +32,7 @@ What if you change to arhitecture of your code or want to build it with differen
 :::::::::::::::::::::::: solution 
 
 You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
+
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 

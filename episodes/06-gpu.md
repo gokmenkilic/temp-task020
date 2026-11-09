@@ -62,15 +62,11 @@ e.g. by providing the answer to a commonly-asked question.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Evaluation
 
-## Math
+The GPU peak performance ratio is:
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+$C_{GPU} = \dfrac{R_{observed}}{R_{theoretical}}$
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

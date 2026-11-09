@@ -38,14 +38,18 @@ You need to check compute capability across the different machines. Take a look 
 
 #fixme Compute Capability
 
-## Figures
 
-You can use standard markdown for static figures with the following syntax:
+## Data Collection
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+To get the observed rate in FLOPS/s we need the number of
+floating point operations the kernel executed, and its runtime.
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+On Nvidia GPUs, Nsight Compute (`ncu`) can count the operations:
+
+```bash
+ncu --metrics "regex:^sm_.*d_op_(d|f[^p]|h).*\\.sum$" --csv \
+    --log-file out.csv ./code
+```
 
 ::::::::::::::::::::::::::::::::::::: callout
 

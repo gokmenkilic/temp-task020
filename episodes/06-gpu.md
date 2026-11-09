@@ -21,7 +21,7 @@ Even though we used performance rubrics accross other lessons, we'll also use it
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not have install any software for this lesson.Y
+We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not have install any software for this lesson.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

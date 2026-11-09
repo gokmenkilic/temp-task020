@@ -86,7 +86,7 @@ coverage analysis:
 : test
 
 flame graph
-: test
+: It illustrates  which functions call which, and the width of each bar shows how much time was spent there. See [flame graphs](https://www.brendangregg.com/flamegraphs.html).
 
 strong scaling:
 : test
@@ -149,10 +149,10 @@ algoritmic scaling
 : test
 
 problem size
-: test
+: It describes the amount of work set by the input data, for example the number of particles or grid points.
 
 algorithm complexity
 : It measures how amount of the work an algorithm grows with the problem size. Some others use term of "computational complexity" to describe it. For more info please see [computational complexity](https://en.wikipedia.org/wiki/Computational_complexity).
 
 hybrid codes
-: test
+: It usally refers codes where MPI and OpenMP used for paralelization. These codes combines MPI for making good use of multiple nodes, OpenMP for threading on a single node.

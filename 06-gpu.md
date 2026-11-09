@@ -21,7 +21,7 @@ Even though we used performance rubrics accross other lessons, we'll also use it
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not have install any software for this lesson.Y
+We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not have install any software for this lesson.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -38,14 +38,18 @@ You need to check compute capability across the different machines. Take a look 
 
 #fixme Compute Capability
 
-## Figures
 
-You can use standard markdown for static figures with the following syntax:
+## Data Collection
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+To get the observed rate in FLOPS/s we need the number of
+floating point operations the kernel executed, and its runtime.
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+On Nvidia GPUs, Nsight Compute (`ncu`) can count the operations:
+
+```bash
+ncu --metrics "regex:^sm_.*d_op_(d|f[^p]|h).*\\.sum$" --csv \
+    --log-file out.csv ./code
+```
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -58,15 +62,11 @@ e.g. by providing the answer to a commonly-asked question.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Evaluation
 
-## Math
+The GPU peak performance ratio is:
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+$C_{GPU} = \dfrac{R_{observed}}{R_{theoretical}}$
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

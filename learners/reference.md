@@ -155,4 +155,4 @@ algorithm complexity
 : It measures how amount of the work an algorithm grows with the problem size. Some others use term of "computational complexity" to describe it. For more info please see [computational complexity](https://en.wikipedia.org/wiki/Computational_complexity).
 
 hybrid codes
-: It usally refers codes where MPI and OpenMP used for paralelization. These type of codes usally can be run on single node or multiple nodes.
+: It usally refers codes where MPI and OpenMP used for paralelization. These codes combines MPI for making good use of multiple nodes, OpenMP for threading on a single node.

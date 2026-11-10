@@ -42,7 +42,8 @@ first?
 
 :::::::::::::::::::::::: solution 
 
-You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
+You need to check the compute capability of H200. ([NVIDIA compute capability](https://developer.nvidia.com/cuda/gpus)).
+For the H200 we need to add `-code=sm_90` to our makefile.
 
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::

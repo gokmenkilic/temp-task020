@@ -65,6 +65,8 @@ where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`
 
 ::::::::::::::::::::::::::::::::::::: callout
 
+GPU vendors provides its own profiling tools, with similar but
+different counters. You have to decide which metric you want to see out of profiling your code, and if it is available on the system. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

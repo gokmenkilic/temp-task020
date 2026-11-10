@@ -6,7 +6,8 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How to compare theoretical peak performance of GPU
+- How close does a code get to the theoretical peak performance of the GPU?
+- What should be checked before trusting a GPU benchmaark?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

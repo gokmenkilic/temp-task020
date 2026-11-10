@@ -13,8 +13,8 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Making good use of GPU
-- Understanding GPU metrics and chosing right metrics for performance analysis
+- Preparing a GPU benchmark and using a problem larger than the GPU cache
+- Calculating the observed work rate of a kernel from profiler
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

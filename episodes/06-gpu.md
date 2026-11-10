@@ -26,6 +26,14 @@ We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not hav
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Preparation
+
+To prepare our data for GPU benchmark, we need to pay attention several things such as our data, artitecture we will be using and complier versions etc. We can check our benchmark with following steps on GPUs:
+
+1. Every GPU generation has a compute capability where code desigin to build and run on it. We have to tell our code which system we will be using via comptue capability.
+2. To build our code we have to use most effective compiler. Choosing most recent compiler doe not mean you will get more performance. It is always worth to checking with latest compilers however.
+3. Last thing for benchmark preparation deciding our data to represent well on GPU. As with the core measurement, a problem that fits in cache gives unrealistically fast results. We have to check the memory of the benchmark on the GPU to confirm it is big enough.
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 What if you change to arhitecture of your code or want to build it with different compiler? What will be first thing you need to check it?

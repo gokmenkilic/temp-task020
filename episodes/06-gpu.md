@@ -18,7 +18,7 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of the GPU. To do that we'll firstly investigate peak perforamnce of our system. 
+Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of theGPU. To do that we'll firstly investigate peak perforamnce of our system. We will use the same method as achieved performance divided by theoretical peak. Please note that in this episode we will assess a single GPU, using multiple GPUs is out of scope.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

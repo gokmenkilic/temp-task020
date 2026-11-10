@@ -70,6 +70,16 @@ different counters. You have to decide which metric you want to see out of profi
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::: callout
+
+Altough we will use `ncu` on or cloud system, Nvidia drivers may restrict access to GPU performance counters which means `ncu` might fail with
+`ERR_NVGPUCTRPERM`. This is a system setting needs to be configured by system admins.
+
+::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
 ## Evaluation
 
 The GPU peak performance ratio is:

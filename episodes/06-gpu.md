@@ -112,6 +112,14 @@ Theoretical peak performance can calculate based on operations per second as sam
 :::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::: instructor
+
+- `ncu` may not work in the portal pods, because counter access is a
+host setting. Can prepare a pre-collected `out.csv` for the exercise.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 

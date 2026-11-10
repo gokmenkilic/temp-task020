@@ -77,14 +77,19 @@ Altough we will use `ncu` on or cloud system, Nvidia drivers may restrict access
 
 ::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
 ## Evaluation
 
 The GPU peak performance ratio is:
 
 $C_{GPU} = \dfrac{R_{observed}}{R_{theoretical}}$
+
+Theoretical peak performance can calculate based on operations per second as same idea as on rubrics benchmark classification.
+
+| $C_{GPU}$ | Classification | Meaning |
+|---|---|---|
+| $C_{GPU} \ge 0.8$ |  Green | GPU compute performance is good |
+| $0.6 \le C_{GPU} < 0.8$ | Yellow | Not particularly good |
+| $C_{GPU} < 0.6$ | Red | GPU compute performance is poor |
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

@@ -48,9 +48,6 @@ For the H200 we need to add `-code=sm_90` to our makefile.
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-#fixme Compute Capability
-
-
 ## Data Collection
 
 To get the observed rate in FLOPS/s we need the number of
@@ -63,14 +60,11 @@ ncu --metrics "regex:^sm_.*d_op_(d|f[^p]|h).*\\.sum$" --csv \
     --log-file out.csv ./code
 ```
 
+By help of above command we collected `sm__sass_thread_inst_executed_op_{METRIC}_pred_on.sum`,
+where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`, `hadd` or `hmul`.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -36,7 +36,9 @@ To prepare our data for GPU benchmark, we need to pay attention several things s
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-What if you change to arhitecture of your code or want to build it with different compiler? What will be first thing you need to check it?
+Your built your code for an older GPU, and now you
+want to build and run it on an H200. What do you need to check and change
+first?
 
 :::::::::::::::::::::::: solution 
 

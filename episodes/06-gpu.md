@@ -50,8 +50,7 @@ For the H200 we need to add `-code=sm_90` to our makefile.
 
 ## Data Collection
 
-To get the observed rate in FLOPS/s we need the number of
-floating point operations the kernel executed, and its runtime.
+To get the observed rate in FLOPS/s we need the number of floating point operations the kernel executed, and its runtime.
 
 On Nvidia GPUs, Nsight Compute (`ncu`) can count the operations:
 
@@ -60,8 +59,7 @@ ncu --metrics "regex:^sm_.*d_op_(d|f[^p]|h).*\\.sum$" --csv \
     --log-file out.csv ./code
 ```
 
-By help of above command we collected `sm__sass_thread_inst_executed_op_{METRIC}_pred_on.sum`,
-where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`, `hadd` or `hmul`.
+By help of above command we collected `sm__sass_thread_inst_executed_op_{METRIC}_pred_on.sum`, where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`, `hadd` or `hmul`.
 
 ::::::::::::::::::::::::::::::::::::: callout
 

@@ -89,6 +89,33 @@ Theoretical peak performance can calculate based on operations per second as sam
 | $0.6 \le C_{GPU} < 0.8$ | Yellow | Not particularly good |
 | $C_{GPU} < 0.6$ | Red | GPU compute performance is poor |
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+#fixme kernel measurements
+
+| Instruction | Count |
+|---|---|
+| `dfma` | $? \times 10^{11}$ |
+| `dadd` | $? \times 10^{11}$ |
+| `dmul` | $? \times 10^{11}$ |
+
+1. Calculate the total number of operations.
+2. Calculate $R_{observed}$, $C_{GPU}$ and the classification.
+
+:::::::::::::::::::::::: solution
+
+### Solution
+
+1. xx operations.
+2. $R_{observed} = 1.1\times10^{12}/? = ?$ TFLOP/s ...
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Use `.md` files for episodes when you want static content

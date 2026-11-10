@@ -119,17 +119,9 @@ host setting. Can prepare a pre-collected `out.csv` for the exercise.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
-
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- GPU benchmark needs a build for the right architecture with a compatiable compiler, and a problem size larger than the GPU cache.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

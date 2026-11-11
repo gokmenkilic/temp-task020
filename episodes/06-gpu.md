@@ -1,7 +1,7 @@
 ---
 title: "GPU level benchmarking"
 teaching: 40 # teaching time in minutes
-exercises:20 # exercise time in minutes
+exercises: 20 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

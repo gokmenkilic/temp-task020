@@ -123,7 +123,7 @@
     <a id="search-button-nav" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">84%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">69%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -263,7 +263,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#data-collection">Data Collection</a></li>
+        <ul><li><a href="#preparation">Preparation</a></li>
+<li><a href="#data-collection">Data Collection</a></li>
 <li><a href="#evaluation">Evaluation</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -361,13 +362,13 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>GPU level benchmarking</h1>
-        <p>Last updated on 2026-11-09 |
+        <p>Last updated on 2026-11-11 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/06-gpu.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -382,7 +383,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How to compare theoretical peak performance of GPU</li>
+<ul><li>How close does a code get to the theoretical peak performance of the
+GPU?</li>
+<li>What should be checked before trusting a GPU benchmaark?</li>
 </ul></div>
 </div>
 </div>
@@ -390,9 +393,9 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Making good use of GPU</li>
-<li>Understanding GPU metrics and chosing right metrics for performance
-analysis</li>
+<ul><li>Preparing a GPU benchmark and using a problem larger than the GPU
+cache</li>
+<li>Calculating the observed work rate of a kernel from profiler</li>
 </ul></div>
 </div>
 </div>
@@ -401,14 +404,17 @@ analysis</li>
 <p>Even though we used performance rubrics accross other lessons, we’ll
 also use it in GPU level benchmarking to see how the code make a good
 use of hardware. With Nbody simulation, we’ll try to investigate how the
-implementation of code benefit from parallelisim of the GPU. To do that
-we’ll firstly investigate peak perforamnce of our system.</p>
+implementation of code benefit from parallelisim of theGPU. To do that
+we’ll firstly investigate peak perforamnce of our system. We will use
+the same method as achieved performance divided by theoretical peak.
+Please note that in this episode we will assess a single GPU, using
+multiple GPUs is out of scope.</p>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>We’re targeting to use Nvidia RTX 6000 on Azimuth cloud system as you
 do not have install any software for this lesson.</p>
@@ -416,7 +422,22 @@ do not have install any software for this lesson.</p>
 </div>
 </div>
 </div>
-<div id="challenge1" class="callout challenge">
+<section><h2 class="section-heading" id="preparation">Preparation<a class="anchor" aria-label="anchor" href="#preparation"></a></h2>
+<hr class="half-width"><p>To prepare our data for GPU benchmark, we need to pay attention
+several things such as our data, artitecture we will be using and
+complier versions etc. We can check our benchmark with following steps
+on GPUs:</p>
+<ol style="list-style-type: decimal"><li>Every GPU generation has a compute capability where code desigin to
+build and run on it. We have to tell our code which system we will be
+using via comptue capability.</li>
+<li>To build our code we have to use most effective compiler. Choosing
+most recent compiler doe not mean you will get more performance. It is
+always worth to checking with latest compilers however.</li>
+<li>Last thing for benchmark preparation deciding our data to represent
+well on GPU. As with the core measurement, a problem that fits in cache
+gives unrealistically fast results. We have to check the memory of the
+benchmark on the GPU to confirm it is big enough.</li>
+</ol><div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -424,9 +445,8 @@ do not have install any software for this lesson.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>What if you change to arhitecture of your code or want to build it
-with different compiler? What will be first thing you need to check
-it?</p>
+<p>Your built your code for an older GPU, and now you want to build and
+run it on an H200. What do you need to check and change first?</p>
 </div>
 </div>
 </div>
@@ -435,17 +455,16 @@ it?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>You need to check compute capability across the different machines.
-Take a look at <a href="https://developer.nvidia.com/cuda/gpus" class="external-link">CUDA GPU
-Comupte Capability</a>.</p>
+<p>You need to check the compute capability of H200. (<a href="https://developer.nvidia.com/cuda/gpus" class="external-link">NVIDIA compute
+capability</a>). For the H200 we need to add <code>-code=sm_90</code> to
+our makefile.</p>
 </div>
 </div>
 </div>
 </div>
-<p>#fixme Compute Capability</p>
-<section><h2 class="section-heading" id="data-collection">Data Collection<a class="anchor" aria-label="anchor" href="#data-collection"></a></h2>
+</section><section><h2 class="section-heading" id="data-collection">Data Collection<a class="anchor" aria-label="anchor" href="#data-collection"></a></h2>
 <hr class="half-width"><p>To get the observed rate in FLOPS/s we need the number of floating
 point operations the kernel executed, and its runtime.</p>
 <p>On Nvidia GPUs, Nsight Compute (<code>ncu</code>) can count the
@@ -456,6 +475,7 @@ operations:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">ncu</span> <span class="at">--metrics</span> <span class="st">"regex:^sm_.*d_op_(d|f[^p]|h).*</span><span class="dt">\\</span><span class="st">.sum$"</span> <span class="at">--csv</span> <span class="dt">\</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a>    <span class="at">--log-file</span> out.csv ./code</span></code></pre>
 </div>
+<!-- By help of above command we collected `sm__sass_thread_inst_executed_op_{METRIC}_pred_on.sum`, where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`, `hadd` or `hmul`. -->
 <div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -463,11 +483,23 @@ operations:</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
+<p>GPU vendors provides its own profiling tools, with similar but
+different counters. You have to decide which metric you want to see out
+of profiling your code, and if it is available on the system.</p>
+</div>
+</div>
+</div>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Altough we will use <code>ncu</code> on or cloud system, Nvidia
+drivers may restrict access to GPU performance counters which means
+<code>ncu</code> might fail with <code>ERR_NVGPUCTRPERM</code>. This is
+a system setting needs to be configured by system admins.</p>
 </div>
 </div>
 </div>
@@ -475,6 +507,72 @@ to a commonly-asked question.</p>
 <hr class="half-width"><p>The GPU peak performance ratio is:</p>
 <p><span class="math inline">\(C_{GPU} =
 \dfrac{R_{observed}}{R_{theoretical}}\)</span></p>
+<p>Theoretical peak performance can calculate based on operations per
+second as same idea as on rubrics benchmark classification.</p>
+<table class="table"><thead><tr><th><span class="math inline">\(C_{GPU}\)</span></th>
+<th>Classification</th>
+<th>Meaning</th>
+</tr></thead><tbody><tr><td><span class="math inline">\(C_{GPU} \ge 0.8\)</span></td>
+<td>Green</td>
+<td>GPU compute performance is good</td>
+</tr><tr><td><span class="math inline">\(0.6 \le C_{GPU} &lt; 0.8\)</span></td>
+<td>Yellow</td>
+<td>Not particularly good</td>
+</tr><tr><td><span class="math inline">\(C_{GPU} &lt; 0.6\)</span></td>
+<td>Red</td>
+<td>GPU compute performance is poor</td>
+</tr></tbody></table><div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>#fixme kernel measurements</p>
+<table class="table"><thead><tr><th>Instruction</th>
+<th>Count</th>
+</tr></thead><tbody><tr><td><code>dfma</code></td>
+<td><span class="math inline">\(? \times 10^{11}\)</span></td>
+</tr><tr><td><code>dadd</code></td>
+<td><span class="math inline">\(? \times 10^{11}\)</span></td>
+</tr><tr><td><code>dmul</code></td>
+<td><span class="math inline">\(? \times 10^{11}\)</span></td>
+</tr></tbody></table><ol style="list-style-type: decimal"><li>Calculate the total number of operations.</li>
+<li>Calculate <span class="math inline">\(R_{observed}\)</span>, <span class="math inline">\(C_{GPU}\)</span> and the classification.</li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<ol style="list-style-type: decimal"><li>xx operations.</li>
+<li>
+<span class="math inline">\(R_{observed} = 1.1\times10^{12}/? =
+?\)</span> TFLOP/s …</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div class="accordion-body">
+<ul><li>
+<code>ncu</code> may not work in the portal pods, because counter
+access is a host setting. Can prepare a pre-collected
+<code>out.csv</code> for the exercise.</li>
+</ul></div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -482,14 +580,8 @@ to a commonly-asked question.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<ul><li>GPU benchmark needs a build for the right architecture with a
+compatiable compiler, and a problem size larger than the GPU cache.</li>
 </ul></div>
 </div>
 </div>
@@ -557,8 +649,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/instructor/06-gpu.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/instructor/06-gpu.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-11-09",
-  "datePublished": "2026-11-10"
+  "dateModified": "2026-11-11",
+  "datePublished": "2026-11-11"
 }
 
   </script><script>

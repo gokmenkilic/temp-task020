@@ -124,6 +124,9 @@ computation efficiency
 runtime
 : test
 
+I/O 
+: It stands for input output where processor read and write to storage according to the data pipeline. 
+
 inclusive
 : test
 

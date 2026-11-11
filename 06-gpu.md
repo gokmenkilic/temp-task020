@@ -1,23 +1,24 @@
 ---
 title: "GPU level benchmarking"
-teaching: 10 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+teaching: 40 # teaching time in minutes
+exercises: 20 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How to compare theoretical peak performance of GPU
+- How close does a code get to the theoretical peak performance of the GPU?
+- What should be checked before trusting a GPU benchmaark?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Making good use of GPU
-- Understanding GPU metrics and chosing right metrics for performance analysis
+- Preparing a GPU benchmark and using a problem larger than the GPU cache
+- Calculating the observed work rate of a kernel from profiler
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of the GPU. To do that we'll firstly investigate peak perforamnce of our system. 
+Even though we used performance rubrics accross other lessons, we'll also use it in GPU level benchmarking to see how the code make a good use of hardware. With Nbody simulation, we'll try to investigate how the implementation of code benefit from parallelisim of theGPU. To do that we'll firstly investigate peak perforamnce of our system. We will use the same method as achieved performance divided by theoretical peak. Please note that in this episode we will assess a single GPU, using multiple GPUs is out of scope.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -25,24 +26,31 @@ We're targeting to use Nvidia RTX 6000 on Azimuth cloud system as you do not hav
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Preparation
+
+To prepare our data for GPU benchmark, we need to pay attention several things such as our data, artitecture we will be using and complier versions etc. We can check our benchmark with following steps on GPUs:
+
+1. Every GPU generation has a compute capability where code desigin to build and run on it. We have to tell our code which system we will be using via comptue capability.
+2. To build our code we have to use most effective compiler. Choosing most recent compiler doe not mean you will get more performance. It is always worth to checking with latest compilers however.
+3. Last thing for benchmark preparation deciding our data to represent well on GPU. As with the core measurement, a problem that fits in cache gives unrealistically fast results. We have to check the memory of the benchmark on the GPU to confirm it is big enough.
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-What if you change to arhitecture of your code or want to build it with different compiler? What will be first thing you need to check it?
+Your built your code for an older GPU, and now you
+want to build and run it on an H200. What do you need to check and change
+first?
 
 :::::::::::::::::::::::: solution 
 
-You need to check compute capability across the different machines. Take a look at [CUDA GPU Comupte Capability](https://developer.nvidia.com/cuda/gpus). 
+You need to check the compute capability of H200. ([NVIDIA compute capability](https://developer.nvidia.com/cuda/gpus)).
+For the H200 we need to add `-code=sm_90` to our makefile.
 
 :::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
-#fixme Compute Capability
-
-
 ## Data Collection
 
-To get the observed rate in FLOPS/s we need the number of
-floating point operations the kernel executed, and its runtime.
+To get the observed rate in FLOPS/s we need the number of floating point operations the kernel executed, and its runtime.
 
 On Nvidia GPUs, Nsight Compute (`ncu`) can count the operations:
 
@@ -51,16 +59,21 @@ ncu --metrics "regex:^sm_.*d_op_(d|f[^p]|h).*\\.sum$" --csv \
     --log-file out.csv ./code
 ```
 
+<!-- By help of above command we collected `sm__sass_thread_inst_executed_op_{METRIC}_pred_on.sum`, where `{METRIC}` is one of `dfma`, `dadd`, `dmul`, `ffma`, `fadd`,`fmul`, `hfma`, `hadd` or `hmul`. -->
+
 ::::::::::::::::::::::::::::::::::::: callout
 
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
+GPU vendors provides its own profiling tools, with similar but
+different counters. You have to decide which metric you want to see out of profiling your code, and if it is available on the system. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::: callout
+
+Altough we will use `ncu` on or cloud system, Nvidia drivers may restrict access to GPU performance counters which means `ncu` might fail with
+`ERR_NVGPUCTRPERM`. This is a system setting needs to be configured by system admins.
+
+::::::::::::::::::::::::::::::::::::::::::::
 
 ## Evaluation
 
@@ -68,12 +81,47 @@ The GPU peak performance ratio is:
 
 $C_{GPU} = \dfrac{R_{observed}}{R_{theoretical}}$
 
+Theoretical peak performance can calculate based on operations per second as same idea as on rubrics benchmark classification.
+
+| $C_{GPU}$ | Classification | Meaning |
+|---|---|---|
+| $C_{GPU} \ge 0.8$ |  Green | GPU compute performance is good |
+| $0.6 \le C_{GPU} < 0.8$ | Yellow | Not particularly good |
+| $C_{GPU} < 0.6$ | Red | GPU compute performance is poor |
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+#fixme kernel measurements
+
+| Instruction | Count |
+|---|---|
+| `dfma` | $? \times 10^{11}$ |
+| `dadd` | $? \times 10^{11}$ |
+| `dmul` | $? \times 10^{11}$ |
+
+1. Calculate the total number of operations.
+2. Calculate $R_{observed}$, $C_{GPU}$ and the classification.
+
+:::::::::::::::::::::::: solution
+
+### Solution
+
+1. xx operations.
+2. $R_{observed} = 1.1\times10^{12}/? = ?$ TFLOP/s ...
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::: instructor
+
+- `ncu` may not work in the portal pods, because counter access is a
+host setting. Can prepare a pre-collected `out.csv` for the exercise.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- GPU benchmark needs a build for the right architecture with a compatiable compiler, and a problem size larger than the GPU cache.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <chrono>
 
 using std::vector;
 
@@ -35,9 +36,16 @@ Vec2 calc_acc_pair(Vec2 pi, Vec2 pj, real mj, real eps = 0.0) {
   return {r.x * accs, r.y * accs};
 }
 
+double calc_acc_seconds = 0.0;
+unsigned long long calc_acc_calls = 0;
+
 /// Calculate acceleration on each particle due to every other particle
 void calc_acc(vector<Vec2> &acc, const vector<Vec2> &pos,
               const vector<real> &mass, real eps = 0.0) {
+
+  auto start = std::chrono::steady_clock::now();
+
+  // Original calculation
   for (int i = 0; i < acc.size(); ++i) {
     Vec2 accl = {0.0, 0.0};
     const Vec2 pi = pos[i];
@@ -50,6 +58,13 @@ void calc_acc(vector<Vec2> &acc, const vector<Vec2> &pos,
 
     acc[i] = accl;
   }
+
+  auto end = std::chrono::steady_clock::now();
+
+  calc_acc_seconds +=
+      std::chrono::duration<double>(end - start).count();
+
+  ++calc_acc_calls;
 }
 
 /// Calculate next position of every particle from old position and acceleration
@@ -87,7 +102,7 @@ int main(int argc, char *argv[]) {
     if (!tests_passed)
       return -1;
 
-    if(tests_passed && only_unit_tests) {
+    if (tests_passed && only_unit_tests) {
       std::cout << "All tests passed!\n";
       return 0;
     }
@@ -184,8 +199,43 @@ int main(int argc, char *argv[]) {
   std::cout << "Steps: " << loop_counter << "\n";
   std::cout << "Total: " << total_elapsed_us << " us\n";
   std::cout << "Mean per step: " << total_elapsed_us / loop_counter << " us\n";
-}
 
+ 
+  // calc_acc profiling
+  std::cout << "\n--- calc_acc profiling ---\n";
+  std::cout << "Number of particles: " << N_PARTICLES << '\n';
+  std::cout << "Simulation steps: " << loop_counter << '\n';
+  std::cout << "calc_acc calls: " << calc_acc_calls << '\n';
+  std::cout << "calc_acc total time: "
+            << calc_acc_seconds << " seconds\n";
+
+  if (calc_acc_seconds > 0.0 && calc_acc_calls > 0) {
+
+    const double total_pairs =
+        static_cast<double>(calc_acc_calls) *
+        N_PARTICLES * N_PARTICLES;
+
+    const double total_flops = total_pairs * 15.0;
+
+    const double gflops =
+        total_flops / calc_acc_seconds / 1.0e9;
+
+    const double average_time =
+        calc_acc_seconds / calc_acc_calls;
+
+    std::cout << "Total particle pairs: "
+              << total_pairs << '\n';
+
+    std::cout << "Average calc_acc time: "
+              << average_time * 1000.0 << " ms\n";
+
+    std::cout << "Estimated arithmetic operations: "
+              << total_flops << '\n';
+
+    std::cout << "Estimated arithmetic throughput: "
+              << gflops << " GFLOP/s\n";
+  }
+}
 // TESTS
 
 bool assert_nearly_eql(real x, real y, real eps = 1e-6) {

@@ -272,8 +272,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#figures">Figures</a></li>
-<li><a href="#math">Math</a></li>
+        <ul><li><a href="#preparation">Preparation</a></li>
+<li><a href="#evaluation">Evaluation</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -361,7 +361,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Input Output benchmarking</h1>
-        <p>Last updated on 2026-11-11 |
+        <p>Last updated on 2026-11-16 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/07-io.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -405,51 +405,127 @@ appear fine, however in some case can significally affect on the total
 execution time. Code may utulize resoruces well while spending a lot
 time of its runtime I/O operations. Therefore, we will learn how to
 assess I/O performance in this section.</p>
+<p>We will use the same method as before with some examples to desctibe
+I/O benchmkaring and the necesseary metrics to interpret.</p>
 
-<div id="challenge-1-can-you-do-it" class="callout challenge">
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>To evaluate I/O performance, a code is considered good performance if
+it spends less than 20% of its runtime on I/O.</p>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="preparation">Preparation<a class="anchor" aria-label="anchor" href="#preparation"></a></h2>
+<hr class="half-width"><p>You can use a typical run of code which familar to you or your own
+code that in format used in test your developments runs. To be realistic
+for I/O benchmark preperation do not temp to cut I/O to improve the
+performance. If you want to prepare a case that isolated from heavy I/O
+routines, it could be useful for other rubrics, where you want to
+isolate compute performance or level of benchmkark you want to exclude.
+On I/O, there are not much tools to be used and it is relativelty
+focused on Darshan. Darshan a I/O tool, which records the I/O calls a
+code while it runs. In this way it can measure MPI-IO,HDF5, PNetCDF and
+POSIC calls on disk with minumum overhead.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>To be able to pick measurments from I/O calls, you make to use that
+you compile the code via appropriate compiler wrappers on the system you
+are using. Please check relavant modeuls and paths on your own
+documentation.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="evaluation">Evaluation<a class="anchor" aria-label="anchor" href="#evaluation"></a></h2>
+<hr class="half-width"><p>The I/O metric is <span class="math inline">\(C_{I/O} = 1 -
+\dfrac{t_{read} + t_{write}}{t_{total}}\)</span> where <span class="math inline">\(t_{total}\)</span> is the total runtime, including
+the I/O time.</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th><span class="math inline">\(C_{I/O}\)</span></th>
+<th>Classification</th>
+<th>Meaning</th>
+</tr></thead><tbody><tr><td><span class="math inline">\(C_{I/O} \ge 0.8\)</span></td>
+<td>Green</td>
+<td>I/O does not dominate the runtime</td>
+</tr><tr><td><span class="math inline">\(0.6 \le C_{I/O} &lt; 0.8\)</span></td>
+<td>Yellow</td>
+<td>I/O is a significant part of the runtime</td>
+</tr><tr><td><span class="math inline">\(C_{I/O} &lt; 0.6\)</span></td>
+<td>Red</td>
+<td>I/O dominates the runtime</td>
+</tr></tbody></table><p>After this point, it is worth to check other five rubrics to have an
+idea about code behaviour.</p>
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
+<p>Three codes were run with a typical I/O workload. Each took 600 s in
+total.</p>
+<table class="table"><thead><tr><th>Code</th>
+<th>
+<span class="math inline">\(t_{read}\)</span> [s]</th>
+<th>
+<span class="math inline">\(t_{write}\)</span> [s]</th>
+</tr></thead><tbody><tr><td>A</td>
+<td>20</td>
+<td>40</td>
+</tr><tr><td>B</td>
+<td>90</td>
+<td>120</td>
+</tr><tr><td>C</td>
+<td>150</td>
+<td>260</td>
+</tr></tbody></table><p>Calculate <span class="math inline">\(C_{I/O}\)</span> for each code
+and classify it.</p>
 </div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
+<table class="table"><thead><tr><th>Code</th>
+<th><span class="math inline">\(C_{I/O}\)</span></th>
+<th>Classification</th>
+</tr></thead><tbody><tr><td>A</td>
+<td><span class="math inline">\(1 - 60/600 = 0.90\)</span></td>
+<td>Green</td>
+</tr><tr><td>B</td>
+<td><span class="math inline">\(1 - 210/600 = 0.65\)</span></td>
+<td>Yellow</td>
+</tr><tr><td>C</td>
+<td><span class="math inline">\(1 - 410/600 \approx 0.32\)</span></td>
+<td>Red</td>
+</tr></tbody></table></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
+<div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-
+<p>Sometimes you could get very high scores for $C_{I/O}. To interpret
+what is going wrong and even when you increase the problem size why it
+might help to improve performance?</p>
 </div>
 </div>
 </div>
@@ -458,40 +534,16 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
+<p>Always it needs to be consider matching output frequency with
+production runs. For direct summation, the compute work grows like <span class="math inline">\(n^2\)</span> while the size of a snapshot grows
+like <span class="math inline">\(n\)</span>, so the share of time spent
+on I/O decreases as the problem grows.</p>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a></h2>
-<hr class="half-width"><p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a></h2>
-<hr class="half-width"><p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -574,8 +626,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/07-io.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/07-io.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-11-11",
-  "datePublished": "2026-11-12"
+  "dateModified": "2026-11-16",
+  "datePublished": "2026-11-16"
 }
 
   </script><script>

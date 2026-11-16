@@ -128,10 +128,10 @@ I/O
 : It stands for input output where processor read and write to storage according to the data pipeline. 
 
 inclusive
-: test
+: It desctibes a timing that counts a funtion's own time plus the time of ecreything it calls. This term can interpret with exculisive.
 
 exculisive
-: test
+: It usally describe a dedicated hardware to access for a single user or a timing only counts the time spent in a fcuntion itself.
 
 compute bound
 : test

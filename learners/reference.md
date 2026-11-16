@@ -131,7 +131,7 @@ inclusive
 : test
 
 exculisive
-: test
+: It usally describe a dedicated hardware to access for a single user or a timing only counts the time spent in a fcuntion itself.
 
 compute bound
 : test

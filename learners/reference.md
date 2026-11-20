@@ -62,8 +62,8 @@ scheduler
 : It stands for a sofware which descides which jobs run on which nodes and when. Slurm is an good example for scheduler. See [slurm workload manager](https://en.wikipedia.org/wiki/Slurm_Workload_Manager).
 
 dynamic scheduling
-: test
-
+: It describe assinging work to processors at runtime rather than before execution begans. See [load blancing](https://hpc-wiki.info/hpc/Load_Balancing).
+	
 speedup
 : test
 
@@ -116,7 +116,7 @@ observed parallelism
 : test
 
 blancing
-: test
+: It describes sharing work evenly between cores so that none of them sit idle waiting to others. See [load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)).
 
 global efficiency
 : It describes how well the parallelization of code performing.

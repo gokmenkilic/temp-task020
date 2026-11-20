@@ -26,7 +26,7 @@ compile time
 : It describes a stage where source code is translated into executable program, before it runs.
 
 tracing
-: test
+: It describe recording of individual events in the order they happaned in a source code. See [tracing](https://en.wikipedia.org/wiki/Tracing_(software)).
 
 idle
 : test

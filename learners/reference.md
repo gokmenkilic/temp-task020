@@ -11,13 +11,13 @@ performance analysis
 : It describes explanining why a code behaves the way it does, usally after a performance assetment performed.
 
 performance engineering
-: It desribes improvment and refactoring of code after performance anaylsis done.
+: It describes improvment and refactoring of code after performance anaylsis done.
 
 refactoring
-: It desribes improvment of a code, changing structure without affecting its external behaviour.
+: It describes improvment of a code, changing structure without affecting its external behaviour.
 
 profiling
-: test
+: 
 
 execution
 : test
@@ -131,10 +131,10 @@ I/O
 : It stands for input output where processor read and write to storage according to the data pipeline. 
 
 inclusive
-: It desctibes a timing that counts a funtion's own time plus the time of ecreything it calls. This term can interpret with exculisive.
+: It describes a timing that counts a funtion's own time plus the time of ecreything it calls. This term can interpret with exculisive.
 
 exculisive
-: It usally describe a dedicated hardware to access for a single user or a timing only counts the time spent in a fcuntion itself.
+: It usally describes a dedicated hardware to access for a single user or a timing only counts the time spent in a fcuntion itself.
 
 compute bound
 : test

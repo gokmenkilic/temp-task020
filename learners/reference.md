@@ -44,13 +44,13 @@ node
 : It describes one standalone comptuter or server within a cluster that excuetes source codes, jobs and tasks.
 
 core
-: test
+: It describes a single processing unit inside a node.
 
 login node
-: test
+: It describes the node you connect to on an HPC system. It usally uses for compiling and submitting jobs, however not benchmarking, because evreyone on ystem shares it.
 
 compute node
-: test
+: It describe a node where jobs actullay run.
 
 intra-node
 :test

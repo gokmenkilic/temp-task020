@@ -59,7 +59,7 @@ inter-node
 : It desribes between separte nodes, which exchange data over netwrok, usally with MPI.
 
 scheduler
-: test
+: It stands for a sofware which descides which jobs run on which nodes and when. Slurm is an good example for scheduler. See [slurm workload manager](https://en.wikipedia.org/wiki/Slurm_Workload_Manager).
 
 dynamic scheduling
 : test
@@ -155,7 +155,7 @@ optimisaation
 : test
 
 slurm
-: test
+: It desribe a most widely used job scheduler on HPC systems. See [Slurm](https://slurm.schedmd.com/).
 
 numactl
 : test

@@ -131,7 +131,7 @@ computation efficiency
 : It describes how well the computational load of code scales with number of processes. 
 
 runtime
-: test
+: It describes the time a program or a part of it takes to run on hardware.
 
 I/O 
 : It stands for input output where processor read and write to storage according to the data pipeline. 

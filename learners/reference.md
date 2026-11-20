@@ -77,10 +77,10 @@ practical concurrency
 : It desribes how much of available parallel work can really run at the same time on a given machine to compare with theoretical concurrrency.
 
 threading analysis
-: test 
+: It describes to analyse threads activities in profiling tools such as how well cores are used and general picture what threads are doing. See [threading analysis](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2026-1/threading-analysis.html).  
 
 multithreading
-: test 
+: It describes using multiple threads inside one process. See [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)).
 
 overhead
 : test

@@ -20,10 +20,10 @@ profiling
 : It stands for recording total times, such as how much time spent in each funtion. It shows effect of running the program. See [profiling](https://en.wikipedia.org/wiki/Profiling_(computer_programming)). 
 
 execution
-: test
+: It usally describes running of a program on a machine, as opposed to building it.
 
 compile time
-: test
+: It describes a stage where source code is translated into executable program, before it runs.
 
 tracing
 : test

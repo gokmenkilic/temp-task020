@@ -23,19 +23,22 @@ execution
 : It usally describes running of a program on a machine, as opposed to building it.
 
 job
-:
+: It describes an indivual unit of work submitted to a cluster. 
 
 task
-:
+: It describes a unit of work run across parallel resources. See[task](https://en.wikipedia.org/wiki/Task_(computing)).
 
 compile time
 : It describes a stage where source code is translated into executable program, before it runs.
 
 tracing
-: It describe recording of individual events in the order they happaned in a source code. See [tracing](https://en.wikipedia.org/wiki/Tracing_(software)).
+: It describes recording of individual events in the order they happaned in a source code. See [tracing](https://en.wikipedia.org/wiki/Tracing_(software)).
 
 idle
-: It usally desribe a state that CPU or GPU are not being used by any code or proceses. See [idle](https://en.wikipedia.org/wiki/Idle_(CPU)).
+: It usally desribes a state that CPU or GPU are not being used by any code or proceses. See [idle](https://en.wikipedia.org/wiki/Idle_(CPU)).
+
+cluster
+: It describes a set of networked nodes working together through parallel processing. 
 
 node
 : It describes one standalone comptuter or server within a cluster that excuetes source codes, jobs and tasks.

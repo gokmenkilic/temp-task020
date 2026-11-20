@@ -143,13 +143,19 @@ exculisive
 : It usally describes a dedicated hardware to access for a single user or a timing only counts the time spent in a fcuntion itself.
 
 compute bound
-: test
+: It describes performance is limited by how fast the processor can do arithmetic operations.  
 
 memory bound
-: test
+: It describes performance is limited by how fast data can be moved to and from memory. 
+
+roofline model
+: It describes camparing code performance againist hardware capabilities. See [roofline model](https://en.wikipedia.org/wiki/Roofline_model).
 
 optimisaation
 : test
+
+arithmetic intensity
+:
 
 slurm
 : It desribe a most widely used job scheduler on HPC systems. See [Slurm](https://slurm.schedmd.com/).

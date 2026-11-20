@@ -110,7 +110,7 @@ performance characterization analysis
 : It gives a summary of compute intensive code where usage of CPU, memory and floating point of operations can be found. See [performance characterization analysis](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2024-2/hpc-performance-characterization-analysis.html). 
 
 observed parallelism
-: test
+: It is same meaning as practical parallelism, tells us how much work is actually running at the same time.
 
 blancing
 : It describes sharing work evenly between cores so that none of them sit idle waiting to others. See [load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)).

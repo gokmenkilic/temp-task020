@@ -107,7 +107,7 @@ hotspot analysis
 : It describes finding funtions or lines where a code spends most of its time. See [hotspot analysis](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2026-0/basic-hotspots-analysis.html).
 
 performance characterization analysis
-: test
+: It gives a summary of compute intensive code where usage of CPU, memory and floating point of operations can be found. See [performance characterization analysis](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2024-2/hpc-performance-characterization-analysis.html). 
 
 observed parallelism
 : test

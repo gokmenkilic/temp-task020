@@ -160,8 +160,11 @@ arithmetic intensity
 slurm
 : It desribe a most widely used job scheduler on HPC systems. See [Slurm](https://slurm.schedmd.com/).
 
+numa
+: It is a computer memory design used in multiprocessing where time of accessing memory depends on memory location relative to processor.
+
 numactl
-: test
+: It is a tool for choosing which cores and memory regions a process may use on machines.
 
 algoritmic scaling
 : test

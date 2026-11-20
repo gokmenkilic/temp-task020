@@ -5,13 +5,16 @@ title: 'Reference'
 ## Glossary
 
 performance assessment
-: It describe collecting, measuring and reporting targeted performance metrics of code and reporting them without exlanining underlying reasons.
+: It describes collecting, measuring and reporting targeted performance metrics of code and reporting them without exlanining underlying reasons.
 
 performance analysis
-: It describe explanining why a code behaves the way it does, usally after a performance assetment performed.
+: It describes explanining why a code behaves the way it does, usally after a performance assetment performed.
 
 performance engineering
-: It desribe improvment and refactoring of code after performance anaylsis done.
+: It desribes improvment and refactoring of code after performance anaylsis done.
+
+refactoring
+: It desribes improvment of a code, changing structure without affecting its external behaviour.
 
 profiling
 : test

@@ -83,13 +83,13 @@ multithreading
 : It describes using multiple threads inside one process. See [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)).
 
 overhead
-: test
+: It describes extra time spent managing parallel work. Synchronising threads and cummunation between nodes are good example for overhead. 
 
 occupation
-: test
+: It describe a part of available cores or threads that are busy with doing actual work.
 
 utulization
-: test 
+: It describes fraction of time a code doing actual work. 
 
 coverage analysis:
 : test

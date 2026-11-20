@@ -17,7 +17,7 @@ refactoring
 : It describes improvment of a code, changing structure without affecting its external behaviour.
 
 profiling
-: 
+: It stands for recording total times, such as how much time spent in each funtion. It shows effect of running the program. See [profiling](https://en.wikipedia.org/wiki/Profiling_(computer_programming)). 
 
 execution
 : test

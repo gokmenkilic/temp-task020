@@ -50,13 +50,13 @@ login node
 : It describes the node you connect to on an HPC system. It usally uses for compiling and submitting jobs, however not benchmarking, because evreyone on ystem shares it.
 
 compute node
-: It describe a node where jobs actullay run.
+: It describes a node where jobs actullay run.
 
 intra-node
-:test
+: It describes within a single node where there is no data exchange betwen other nodes and therefore no MPI.
 
 inter-node
-: test 
+: It desribes between separte nodes, which exchange data over netwrok, usally with MPI.
 
 scheduler
 : test

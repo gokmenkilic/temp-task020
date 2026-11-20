@@ -22,6 +22,12 @@ profiling
 execution
 : It usally describes running of a program on a machine, as opposed to building it.
 
+job
+:
+
+task
+:
+
 compile time
 : It describes a stage where source code is translated into executable program, before it runs.
 
@@ -29,10 +35,10 @@ tracing
 : It describe recording of individual events in the order they happaned in a source code. See [tracing](https://en.wikipedia.org/wiki/Tracing_(software)).
 
 idle
-: test
+: It usally desribe a state that CPU or GPU are not being used by any code or proceses. See [idle](https://en.wikipedia.org/wiki/Idle_(CPU)).
 
 node
-: test
+: It describes one standalone comptuter or server within a cluster that excuetes source codes, jobs and tasks.
 
 core
 : test

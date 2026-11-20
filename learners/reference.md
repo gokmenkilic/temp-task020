@@ -67,9 +67,6 @@ dynamic scheduling
 speedup
 : test
 
-task
-: test
-
 task-based parallelisation
 : test 
 

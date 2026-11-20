@@ -68,7 +68,7 @@ speedup
 : It is a number that measures the relavtive performance of two or more systems processing on the same problem. See [speedup](https://en.wikipedia.org/wiki/Speedup)). 
 
 task-based parallelisation
-: test 
+: It desribes splitting a program into many tasks, some of which dpend on others. See [task parallelism](https://en.wikipedia.org/wiki/Task_parallelism). 
 
 theoretical concurrency
 : test

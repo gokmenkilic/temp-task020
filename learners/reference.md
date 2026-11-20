@@ -71,10 +71,10 @@ task-based parallelisation
 : It desribes splitting a program into many tasks, some of which dpend on others. See [task parallelism](https://en.wikipedia.org/wiki/Task_parallelism). 
 
 theoretical concurrency
-: test
+: It desribes how much work could run at the same time in principle within a source code and its dependencies to compare with practical concurrency.
 
 practical concurrency
-: test 
+: It desribes how much of available parallel work can really run at the same time on a given machine to compare with theoretical concurrrency.
 
 threading analysis
 : test 

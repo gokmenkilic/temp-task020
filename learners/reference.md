@@ -155,7 +155,7 @@ optimisaation
 : It describes making code faster or use less resoruces via code development or environment improvments such as compiler settings.
 
 arithmetic intensity
-:
+: It is a ratio of work to the memory traffic.
 
 slurm
 : It desribe a most widely used job scheduler on HPC systems. See [Slurm](https://slurm.schedmd.com/).

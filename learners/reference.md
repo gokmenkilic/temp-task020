@@ -152,7 +152,7 @@ roofline model
 : It describes camparing code performance againist hardware capabilities. See [roofline model](https://en.wikipedia.org/wiki/Roofline_model).
 
 optimisaation
-: test
+: It describes making code faster or use less resoruces via code development or environment improvments such as compiler settings.
 
 arithmetic intensity
 :

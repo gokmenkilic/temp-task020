@@ -167,7 +167,7 @@ numactl
 : It is a tool for choosing which cores and memory regions a process may use on machines.
 
 algoritmic scaling
-: test
+: It measures how an algorthm's runtime change as you add processors or increase problem size.
 
 problem size
 : It describes the amount of work set by the input data, for example the number of particles or grid points.

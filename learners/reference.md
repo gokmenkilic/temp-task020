@@ -98,10 +98,10 @@ flame graph
 : It illustrates  which functions call which, and the width of each bar shows how much time was spent there. See [flame graphs](https://www.brendangregg.com/flamegraphs.html).
 
 strong scaling:
-: test
+: It describes keeping the total problem size fixed while increasing number of processors. 
 
 weak scaling
-: test
+: It desribes increasing problem size while keeping number of processors constant. 
 
 hotspot analysis:
 : test

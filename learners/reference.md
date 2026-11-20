@@ -65,7 +65,7 @@ dynamic scheduling
 : It describe assinging work to processors at runtime rather than before execution begans. See [load blancing](https://hpc-wiki.info/hpc/Load_Balancing).
 	
 speedup
-: test
+: It is a number that measures the relavtive performance of two or more systems processing on the same problem. See [speedup](https://en.wikipedia.org/wiki/Speedup)). 
 
 task-based parallelisation
 : test 

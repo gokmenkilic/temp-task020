@@ -104,7 +104,7 @@ weak scaling
 : It describes increasing problem size while keeping number of processors constant. 
 
 hotspot analysis
-: 
+: It describes finding funtions or lines where a code spends most of its time. See [hotspot analysis](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2026-0/basic-hotspots-analysis.html).
 
 performance characterization analysis
 : test

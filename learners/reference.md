@@ -86,13 +86,13 @@ overhead
 : It describes extra time spent managing parallel work. Synchronising threads and cummunation between nodes are good example for overhead. 
 
 occupation
-: It describe a part of available cores or threads that are busy with doing actual work.
+: It describes a part of available cores or threads that are busy with doing actual work.
 
 utulization
 : It describes fraction of time a code doing actual work. 
 
 coverage analysis:
-: test
+: It describes measuring how much of a program's runtime is spent in code that runs in parallel, compared with code that runs serially.
 
 flame graph
 : It illustrates  which functions call which, and the width of each bar shows how much time was spent there. See [flame graphs](https://www.brendangregg.com/flamegraphs.html).

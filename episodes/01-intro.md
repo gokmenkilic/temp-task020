@@ -37,10 +37,10 @@ This is a note for instructor of this course who might need to use COSMA Azimuth
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Have you been already performance analaysis?
+Have you been already performance analaysis?
 
-Now, take a minute and think of a time in daily life when you compared two
-ways of doing something to see which was more efficent or faster
+Take a minute and think of a time in daily life when you compared two
+ways of doing something to see which was more efficent or faster,
 even if you never called it "benchmarking."
 
 :::::::::::::::::::::::: solution 

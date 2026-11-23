@@ -52,6 +52,15 @@ login node
 compute node
 : It describes a node where jobs actullay run.
 
+wall-clock time
+:
+
+clock speed
+:
+
+compiler
+: test, compiler version
+
 intra-node
 : It describes within a single node where there is no data exchange betwen other nodes and therefore no MPI.
 

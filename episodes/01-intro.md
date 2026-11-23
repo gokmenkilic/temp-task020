@@ -45,7 +45,7 @@ even if you never called it "benchmarking."
 
 :::::::::::::::::::::::: solution 
 
-### Examples
+Examples
 
 - Timing two different driving routes to see which
   actually gets you there faster.

@@ -37,7 +37,7 @@ This is a note for instructor of this course who might need to use COSMA Azimuth
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Have you already done some benchmkaring?
+## Have you already done some benchmarking?
 
 Take a minute and think of a time in daily life when you compared two
 ways of doing something to see which was more efficent or faster,
@@ -67,11 +67,18 @@ measurement to decide what to do next.
 
 As we go through the lesson, we will build a glossary covering the theory of performance analysis and optimisation. Please open [Glossary](reference.html#glossary) in a new tab and refer back it as you work through lesson.
 
+## Assessment, analysis and engineering
+
+Performance work usually happens in three stages:
+
+1. Performance assessment answers how well does the code perform? You run the code under controlled conditions and record metrics such as run time, speedup and efficiency. Benchmarking belongs here.
+2. Performance analysis answers why does it perform like that? You use tools to find where the time goes and what limits the code. Two common approaches are profiling, which summarises where time is spent over the whole run (e.g. 60% of the time is in one function), and tracing, which records individual events in the order they happened (e.g. when each process started waiting for a message).
+3. Performance engineering answers what can we change to make it better? You change the code, compiler flags, libraries or run configuration, then go back to stage 1 to measure whether the change actually helped.
+
+Keeping these stages separate helps you ask the right question at the right time. A benchmark can tell you that something is slow, but not why; and an optimisation is only an improvement once a new benchmark confirms it.
+
 :::::::::::::::::::::::::::::::::::::::::::::
  
-
-
-
 ## Amdahl's Law 
 ::::::::::::::::::::::::::::::::::::: callout
 

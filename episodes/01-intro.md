@@ -31,7 +31,7 @@ The last point is the reason you need to benchmark your code yourself. Some othe
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-This is a note for instructor of this course who might need to use COSMA Azimuth. 
+This is a note for instructor of this course who might need to use COSMA Azimuth. #fixme add link to training academy 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

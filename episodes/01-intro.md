@@ -18,7 +18,7 @@ exercises: 5 # exercise time in minutes
 
 This lesson will introduces concept of benchmarking and with the theory behind it. The aim is not to analyse your code for you during the course,but show you how to assess your own code once the course is over. 
 
-Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetments. Therefore, we will start to introduce key metrics of benchmarking and put them glossary of this course so that you will have a better understanding of benchmarking at the end of the course. Saying that to have a skill to  decide which metrics means what and how you can use relavant technics to benchmark and asset your code.
+Altough there is no single standard way to benchmark a code,there are common fundementals. We will cover these and build them into a structured workflow that you can adapt to your own research andown performance assessments. Along the way we will introduce key metrics of benchmarking and collect them in the glossary of this course. By the end, you should be able to decide which metrics matter for your code, understand what each one tells you, and choose the right techniques to benchmark and assess it. 
 
 It is assumed that the learner of this course has a limited knowledge of benchmarking, profiling and the algorithms used.  Before starting this course, it is assumed that the learner has:
 

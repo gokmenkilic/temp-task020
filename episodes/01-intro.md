@@ -27,6 +27,8 @@ It is assumed that the learner of this course has a limited knowledge of benchma
  3. Has sufficient knowledge of the code to know how to modify compiler flags and algorithms within it.
  4. Awareness that benchmarking might be specific to the system on which it is performed; running the code on another system might give different performance characteristics.
 
+The last point is the reason you need to benchmark your code yourself. Some other published results, or results from a diffrent version of the code, were measured with diffrent combination of codeversion, compiler, libraries, input and machine. They are a useful starting point, however they can not tell you how your code bhhaves on your system.
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 This is a note for instructor of this course who might need to use COSMA Azimuth. 

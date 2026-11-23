@@ -63,12 +63,14 @@ measurement to decide what to do next.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-This lesson aims to create a glossary that covers theory of performance analysis and optimisation. Please open it via
-[Glossary](reference.html#glossary) in a new tab and refer back to it
-as you go through this lesson.
+## Glossary 
+
+As we go through the lesson, we will build a glossary covering the theory of performance analysis and optimisation. Please open [Glossary](reference.html#glossary) in a new tab and refer back it as you work through lesson.
 
 :::::::::::::::::::::::::::::::::::::::::::::
  
+
+
 
 ## Amdahl's Law 
 ::::::::::::::::::::::::::::::::::::: callout

@@ -243,7 +243,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-intro.html">1. Introduction to Performance Analysis and Optimisation</a>
+        <a href="01-intro.html">1. Introduction</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -255,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-preparation.html">2. Preparation</a>
+        <a href="02-preparation.html">2. Benchmark Preparation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -409,9 +409,9 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>All in One View</h1>
         
-<section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introduction to Performance Analysis and Optimisation</a></p>
+<section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2026-09-22 |
+<p>Last updated on 2026-11-23 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -444,17 +444,18 @@ exsiting version</li>
 </div>
 </div>
 </div>
-<p>This lesson will introduce concept of benchmarking with underlying
-theory. The main idea is not deploying your code here to analyse, rather
-it is guiding you how to asset your own code.</p>
-<p>Altough there is no standard way to benchmark the code, we will touch
-fundamentals of benchmkaring and structure a workflow to help a scentist
-to use in their own process or assetments. Therefore, we will start to
-introduce key metrics of benchmarking and put them glossary of this
-course so that you will have a better understanding of benchmarking at
-the end of the course. Saying that to have a skill to decide which
-metrics means what and how you can use relavant technics to benchmark
-and asset your code.</p>
+<p>This lesson will introduces concept of benchmarking and with the
+theory behind it. The aim is not to analyse your code for you during the
+course,but show you how to assess your own code once the course is
+over.</p>
+<p>Altough there is no single standard way to benchmark a code,there are
+common fundementals. We will cover these and build them into a
+structured workflow that you can adapt to your own research andown
+performance assessments. Along the way we will introduce key metrics of
+benchmarking and collect them in the glossary of this course. By the
+end, you should be able to decide which metrics matter for your code,
+understand what each one tells you, and choose the right techniques to
+benchmark and assess it.</p>
 <p>It is assumed that the learner of this course has a limited knowledge
 of benchmarking, profiling and the algorithms used. Before starting this
 course, it is assumed that the learner has:</p>
@@ -468,18 +469,23 @@ flags and algorithms within it.</li>
 it is performed; running the code on another system might give different
 performance characteristics.</li>
 </ol>
-<div id="have-you-been-already-performance-analaysis" class="callout challenge">
+<p>The last point is the reason you need to benchmark your code
+yourself. Some other published results, or results from a diffrent
+version of the code, were measured with diffrent combination of
+codeversion, compiler, libraries, input and machine. They are a useful
+starting point, however they can not tell you how your code bhhaves on
+your system.</p>
+<div id="have-you-already-done-some-benchmarking" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="have-you-been-already-performance-analaysis" class="callout-inner">
-<h3 class="callout-title">Have you been already performance
-analaysis?</h3>
+<div id="have-you-already-done-some-benchmarking" class="callout-inner">
+<h3 class="callout-title">Have you already done some benchmarking?</h3>
 <div class="callout-content">
-<p>Now, take a minute and think of a time in daily life when you
-compared two ways of doing something to see which was more efficent or
-faster even if you never called it “benchmarking.”</p>
+<p>Take a minute and think of a time in daily life when you compared two
+ways of doing something to see which was more efficent or faster, even
+if you never called it “benchmarking.”</p>
 </div>
 </div>
 </div>
@@ -488,7 +494,7 @@ faster even if you never called it “benchmarking.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Examples </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Timing two different driving routes to see which actually gets you
@@ -505,16 +511,100 @@ to decide what to do next.</p>
 </div>
 </div>
 </div>
-<div id="callout1" class="callout">
+<div id="glossary" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div class="callout-inner">
+<div id="glossary" class="callout-inner">
+<h3 class="callout-title">Glossary</h3>
 <div class="callout-content">
-<p>This lesson aims to create a glossary that covers theory of
-performance analysis and optimisation. Please open it via <a href="reference.html#glossary">Glossary</a> in a new tab and refer back
-to it as you go through this lesson.</p>
+<p>As we go through the lesson, we will build a glossary covering the
+theory of performance analysis and optimisation. Please open <a href="reference.html#glossary">Glossary</a> in a new tab and refer back
+it as you work through lesson.</p>
+<div class="section level2">
+<h2 id="assessment-analysis-and-engineering">Assessment, analysis and engineering<a class="anchor" aria-label="anchor" href="#assessment-analysis-and-engineering"></a>
+</h2>
+<p>Performance work usually happens in three stages:</p>
+<ol style="list-style-type: decimal">
+<li>Performance assessment answers how well does the code perform? You
+run the code under controlled conditions and record metrics such as run
+time, speedup and efficiency. Benchmarking belongs here.</li>
+<li>Performance analysis answers why does it perform like that? You use
+tools to find where the time goes and what limits the code. Two common
+approaches are profiling, which summarises where time is spent over the
+whole run (e.g. 60% of the time is in one function), and tracing, which
+records individual events in the order they happened (e.g. when each
+process started waiting for a message).</li>
+<li>Performance engineering answers what can we change to make it
+better? You change the code, compiler flags, libraries or run
+configuration, then go back to stage 1 to measure whether the change
+actually helped.</li>
+</ol>
+<p>Keeping these stages separate helps you ask the right question at the
+right time. A benchmark can tell you that something is slow, but not
+why; and an optimisation is only an improvement once a new benchmark
+confirms it.</p>
+</div>
+<div class="section level2">
+<h2 id="speedup-and-efficiency">Speedup and efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency"></a>
+</h2>
+<p>Two terms we will use throughout this lesson are speedup and
+efficiency. Speedup compares the time taken on one processor, <span class="math inline">\(T(1)\)</span>, to the time taken on <span class="math inline">\(p\)</span> processors, <span class="math inline">\(T(p)\)</span>: <span class="math display">\[S(p) =
+\frac{T(1)}{T(p)}\]</span> In the ideal case, <span class="math inline">\(S(p) = p\)</span>: doubling the number of
+processors halves the run time. Efficiency normalises speedup by the
+number of processors used, giving a value between 0 and 1 (or 0% and
+100%): <span class="math display">\[E(p) = \frac{S(p)}{p}\]</span> An
+efficiency of 1 means every processor is being used fully; lower values
+mean some of the extra processors’ time is being lost, for example to
+communication, waiting or serial work.</p>
+<div id="is-benchmarking-the-same-as-performance-analysis" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="is-benchmarking-the-same-as-performance-analysis" class="callout-inner">
+<h3 class="callout-title">Is benchmarking the same as performance
+analysis?</h3>
+<div class="callout-content">
+<p>Now, let’s think about a health screening in medicine: a doctor
+checks your blood pressure, pulse etc for standard checks. If some
+metrics are not in the ideal region where they should be, it will be
+issued for further tests. It will then switch to analysis part.</p>
+<ol style="list-style-type: decimal">
+<li>When you <strong>benchmark</strong> your code (e.g. measuring <span class="math inline">\(S(p)\)</span> and <span class="math inline">\(E(p)\)</span> across different systems), which
+stage does that belong to assetments or analysis?</li>
+<li>Is “benchmarking” and “performance analysis” the same thing? Why or
+why not?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p><strong>1.</strong> Benchmarking is <strong>assessment</strong>.
+Measuring speedup and efficiency is like taking blood pressure and pulse
+— you’re recording <em>what</em> happens, not explaining
+<em>why</em>.</p>
+<p><strong>2.</strong> No, they’re not the same thing. Benchmarking only
+tells you <em>that</em> something might be wrong (e.g. speedup is lower
+than expected). It doesn’t tell you <em>why</em>. Finding the “why” —
+for example, using a profiler to discover that most of the time is spent
+waiting on memory rather than computing — is <strong>performance
+analysis</strong>, the equivalent of the doctor ordering follow-up tests
+once a vital sign looks off.</p>
+<p>In short: <strong>benchmarking is how you assess the code; analysis
+is how you explain what the assessment found.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -544,7 +634,7 @@ portion.The figure has taken from wikipedia: <a href="https://en.wikipedia.org/w
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="speedup-and-efficiency">Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency"></a>
+</section><section><h2 class="section-heading" id="speedup-and-efficiency-1">Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency-1"></a>
 </h2>
 <hr class="half-width">
 <p>Two term we’ll use throughout this lesson are
@@ -561,49 +651,19 @@ is the fraction of the code that must run serially:</p>
 \dfrac{f}{p}}\)</span></p>
 <p>As <span class="math inline">\(p \to \infty\)</span>, speedup meets
 to <span class="math inline">\(\dfrac{1}{1-f}\)</span>.</p>
-<div id="is-benchmarking-the-same-as-performance-analysis" class="callout challenge">
+<div id="callout3" class="callout">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="bell"></i>
 </div>
-<span class="callout-header">Challenge</span>
-<div id="is-benchmarking-the-same-as-performance-analysis" class="callout-inner">
-<h3 class="callout-title">Is benchmarking the same as performance
-analysis?</h3>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
 <div class="callout-content">
-<p>Now, let’s think about a health screening in medicine: a doctor
-checks your blood pressure, pulse etc for standard checks. If some
-metrics are not in the ideal region where they should be, it will be
-issued for further tests. It will then switch to analysis part.</p>
-<ol style="list-style-type: decimal">
-<li>When you <strong>benchmark</strong> your code (e.g. measuring <span class="math inline">\(S(p)\)</span> and <span class="math inline">\(E(p)\)</span> across different systems), which
-stage does that belong to assetments or analysis?</li>
-<li>Is “benchmarking” and “performance analysis” the same thing? Why or
-why not?</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p><strong>1.</strong> Benchmarking is <strong>assessment</strong>.
-Measuring speedup and efficiency is like taking blood pressure and pulse
-— you’re recording <em>what</em> happens, not explaining
-<em>why</em>.</p>
-<p><strong>2.</strong> No, they’re not the same thing. Benchmarking only
-tells you <em>that</em> something might be wrong (e.g. speedup is lower
-than expected). It doesn’t tell you <em>why</em>. Finding the “why” —
-for example, using a profiler to discover that most of the time is spent
-waiting on memory rather than computing — is <strong>performance
-analysis</strong>, the equivalent of the doctor ordering follow-up tests
-once a vital sign looks off.</p>
-<p>In short: <strong>benchmarking is how you assess the code; analysis
-is how you explain what the assessment found.</strong></p>
-</div>
+<p>Strong and weak scaling Amdahl’s Law assumes the problem size stays
+fixed while you add processors. Measuring performance this way is called
+strong scaling. In practice, researchers often use extra processors to
+solve a bigger problem in the same time instead. This is called weak
+scaling, and it is described by Gustafson’s Law, which is much more
+optimistic. We will meet both again in later episodes.</p>
 </div>
 </div>
 </div>
@@ -633,9 +693,9 @@ order in which events happened</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-02-preparation"><p>Content from <a href="02-preparation.html">Preparation</a></p>
+</section></section><section id="aio-02-preparation"><p>Content from <a href="02-preparation.html">Benchmark Preparation</a></p>
 <hr>
-<p>Last updated on 2026-09-24 |
+<p>Last updated on 2026-11-23 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/02-preparation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1184,7 +1244,7 @@ even though all threads look busy.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Code A: tasks are too small.</strong> Concurrency is high,
 but creating and cleaning up each task costs more than the work inside
@@ -1471,7 +1531,7 @@ runs over several physically separate nodes count as inter-node.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>#fixme: probably some profiling with vtune can go here - not sure how
 it can squeeze plots, maybe sort of utulization or hotspot?</p>
@@ -1716,7 +1776,7 @@ run it on an H200. What do you need to check and change first?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You need to check the compute capability of H200. (<a href="https://developer.nvidia.com/cuda/gpus" class="external-link">NVIDIA compute
 capability</a>). For the H200 we need to add <code>-code=sm_90</code> to
@@ -1839,7 +1899,7 @@ second as same idea as on rubrics benchmark classification.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>xx operations.</li>
@@ -2038,7 +2098,7 @@ and classify it.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <table class="table">
 <thead><tr>
@@ -2087,7 +2147,7 @@ might help to improve performance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Always it needs to be consider matching output frequency with
 production runs. For direct summation, the compute work grows like <span class="math inline">\(n^2\)</span> while the size of outputs like <span class="math inline">\(n\)</span>, so the share of time spent on I/O
@@ -2195,7 +2255,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2224,7 +2284,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -2336,8 +2396,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-11-20",
-  "datePublished": "2026-11-20"
+  "dateModified": "2026-11-23",
+  "datePublished": "2026-11-23"
 }
 
   </script><script>

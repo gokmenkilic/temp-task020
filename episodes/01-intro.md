@@ -88,6 +88,42 @@ Efficiency normalises speedup by the number of processors used, giving a value b
 $$E(p) = \frac{S(p)}{p}$$
 An efficiency of 1 means every processor is being used fully; lower values mean some of the extra processors' time is being lost, for example to communication, waiting or serial work.
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Is benchmarking the same as performance analysis?
+
+Now, let's think about a health screening in medicine: a doctor checks your
+blood pressure, pulse etc for standard checks. If some metrics are not in the ideal region
+where they should be, it will be issued for further tests. It will then switch to analysis part.
+
+1. When you **benchmark** your code (e.g. measuring $S(p)$ and $E(p)$
+across different systems), which stage does that belong to assetments or analysis?
+2. Is "benchmarking" and "performance analysis" the same thing? Why or
+why not?
+
+:::::::::::::::::::::::: solution
+
+### Solution
+
+**1.** Benchmarking is **assessment**. Measuring speedup and
+efficiency is like taking blood pressure and pulse — you're recording
+*what* happens, not explaining *why*.
+
+**2.** No, they're not the same thing. Benchmarking only tells you
+*that* something might be wrong (e.g. speedup is lower than expected).
+It doesn't tell you *why*. Finding the "why" — for example, using a
+profiler to discover that most of the time is spent waiting on memory
+rather than computing — is **performance analysis**, the equivalent of
+the doctor ordering follow-up tests once a vital sign looks off.
+
+In short: **benchmarking is how you assess the code; analysis is how you
+explain what the assessment found.**
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 :::::::::::::::::::::::::::::::::::::::::::::
  
@@ -125,39 +161,11 @@ $S(p) = \dfrac{1}{(1 - f) + \dfrac{f}{p}}$
 
 As $p \to \infty$, speedup meets to $\dfrac{1}{1-f}$.
 
-::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::: callout
+Strong and weak scaling
+Amdahl's Law assumes the problem size stays fixed while you add processors. Measuring performance this way is called strong scaling. In practice, researchers often use extra processors to solve a bigger problem in the same time instead. This is called weak scaling, and it is described by Gustafson's Law, which is much more optimistic. We will meet both again in later episodes.
+:::::::::::::::::::::::::::::::::::::::::::::
 
-### Is benchmarking the same as performance analysis?
-
-Now, let's think about a health screening in medicine: a doctor checks your
-blood pressure, pulse etc for standard checks. If some metrics are not in the ideal region
-where they should be, it will be issued for further tests. It will then switch to analysis part.
-
-1. When you **benchmark** your code (e.g. measuring $S(p)$ and $E(p)$
-across different systems), which stage does that belong to assetments or analysis?
-2. Is "benchmarking" and "performance analysis" the same thing? Why or
-why not?
-
-:::::::::::::::::::::::: solution
-
-### Solution
-
-**1.** Benchmarking is **assessment**. Measuring speedup and
-efficiency is like taking blood pressure and pulse — you're recording
- *what* happens, not explaining *why*.
-
- **2.** No, they're not the same thing. Benchmarking only tells you
- *that* something might be wrong (e.g. speedup is lower than expected).
- It doesn't tell you *why*. Finding the "why" — for example, using a
- profiler to discover that most of the time is spent waiting on memory
- rather than computing — is **performance analysis**, the equivalent of
- the doctor ordering follow-up tests once a vital sign looks off.
-
- In short: **benchmarking is how you assess the code; analysis is how you
- explain what the assessment found.**
-
-:::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

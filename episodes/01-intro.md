@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Performance Analysis and Optimisation"
+title: "Introduction"
 teaching: 20 # teaching time in minutes
 exercises: 5 # exercise time in minutes
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Performance Analysis and Optimisation"
+title: "Introduction"
 teaching: 20 # teaching time in minutes
 exercises: 5 # exercise time in minutes
 ---
@@ -16,9 +16,9 @@ exercises: 5 # exercise time in minutes
 - Explain why is it necessary to benchmark code without relying on exsiting version
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-This lesson will introduce concept of benchmarking with underlying theory. The main idea is not deploying your code here to analyse, rather it is guiding you how to asset your own code. 
+This lesson will introduces concept of benchmarking and with the theory behind it. The aim is not to analyse your code for you during the course,but show you how to assess your own code once the course is over. 
 
-Altough there is no standard way to benchmark the code, we will touch fundamentals of benchmkaring and structure a workflow to help a scentist to use in their own process or assetments. Therefore, we will start to introduce key metrics of benchmarking and put them glossary of this course so that you will have a better understanding of benchmarking at the end of the course. Saying that to have a skill to  decide which metrics means what and how you can use relavant technics to benchmark and asset your code.
+Altough there is no single standard way to benchmark a code,there are common fundementals. We will cover these and build them into a structured workflow that you can adapt to your own research andown performance assessments. Along the way we will introduce key metrics of benchmarking and collect them in the glossary of this course. By the end, you should be able to decide which metrics matter for your code, understand what each one tells you, and choose the right techniques to benchmark and assess it. 
 
 It is assumed that the learner of this course has a limited knowledge of benchmarking, profiling and the algorithms used.  Before starting this course, it is assumed that the learner has:
 
@@ -27,18 +27,20 @@ It is assumed that the learner of this course has a limited knowledge of benchma
  3. Has sufficient knowledge of the code to know how to modify compiler flags and algorithms within it.
  4. Awareness that benchmarking might be specific to the system on which it is performed; running the code on another system might give different performance characteristics.
 
+The last point is the reason you need to benchmark your code yourself. Some other published results, or results from a diffrent version of the code, were measured with diffrent combination of codeversion, compiler, libraries, input and machine. They are a useful starting point, however they can not tell you how your code bhhaves on your system.
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-This is a note for instructor of this course who might need to use COSMA Azimuth. 
+This is a note for instructor of this course who might need to use COSMA Azimuth. #fixme add link to training academy 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Have you been already performance analaysis?
+## Have you already done some benchmarking?
 
-Now, take a minute and think of a time in daily life when you compared two
-ways of doing something to see which was more efficent or faster
+Take a minute and think of a time in daily life when you compared two
+ways of doing something to see which was more efficent or faster,
 even if you never called it "benchmarking."
 
 :::::::::::::::::::::::: solution 
@@ -61,13 +63,70 @@ measurement to decide what to do next.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-This lesson aims to create a glossary that covers theory of performance analysis and optimisation. Please open it via
-[Glossary](reference.html#glossary) in a new tab and refer back to it
-as you go through this lesson.
+## Glossary 
+
+As we go through the lesson, we will build a glossary covering the theory of performance analysis and optimisation. Please open [Glossary](reference.html#glossary) in a new tab and refer back it as you work through lesson.
+
+## Assessment, analysis and engineering
+
+Performance work usually happens in three stages:
+
+1. Performance assessment answers how well does the code perform? You run the code under controlled conditions and record metrics such as run time, speedup and efficiency. Benchmarking belongs here.
+2. Performance analysis answers why does it perform like that? You use tools to find where the time goes and what limits the code. Two common approaches are profiling, which summarises where time is spent over the whole run (e.g. 60% of the time is in one function), and tracing, which records individual events in the order they happened (e.g. when each process started waiting for a message).
+3. Performance engineering answers what can we change to make it better? You change the code, compiler flags, libraries or run configuration, then go back to stage 1 to measure whether the change actually helped.
+
+Keeping these stages separate helps you ask the right question at the right time. A benchmark can tell you that something is slow, but not why; and an optimisation is only an improvement once a new benchmark confirms it.
+
+
+## Speedup and efficiency
+
+Two terms we will use throughout this lesson are speedup and efficiency.
+Speedup compares the time taken on one processor, $T(1)$, to the time taken on $p$ processors, $T(p)$:
+$$S(p) = \frac{T(1)}{T(p)}$$
+In the ideal case, $S(p) = p$: doubling the number of processors halves the run time.
+Efficiency normalises speedup by the number of processors used, giving a value between 0 and 1 (or 0% and 100%):
+$$E(p) = \frac{S(p)}{p}$$
+An efficiency of 1 means every processor is being used fully; lower values mean some of the extra processors' time is being lost, for example to communication, waiting or serial work.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Is benchmarking the same as performance analysis?
+
+Now, let's think about a health screening in medicine: a doctor checks your
+blood pressure, pulse etc for standard checks. If some metrics are not in the ideal region
+where they should be, it will be issued for further tests. It will then switch to analysis part.
+
+1. When you **benchmark** your code (e.g. measuring $S(p)$ and $E(p)$
+across different systems), which stage does that belong to assetments or analysis?
+2. Is "benchmarking" and "performance analysis" the same thing? Why or
+why not?
+
+:::::::::::::::::::::::: solution
+
+### Solution
+
+**1.** Benchmarking is **assessment**. Measuring speedup and
+efficiency is like taking blood pressure and pulse — you're recording
+*what* happens, not explaining *why*.
+
+**2.** No, they're not the same thing. Benchmarking only tells you
+*that* something might be wrong (e.g. speedup is lower than expected).
+It doesn't tell you *why*. Finding the "why" — for example, using a
+profiler to discover that most of the time is spent waiting on memory
+rather than computing — is **performance analysis**, the equivalent of
+the doctor ordering follow-up tests once a vital sign looks off.
+
+In short: **benchmarking is how you assess the code; analysis is how you
+explain what the assessment found.**
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 :::::::::::::::::::::::::::::::::::::::::::::
  
-
 ## Amdahl's Law 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -102,39 +161,11 @@ $S(p) = \dfrac{1}{(1 - f) + \dfrac{f}{p}}$
 
 As $p \to \infty$, speedup meets to $\dfrac{1}{1-f}$.
 
-::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::: callout
+Strong and weak scaling
+Amdahl's Law assumes the problem size stays fixed while you add processors. Measuring performance this way is called strong scaling. In practice, researchers often use extra processors to solve a bigger problem in the same time instead. This is called weak scaling, and it is described by Gustafson's Law, which is much more optimistic. We will meet both again in later episodes.
+:::::::::::::::::::::::::::::::::::::::::::::
 
-### Is benchmarking the same as performance analysis?
-
-Now, let's think about a health screening in medicine: a doctor checks your
-blood pressure, pulse etc for standard checks. If some metrics are not in the ideal region
-where they should be, it will be issued for further tests. It will then switch to analysis part.
-
-1. When you **benchmark** your code (e.g. measuring $S(p)$ and $E(p)$
-across different systems), which stage does that belong to assetments or analysis?
-2. Is "benchmarking" and "performance analysis" the same thing? Why or
-why not?
-
-:::::::::::::::::::::::: solution
-
-### Solution
-
-**1.** Benchmarking is **assessment**. Measuring speedup and
-efficiency is like taking blood pressure and pulse — you're recording
- *what* happens, not explaining *why*.
-
- **2.** No, they're not the same thing. Benchmarking only tells you
- *that* something might be wrong (e.g. speedup is lower than expected).
- It doesn't tell you *why*. Finding the "why" — for example, using a
- profiler to discover that most of the time is spent waiting on memory
- rather than computing — is **performance analysis**, the equivalent of
- the doctor ordering follow-up tests once a vital sign looks off.
-
- In short: **benchmarking is how you assess the code; analysis is how you
- explain what the assessment found.**
-
-:::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

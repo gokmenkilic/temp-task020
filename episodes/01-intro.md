@@ -77,17 +77,6 @@ Performance work usually happens in three stages:
 
 Keeping these stages separate helps you ask the right question at the right time. A benchmark can tell you that something is slow, but not why; and an optimisation is only an improvement once a new benchmark confirms it.
 
-
-## Speedup and efficiency
-
-Two terms we will use throughout this lesson are speedup and efficiency.
-Speedup compares the time taken on one processor, $T(1)$, to the time taken on $p$ processors, $T(p)$:
-$$S(p) = \frac{T(1)}{T(p)}$$
-In the ideal case, $S(p) = p$: doubling the number of processors halves the run time.
-Efficiency normalises speedup by the number of processors used, giving a value between 0 and 1 (or 0% and 100%):
-$$E(p) = \frac{S(p)}{p}$$
-An efficiency of 1 means every processor is being used fully; lower values mean some of the extra processors' time is being lost, for example to communication, waiting or serial work.
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Is benchmarking the same as performance analysis?

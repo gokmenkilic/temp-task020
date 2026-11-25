@@ -6,7 +6,8 @@ exercises: 5 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do we choose a characteristic benchmark of codebase?
+- How do we prepare a representative and reproducible benchmark?
+- How many times should we run a benchmark to summarise results?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

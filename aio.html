@@ -411,7 +411,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2026-11-23 |
+<p>Last updated on 2026-11-25 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -545,19 +545,6 @@ actually helped.</li>
 right time. A benchmark can tell you that something is slow, but not
 why; and an optimisation is only an improvement once a new benchmark
 confirms it.</p>
-</div>
-<div class="section level2">
-<h2 id="speedup-and-efficiency">Speedup and efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency"></a>
-</h2>
-<p>Two terms we will use throughout this lesson are speedup and
-efficiency. Speedup compares the time taken on one processor, <span class="math inline">\(T(1)\)</span>, to the time taken on <span class="math inline">\(p\)</span> processors, <span class="math inline">\(T(p)\)</span>: <span class="math display">\[S(p) =
-\frac{T(1)}{T(p)}\]</span> In the ideal case, <span class="math inline">\(S(p) = p\)</span>: doubling the number of
-processors halves the run time. Efficiency normalises speedup by the
-number of processors used, giving a value between 0 and 1 (or 0% and
-100%): <span class="math display">\[E(p) = \frac{S(p)}{p}\]</span> An
-efficiency of 1 means every processor is being used fully; lower values
-mean some of the extra processors’ time is being lost, for example to
-communication, waiting or serial work.</p>
 <div id="is-benchmarking-the-same-as-performance-analysis" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -634,7 +621,7 @@ portion.The figure has taken from wikipedia: <a href="https://en.wikipedia.org/w
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="speedup-and-efficiency-1">Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency-1"></a>
+</section><section><h2 class="section-heading" id="speedup-and-efficiency">Speedup and Efficiency<a class="anchor" aria-label="anchor" href="#speedup-and-efficiency"></a>
 </h2>
 <hr class="half-width">
 <p>Two term we’ll use throughout this lesson are
@@ -695,7 +682,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-preparation"><p>Content from <a href="02-preparation.html">Benchmark Preparation</a></p>
 <hr>
-<p>Last updated on 2026-11-23 |
+<p>Last updated on 2026-11-25 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/02-preparation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -709,7 +696,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do we choose a characteristic benchmark of codebase?</li>
+<li>How do we prepare a representative and reproducible benchmark?</li>
+<li>How many times should we run a benchmark to summarise results?</li>
 </ul>
 </div>
 </div>
@@ -719,8 +707,10 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Prepare the benchmark case</li>
-<li>Define the benchmark characteristics</li>
+<li>Apply a checklist to benchmark a code</li>
+<li>Prepare enviorment and name benchmark cases in order</li>
+<li>Choose a representative problem size</li>
+<li>Report a benchmark and report it</li>
 </ul>
 </div>
 </div>
@@ -790,7 +780,7 @@ problem size.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>1.</strong> No, it’s missing two things the checklist asks
 for.</p>
@@ -1099,7 +1089,7 @@ code.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <table class="table">
 <thead><tr>
@@ -1531,7 +1521,7 @@ runs over several physically separate nodes count as inter-node.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>#fixme: probably some profiling with vtune can go here - not sure how
 it can squeeze plots, maybe sort of utulization or hotspot?</p>
@@ -1776,7 +1766,7 @@ run it on an H200. What do you need to check and change first?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You need to check the compute capability of H200. (<a href="https://developer.nvidia.com/cuda/gpus" class="external-link">NVIDIA compute
 capability</a>). For the H200 we need to add <code>-code=sm_90</code> to
@@ -1899,7 +1889,7 @@ second as same idea as on rubrics benchmark classification.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>xx operations.</li>
@@ -2255,7 +2245,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2284,7 +2274,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -2396,8 +2386,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-11-24",
-  "datePublished": "2026-11-24"
+  "dateModified": "2026-11-25",
+  "datePublished": "2026-11-25"
 }
 
   </script><script>

@@ -13,8 +13,10 @@ exercises: 5 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Prepare the benchmark case
-- Define the benchmark characteristics
+- Apply a checklist to benchmark a code
+- Prepare enviorment and name benchmark cases in order
+- Choose a representative problem size
+- Report a benchmark and report it
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

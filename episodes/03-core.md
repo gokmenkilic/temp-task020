@@ -62,7 +62,9 @@ As we mention in the preparation episode, a benchmark needs to be set up the env
 
 <!--Requesting a node with an exculisive access can go here -->
 
-- Also we will need to know what is peak performance of our program where we run executable.
+- We also need to know the performance our program actually achieves on the machine where we run the executable.
+
+<!--Continue from here-->
 
 Recall the `deploy.sh` pattern from the Preparation episode this is
 exactly where a core level benchmark run. Once the code is

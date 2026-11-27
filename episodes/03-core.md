@@ -58,7 +58,9 @@ As we mention in the preparation episode, a benchmark needs to be set up the env
 
 <!-- NOTE: There could be a typo in performance analysis guidebook for core level benchmarking about caches. Need to be verified.-->
 
-- So that we have to know what is peak performance of hardware algin with using single core. Please be aware many HPC systems allows you to run your program on login node initially. However, to be able to benefit from peak performance you have to run the program on a single core. 
+- We need to know the peak performance the hardware can deliver on a single core. Be aware that many HPC systems let you run your program on a login note at first. However, login nodes are shared,so to measure peak performance you need to run on a dedicated core of a compute node.
+
+<!--Requesting a node with an exculisive access can go here -->
 
 - Also we will need to know what is peak performance of our program where we run executable.
 

@@ -23,6 +23,14 @@ When we look at the core level performance, the first thing we investigate is ho
 
 High level performance analysis tools typically report detailed metrics such as vectorisation ratios and memory utulisation, but these are not a good starting point. To prepare a good benchmark case, we therefore start with high level numbers. For example, how close does our code get to the machine's peak performance? Before running  any heavy profiling tools, these numbers tell us whetherour code is compute bound or memory bound, and how uses the microarchitecture of the hardware. 
 
+<!-- NOTE: Comparing a code's FLOP rate with the peak FLOP rate alone cannot
+tell us whether a code is compute bound or memory bound. It is needed the
+memory bandwidth and the code's arithmetic intensity.
+
+Either soften this sentence ("these
+numbers are the first step towards telling whether...") or add one line
+saying a bandwidth measurement is the second number needed. -->
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 This part is for running small examples on COSMA/Azimuth service for instructors.

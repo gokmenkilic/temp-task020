@@ -6,16 +6,16 @@ exercises: 10 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you find out if your code is making good use of a single core?
+- How do you find out whether your code is making good use of a single core?
 - What separates a "good enough" measurement from a misleading one?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what core level performance benchmarks are
-- Describe how to prepare a good core level benchmark case
-- Calculate a core performance ratio and classify it
+- Explain what core level performance benchmarks are.
+- Describe how to prepare a good core level benchmark case.
+- Calculate a core performance ratio and classify it.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

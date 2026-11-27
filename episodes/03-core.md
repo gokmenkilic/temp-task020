@@ -36,6 +36,8 @@ saying a bandwidth measurement is the second number needed. -->
 This part is for running small examples on COSMA/Azimuth service for instructors.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!-- NOTE; We potentially need to amend below exercise. It may read better as a `callout` than a `challenge`. Also citation to performance analysis guidebook would be nice.-->
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 #### The benchmark rubrics

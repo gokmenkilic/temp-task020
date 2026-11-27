@@ -21,7 +21,7 @@ exercises: 10 # exercise time in minutes
 
 When we look at the core level performance, the first thing we investigate is how well our code uses a single core. Most modern processors are designed to use vector (SIMD )instructions efficiently, where data moving between memory and the compute units through a hierachy of fast caches. Whether our code takes advantage of them, is an entierly different question.
 
-When you use high level performance analysis tools, it is common you will likely see vectorication ratios, memory utulizations and those kind of metrics which can not be a good starting point too look at. To prepare a good benchmark case, we therefore start with hig level numbers. For example, how close does our code get to the machine's peak performance? Despite the running any heavy profiling tools, these number will tell us whether our code compute bound or memory bound and how it is well utulize the microarcitechture of harware. 
+High level performance analysis tools typically report detailed metrics such as vectorisation ratios and memory utulisation, but these are not a good starting point. To prepare a good benchmark case, we therefore start with high level numbers. For example, how close does our code get to the machine's peak performance? Before running  any heavy profiling tools, these numbers tell us whetherour code is compute bound or memory bound, and how uses the microarchitecture of the hardware. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 

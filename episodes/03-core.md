@@ -42,7 +42,7 @@ This part is for running small examples on COSMA/Azimuth service for instructors
 
 #### The benchmark rubrics
 
-Across every section of this course, we will use three classification:
+Across every section of this course, we will use three classifications:
 
 - **Green** (≥ 80%): performing efficiently
 - **Yellow** (60–80%): not using the hardware to its full potential

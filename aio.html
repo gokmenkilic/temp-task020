@@ -867,7 +867,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-core"><p>Content from <a href="03-core.html">Core Level Benchmarking</a></p>
 <hr>
-<p>Last updated on 2026-10-12 |
+<p>Last updated on 2026-11-27 |
 
         <a href="https://github.com/gokmenkilic/temp-task020/edit/main/episodes/03-core.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -881,7 +881,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you find out if your code is making good use of a single
+<li>How do you find out whether your code is making good use of a single
 core?</li>
 <li>What separates a “good enough” measurement from a misleading
 one?</li>
@@ -894,29 +894,28 @@ one?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain what core level performance benchmarks are</li>
-<li>Describe how to prepare a good core level benchmark case</li>
-<li>Calculate a core performance ratio and classify it</li>
+<li>Explain what core level performance benchmarks are.</li>
+<li>Describe how to prepare a good core level benchmark case.</li>
+<li>Calculate a core performance ratio and classify it.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>When we look at the core level performance the first thing we
-investigate is measure how well our code utilize a single core.
-Recently, most of the hardwares designed for using vector instructions
-efficiently where data moves between memory and compute via fast
-cachechannels. However, whether our code takes advantage of them is
+<p>When we look at the core level performance, the first thing we
+investigate is how well our code uses a single core. Most modern
+processors are designed to use vector (SIMD )instructions efficiently,
+where data moving between memory and the compute units through a
+hierachy of fast caches. Whether our code takes advantage of them, is an
 entierly different question.</p>
-<p>When you use high level performance analysis tools, it is common you
-will likely see vectorication ratios, memory utulizations and those kind
-of metrics which can not be a good starting point too look at. To
-prepare a good benchmark case, we therefore start with hig level
-numbers. For example, how close does our code get to the machine’s peak
-performance? Despite the running any heavy profiling tools, these number
-will tell us whether our code compute bound or memory bound and how it
-is well utulize the microarcitechture of harware.</p>
+<p>High level performance analysis tools typically report detailed
+metrics such as vectorisation ratios and memory utulisation, but these
+are not a good starting point. To prepare a good benchmark case, we
+therefore start with high level numbers. For example, how close does our
+code get to the machine’s peak performance? Before running any heavy
+profiling tools, these numbers tell us whetherour code is compute bound
+or memory bound, and how uses the microarchitecture of the hardware.</p>
 <div id="the-benchmark-rubrics" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -926,7 +925,7 @@ is well utulize the microarcitechture of harware.</p>
 <h3 class="callout-title">The benchmark rubrics</h3>
 <div class="callout-content">
 <p>Across every section of this course, we will use three
-classification:</p>
+classifications:</p>
 <ul>
 <li>
 <strong>Green</strong> (≥ 80%): performing efficiently</li>
@@ -942,26 +941,30 @@ potential</li>
 <section><h2 class="section-heading" id="running-a-single-core-benchmark">Running a single core benchmark<a class="anchor" aria-label="anchor" href="#running-a-single-core-benchmark"></a>
 </h2>
 <hr class="half-width">
-<p>As we mention in the preparation section, benchmark needs to be set
-up according to the all environment that we have. To do that we have to
-care about some criterias:</p>
+<p>As we mention in the preparation episode, a benchmark needs to be set
+up the environment that we are running in. To do that, we need to
+consider a few criteria:</p>
 <ul>
-<li><p>A representative benchmark case should fit in the cache. You may
-no idea if the problem you will be running on fits on the cache or not.
-Having unrealistic results could be a bad benchmark case you desgined
-and run. To avoid this we have to be sure that the problem size is not
-too small to sit L1/L2/L3 cache. Before running the benchmark case, it
-is always necessary that we are checking target system memory according
-to the our case.</p></li>
-<li><p>So that we have to know what is peak performance of hardware
-algin with using single core. Please be aware many HPC systems allows
-you to run your program on login node initially. However, to be able to
-benefit from peak performance you have to run the program on a single
-core.</p></li>
-<li><p>Also we will need to know what is peak performance of our program
-where we run executable.</p></li>
+<li>A representative benchmark case should not fit in the cache. You may
+not know whether the problem you will be running fits in the cache. If
+it does, the reults will be unrealistically good, and the benchmark case
+you designed and ran will be a poor one. To avoid this, make sure the
+problem size is not so small that it sits in the L1,L2 or L3 cache.
+Before running the benchmark case, always check the cache and memory
+sized of the target system against the memory your case uses.</li>
 </ul>
-<p>Recall the <code>deploy.sh</code> pattern from the Preparation
+<!-- NOTE: There could be a typo in performance analysis guidebook for core level benchmarking about caches. Need to be verified.--><ul>
+<li>We need to know the peak performance the hardware can deliver on a
+single core. Be aware that many HPC systems let you run your program on
+a login note at first. However, login nodes are shared,so to measure
+peak performance you need to run on a dedicated core of a compute
+node.</li>
+</ul>
+<!--Requesting a node with an exculisive access can go here --><ul>
+<li>We also need to know the performance our program actually achieves
+on the machine where we run the executable.</li>
+</ul>
+<!--Continue from here--><p>Recall the <code>deploy.sh</code> pattern from the Preparation
 episode this is exactly where a core level benchmark run. Once the code
 is built, you’d run a peak performance pinned to a single core, rather
 than the all program:</p>
@@ -1234,7 +1237,7 @@ even though all threads look busy.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><strong>Code A: tasks are too small.</strong> Concurrency is high,
 but creating and cleaning up each task costs more than the work inside
@@ -1521,7 +1524,7 @@ runs over several physically separate nodes count as inter-node.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>#fixme: probably some profiling with vtune can go here - not sure how
 it can squeeze plots, maybe sort of utulization or hotspot?</p>
@@ -2386,8 +2389,8 @@ any links that you are not going to use.
   "url": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "identifier": "https://gokmenkilic.github.io/temp-task020/aio.html",
   "dateCreated": "2026-08-10",
-  "dateModified": "2026-11-25",
-  "datePublished": "2026-11-25"
+  "dateModified": "2026-11-27",
+  "datePublished": "2026-11-27"
 }
 
   </script><script>

@@ -52,9 +52,11 @@ Across every section of this course, we will use three classifications:
 
 ## Running a single core benchmark
 
-As we mention in the preparation section, benchmark needs to be set up according to the all environment that we have. To do that we have to care about some criterias:
+As we mention in the preparation episode, a benchmark needs to be set up the environment that we are running in. To do that, we need to consider a few criteria: 
 
-- A representative benchmark case should fit in the cache. You may no idea if the problem you will be running on fits on the cache or not. Having unrealistic results could be a bad benchmark case you desgined and run. To avoid this we have to be sure that the problem size is not too small to sit L1/L2/L3 cache. Before running the benchmark case, it is always necessary that we are checking target system memory according to the our case.
+- A representative benchmark case should not fit in the cache. You may not know whether the problem you will be running fits in the cache. If it does, the reults will be unrealistically good, and the benchmark case you designed and ran will be a poor one. To avoid this, make sure the problem size is not so small that it sits in the L1,L2 or L3 cache. Before running the benchmark case, always check the cache and memory sized of the target system against the memory your case uses.
+
+<!-- NOTE: There could be a typo in performance analysis guidebook for core level benchmarking about caches. Need to be verified.-->
 
 - So that we have to know what is peak performance of hardware algin with using single core. Please be aware many HPC systems allows you to run your program on login node initially. However, to be able to benefit from peak performance you have to run the program on a single core. 
 

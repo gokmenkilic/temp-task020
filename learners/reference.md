@@ -58,6 +58,9 @@ wall-clock time
 clock speed
 :
 
+SIMD
+: 
+
 compiler
 : test, compiler version
 

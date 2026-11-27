@@ -6,33 +6,43 @@ exercises: 10 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you find out if your code is making good use of a single core?
+- How do you find out whether your code is making good use of a single core?
 - What separates a "good enough" measurement from a misleading one?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what core level performance benchmarks are
-- Describe how to prepare a good core level benchmark case
-- Calculate a core performance ratio and classify it
+- Explain what core level performance benchmarks are.
+- Describe how to prepare a good core level benchmark case.
+- Calculate a core performance ratio and classify it.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-When we look at the core level performance the first thing we investigate is measure how well our code utilize a single core. Recently, most of the hardwares designed for using vector instructions efficiently where data moves between memory and compute via fast cachechannels. However, whether our code takes advantage of them is entierly different question.
+When we look at the core level performance, the first thing we investigate is how well our code uses a single core. Most modern processors are designed to use vector (SIMD )instructions efficiently, where data moving between memory and the compute units through a hierachy of fast caches. Whether our code takes advantage of them, is an entierly different question.
 
-When you use high level performance analysis tools, it is common you will likely see vectorication ratios, memory utulizations and those kind of metrics which can not be a good starting point too look at. To prepare a good benchmark case, we therefore start with hig level numbers. For example, how close does our code get to the machine's peak performance? Despite the running any heavy profiling tools, these number will tell us whether our code compute bound or memory bound and how it is well utulize the microarcitechture of harware. 
+High level performance analysis tools typically report detailed metrics such as vectorisation ratios and memory utulisation, but these are not a good starting point. To prepare a good benchmark case, we therefore start with high level numbers. For example, how close does our code get to the machine's peak performance? Before running  any heavy profiling tools, these numbers tell us whetherour code is compute bound or memory bound, and how uses the microarchitecture of the hardware. 
+
+<!-- NOTE: Comparing a code's FLOP rate with the peak FLOP rate alone cannot
+tell us whether a code is compute bound or memory bound. It is needed the
+memory bandwidth and the code's arithmetic intensity.
+
+Either soften this sentence ("these
+numbers are the first step towards telling whether...") or add one line
+saying a bandwidth measurement is the second number needed. -->
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 This part is for running small examples on COSMA/Azimuth service for instructors.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+<!-- NOTE: We potentially need to amend below exercise. It may read better as a `callout` than a `challenge`. Also citation to performance analysis guidebook would be nice.-->
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 #### The benchmark rubrics
 
-Across every section of this course, we will use three classification:
+Across every section of this course, we will use three classifications:
 
 - **Green** (≥ 80%): performing efficiently
 - **Yellow** (60–80%): not using the hardware to its full potential
@@ -42,13 +52,19 @@ Across every section of this course, we will use three classification:
 
 ## Running a single core benchmark
 
-As we mention in the preparation section, benchmark needs to be set up according to the all environment that we have. To do that we have to care about some criterias:
+As we mention in the preparation episode, a benchmark needs to be set up the environment that we are running in. To do that, we need to consider a few criteria: 
 
-- A representative benchmark case should fit in the cache. You may no idea if the problem you will be running on fits on the cache or not. Having unrealistic results could be a bad benchmark case you desgined and run. To avoid this we have to be sure that the problem size is not too small to sit L1/L2/L3 cache. Before running the benchmark case, it is always necessary that we are checking target system memory according to the our case.
+- A representative benchmark case should not fit in the cache. You may not know whether the problem you will be running fits in the cache. If it does, the reults will be unrealistically good, and the benchmark case you designed and ran will be a poor one. To avoid this, make sure the problem size is not so small that it sits in the L1,L2 or L3 cache. Before running the benchmark case, always check the cache and memory sized of the target system against the memory your case uses.
 
-- So that we have to know what is peak performance of hardware algin with using single core. Please be aware many HPC systems allows you to run your program on login node initially. However, to be able to benefit from peak performance you have to run the program on a single core. 
+<!-- NOTE: There could be a typo in performance analysis guidebook for core level benchmarking about caches. Need to be verified.-->
 
-- Also we will need to know what is peak performance of our program where we run executable.
+- We need to know the peak performance the hardware can deliver on a single core. Be aware that many HPC systems let you run your program on a login note at first. However, login nodes are shared,so to measure peak performance you need to run on a dedicated core of a compute node.
+
+<!--Requesting a node with an exculisive access can go here -->
+
+- We also need to know the performance our program actually achieves on the machine where we run the executable.
+
+<!--Continue from here-->
 
 Recall the `deploy.sh` pattern from the Preparation episode this is
 exactly where a core level benchmark run. Once the code is
